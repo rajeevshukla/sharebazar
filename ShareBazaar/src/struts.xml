@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="pack" extends="struts-default">
+
+		<action name="customerRegister"
+			class="com.miracle.sharebazar.registration.CustomerRegister" method="process">
+			<result name="success" type="redirect">customerMemberIdShow.jsp</result>
+			<result name="input" type="redirect">customersignup.jsp</result>
+			<result name="error" type="redirect">error.jsp</result>
+		</action>
+
+
+		<action name="companyRegister"
+			class="com.miracle.sharebazar.registration.CompanyRegister">
+			<result name="success" type="redirect">customerMemberIdShow.jsp</result>
+			<result name="input" type="redirect">companysignup.jsp
+			</result>
+			<result name="error" type="redirect">error.jsp</result>
+		</action>
+
+		<action name="companyLogin" class="com.miracle.sharebazar.login.CompanyLogin">
+
+			<result name="input" type="redirect">/companyLogin.jsp</result>
+			<result name="success" type="redirect">/cyHome.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+			<result name="payment" type="redirect">/companyPayment.jsp</result>
+
+		</action>
+		<action name="customerLogin" class="com.miracle.sharebazar.login.CustomerLogin">
+
+			<result name="input" type="redirect">customerLogin.jsp</result>
+			<result name="success" type="redirect">crHome.jsp</result>
+			<result name="error" type="redirect">error.jsp</result>
+			<result name="payment" type="redirect">customerPayment.jsp</result>
+
+		</action>
+
+
+
+		<action name="customerPayment" class="com.miracle.sharebazar.payment.CustomerPayment">
+			<result name="success">crHome.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="input">customerPayment.jsp</result>
+		</action>
+		<action name="companyPayment" class="com.miracle.sharebazar.payment.CompanyPayment">
+			<result name="success">cyHome.jsp</result>
+			<result name="error">error.jsp</result>
+			<result name="input">companyPayment.jsp</result>
+		</action>
+		<action name="buyShareGet"
+			class="com.miracle.sharebazar.comapnyLogic.GetCompanyList"> <!-- provide the selected company info about shares , rates , etc to buy -->
+
+			<result name="success">buyShare.jsp</result>
+
+		</action>
+		<action name="sellShareGet"
+			class="com.miracle.sharebazar.customerLogic.GetCompanyListWithCustomerShare"><!-- get list of shares and companies only -->
+
+			<result name="success">sellShare.jsp</result>
+
+		</action>
+		<action name="companyDetailGet"
+			class="com.miracle.sharebazar.comapnyLogic.GetCompanyList">      <!-- for get list of companies only -->
+
+			<result name="success">companyDetail.jsp</result>
+
+		</action>
+		<action name="contactwithcompanyGet"
+			class="com.miracle.sharebazar.comapnyLogic.GetCompanyList">
+
+			<result name="success">contactwithcompany.jsp</result>
+
+		</action>
+		<action name="contactwithcompanyPost"
+			class="com.miracle.sharebazar.customerLogic.ContactWithCompany">
+			<result type="redirect">/sendMessageSuccessfull.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+		</action>
+
+		<action name="customerBuyShare"
+			class="com.miracle.sharebazar.customerLogic.CustomerBuyShare">   <!-- Buying shares -->
+			<result>/buySuccessfull.jsp</result>
+			<result name="error">/errorBuy.jsp</result>
+			<result name="input">/buyShare.jsp</result>
+		</action>
+		<action name="customerSellShare"
+			class="com.miracle.sharebazar.customerLogic.CustomerSellShare">
+
+			<result name="success">/sellSuccessfull.jsp</result>
+			<result name="input">/sellShare.jsp</result>
+		</action>
+
+		<action name="getFund" class="com.miracle.sharebazar.customerLogic.GetFund"> <!-- find the total fund and shares -->
+			<result name="success" type="redirect">/funds.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>
+
+		</action>
+
+
+
+		<action name="addFund" class="com.miracle.sharebazar.customerLogic.AddFund"> <!-- adding fund and redirecting to getfund -->
+			<result name="success" type="redirectAction">getFund</result>
+			<result name="error">/error.jsp</result>
+
+		</action>
+
+		<action name="transactionHistory"
+			class="com.miracle.sharebazar.customerLogic.TransactionHistory">  <!-- getting the details of all transactions -->
+			<result type="redirect">/transactionHistory.jsp</result>
+
+
+		</action>
+		<action name="companyInfo" class="com.miracle.sharebazar.customerLogic.CompanyInfo">    <!-- Retriving the information according to the selected company -->
+			<result>/companyInfo.jsp</result>
+			<result name="none">/error.jsp</result>
+		</action>
+
+
+		<action name="editCustomerProfile"
+			class="com.miracle.sharebazar.customerLogic.EditCustomerProfile">
+			<result>/editCustomerProfile.jsp</result>
+		</action>
+		<action name="updateProfile"
+			class="com.miracle.sharebazar.customerLogic.UpdateProfile">
+			<result name="success" type="redirect">/updateProfileSuccessfull.jsp
+			</result>
+			<result name="error">/error.jsp</result>
+
+
+		</action>
+		<action name="commentPost" class="com.miracle.sharebazar.comment.CommentPost">
+			<result type="redirectAction">commentGet</result>
+
+
+		</action>
+		<action name="commentGet" class="com.miracle.sharebazar.comment.CommentGet">
+			<result type="redirect"> /customerFeedback.jsp</result>
+
+
+		</action>
+	</package>
+</struts>    
