@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="display" uri="http://displaytag.sf.net"%>
+<%-- <%@taglib prefix="display" uri="http://displaytag.sf.net"%> --%>
 <c:if test="${empty session.name}">
 	<c:redirect url="index.jsp"></c:redirect>
 
