@@ -8,8 +8,7 @@ import java.sql.Statement;
 
 
 import org.apache.struts2.ServletActionContext;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.HttpSessionRequiredException;
+
 
 import com.miracle.sharebazar.connection.ConnectionDb;
 import com.opensymphony.xwork2.ActionContext;
