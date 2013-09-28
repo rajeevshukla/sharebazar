@@ -21,7 +21,7 @@ public class ConnectionDb {
 	public Connection getConnectionDb() {
 		try {
 			connection = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/sharebazar", "root", "root");
+					"jdbc:mysql://localhost:3306/sharebazar", "root", "password");
 
 			return connection;
 		} catch (Exception e) {

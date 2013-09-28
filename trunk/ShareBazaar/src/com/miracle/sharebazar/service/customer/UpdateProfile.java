@@ -1,4 +1,4 @@
-package com.miracle.sharebazar.customerLogic;
+package com.miracle.sharebazar.service.customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
