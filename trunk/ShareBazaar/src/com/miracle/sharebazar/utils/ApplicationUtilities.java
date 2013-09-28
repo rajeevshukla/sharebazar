@@ -1,13 +1,9 @@
 package com.miracle.sharebazar.utils;
 
+import java.util.Properties;
+
 public class ApplicationUtilities {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	public static Properties  SHARE_BAZAR_PROPERTIES=new  Properties();
 
 }
