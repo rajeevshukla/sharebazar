@@ -1,4 +1,4 @@
-package com.miracle.sharebazar.customerLogic;
+package com.miracle.sharebazar.service.customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.customerLogic.ShareBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 

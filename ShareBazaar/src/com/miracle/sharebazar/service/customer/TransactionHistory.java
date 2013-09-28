@@ -1,4 +1,4 @@
-package com.miracle.sharebazar.customerLogic;
+package com.miracle.sharebazar.service.customer;
 
 import com.opensymphony.xwork2.ActionSupport;
 
