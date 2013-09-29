@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-<!-- <include file="company-config.xml"></include>
-<include file="admin-config.xml"></include>
-<include file="customer-config.xml"></include> --> 
+
 	<package name="pack" extends="struts-default">
 
 
@@ -142,4 +140,7 @@
 			<result type="redirect"> /customerFeedback.jsp</result>
 		</action>
 	</package>
+	<include file="company-config.xml"></include>
+	<include file="admin-config.xml"></include>
+	<include file="customer-config.xml"></include>
 </struts>    

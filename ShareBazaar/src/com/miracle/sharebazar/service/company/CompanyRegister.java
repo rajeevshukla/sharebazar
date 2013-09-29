@@ -1,4 +1,4 @@
-package com.miracle.sharebazar.registration;
+package com.miracle.sharebazar.service.company;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
