@@ -1,6 +1,6 @@
 <%@page
 	import="com.sun.org.apache.xerces.internal.impl.dtd.models.CMAny"%>
-<%@page import="com.miracle.sharebazar.comment.CommentBean"%>
+<%@page import="com.miracle.sharebazar.service.comment.CommentBean"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:if test="${empty session.name }">
