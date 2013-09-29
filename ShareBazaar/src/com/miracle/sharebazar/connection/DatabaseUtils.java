@@ -3,11 +3,11 @@ package com.miracle.sharebazar.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ConnectionDb {
+public class DatabaseUtils {
 
 	Connection connection;
 
-	public ConnectionDb() {
+	public DatabaseUtils() {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

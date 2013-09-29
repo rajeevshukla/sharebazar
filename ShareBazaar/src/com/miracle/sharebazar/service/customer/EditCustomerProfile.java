@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.registration.CustomerBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -24,7 +24,7 @@ public class EditCustomerProfile extends ActionSupport implements
 	public String execute() throws Exception {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		String memberShipId = (String) session.getAttribute("memberId");
-		ConnectionDb db = new ConnectionDb();
+		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 		PreparedStatement ps = connection
 				.prepareStatement("select * from customerregister where memberShipId=? ");

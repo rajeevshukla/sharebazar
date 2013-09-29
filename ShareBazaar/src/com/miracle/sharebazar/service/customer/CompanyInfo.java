@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.payment.PaymentBean;
 import com.miracle.sharebazar.registration.CompanyBean;
 import com.opensymphony.xwork2.ActionSupport;
@@ -25,7 +25,7 @@ PaymentBean paymentBean=new PaymentBean();
  
 	public String execute() throws Exception {
 	
-		ConnectionDb db=new ConnectionDb();
+		DatabaseUtils db=new DatabaseUtils();
 	Connection connection=	db.getConnectionDb();
 	  PreparedStatement ps=            connection.prepareStatement("select * from companyregister c, sharemaster s where c.memberShipId=s.memberShipId and c.memberShipId=?" );
 	     ps.setString(1, memberShipId);

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GetCompanyListWithCustomerShare extends ActionSupport {
@@ -79,7 +79,7 @@ public class GetCompanyListWithCustomerShare extends ActionSupport {
 		shareType.add("no");
 		ratePerShare.add(0.00);
 		companyId.add("");
-		ConnectionDb db = new ConnectionDb();
+		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 		PreparedStatement ps = connection
 				.prepareStatement("select  companyName,remainShare,  shareType ,ratePerShare , memberShipId from sharemaster");

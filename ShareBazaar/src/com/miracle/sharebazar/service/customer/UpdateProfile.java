@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.registration.CustomerBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -18,7 +18,7 @@ public class UpdateProfile extends ActionSupport implements
 
 	@Override
 	public String execute() throws Exception {
-		ConnectionDb db = new ConnectionDb();
+		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 	PreparedStatement ps=	connection
 				.prepareStatement("update customerregister  set firstName=? , lastName=?, email=? , address=? , city=?, state=?, country=?, pin=?, dob=?, occupation=?,mobileNo=?, incomeGroup=? where memberShipId=? ");
