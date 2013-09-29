@@ -10,7 +10,7 @@ import java.sql.Statement;
 import org.apache.struts2.ServletActionContext;
 
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -41,7 +41,7 @@ public class CustomerRegister extends ActionSupport implements
 
 	public String process() {
 
-		ConnectionDb conn = new ConnectionDb();
+		DatabaseUtils conn = new DatabaseUtils();
 		Connection connection = conn.getConnectionDb();
 
 		try {

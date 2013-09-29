@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.customerLogic.ShareBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -34,7 +34,7 @@ private String getBuyer()
 	public String execute()
 	{
 
-		ConnectionDb db=new ConnectionDb();
+		DatabaseUtils db=new DatabaseUtils();
 		Connection  connection=db.getConnectionDb();
 		double remainBal=availabeBal-bean.getTotalAmount();
 		int remainShare=bean.getAvailableShare()-bean.getBuySharePost();
@@ -97,7 +97,7 @@ private String getBuyer()
 	public void validate() {
 
 	
-	ConnectionDb db=new ConnectionDb();
+	DatabaseUtils db=new DatabaseUtils();
 	Connection connection=db.getConnectionDb();
 	try {
 	PreparedStatement ps2=connection.prepareStatement("select balance from customerregister where memberShipId=?");

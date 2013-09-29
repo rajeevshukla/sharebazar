@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -18,7 +18,7 @@ public class CommentPost extends ActionSupport implements ModelDriven<CommentBea
 	@Override
 	public String execute() throws Exception {
 	
-		ConnectionDb db=new ConnectionDb();
+		DatabaseUtils db=new DatabaseUtils();
 	Connection connection=	db.getConnectionDb();
 	HttpSession session=ServletActionContext.getRequest().getSession();
 	String userName=(String)session.getAttribute("name");

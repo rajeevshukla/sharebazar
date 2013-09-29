@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.connection.ConnectionDb;
+import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -22,7 +22,7 @@ public class CustomerLogin extends ActionSupport implements ModelDriven<Customer
     
     public String execute() throws Exception {
     	
-        ConnectionDb db=new ConnectionDb();
+        DatabaseUtils db=new DatabaseUtils();
         Connection connection=db.getConnectionDb();
 	      PreparedStatement ps=connection.prepareStatement("select * from customerlogin where memberShipId=? and loginName=? and password=?");
 	         ps.setString(1, bean.getMemberShipId());
