@@ -16,7 +16,7 @@ import com.opensymphony.xwork2.ModelDriven;
 public class CompanyLogin extends ActionSupport implements ModelDriven<CompanyLoginBean> {
 CompanyLoginBean bean=new CompanyLoginBean();
 	
-	
+	         
 	
 	
 	public CompanyLoginBean getModel() {
