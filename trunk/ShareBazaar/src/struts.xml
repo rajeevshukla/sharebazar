@@ -5,13 +5,7 @@
 	<package name="pack" extends="struts-default">
 
 
-		<action name="customerRegister"
-			class="com.miracle.sharebazar.registration.CustomerRegister" method="process">
-			<result name="success" type="redirect">customerMemberIdShow.jsp</result>
-			<result name="input" type="redirect">customersignup.jsp</result>
-			<result name="error" type="redirect">error.jsp</result>
-		</action>
-
+		
 
 		<action name="companyRegister"
 			class="com.miracle.sharebazar.registration.CompanyRegister">
@@ -123,14 +117,7 @@
 			class="com.miracle.sharebazar.customerLogic.EditCustomerProfile">
 			<result>/editCustomerProfile.jsp</result>
 		</action>
-		<action name="updateProfile"
-			class="com.miracle.sharebazar.customerLogic.UpdateProfile">
-			<result name="success" type="redirect">/updateProfileSuccessfull.jsp
-			</result>
-			<result name="error">/error.jsp</result>
-
-
-		</action>
+		
 		<action name="commentPost" class="com.miracle.sharebazar.comment.CommentPost">
 			<result type="redirectAction">commentGet</result>
 
@@ -140,7 +127,12 @@
 			<result type="redirect"> /customerFeedback.jsp</result>
 		</action>
 	</package>
+	
+	
+	
 	<include file="company-config.xml"></include>
 	<include file="admin-config.xml"></include>
 	<include file="customer-config.xml"></include>
+	
+	
 </struts>    
