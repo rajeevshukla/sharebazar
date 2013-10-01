@@ -2,4 +2,21 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 
+	<package name="customer" extends="struts-default">
+
+		<action name="customerRegister"
+			class="com.miracle.sharebazar.registration.CustomerRegister" method="process">
+			<result name="success" type="redirect">customerMemberIdShow.jsp</result>
+			<result name="input" type="redirect">customersignup.jsp</result>
+			<result name="error" type="redirect">error.jsp</result>
+		</action>
+
+		<action name="updateProfile"
+			class="com.miracle.sharebazar.customerLogic.UpdateProfile">
+			<result name="success" type="redirect">/updateProfileSuccessfull.jsp
+			</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+	</package>
 </struts>
