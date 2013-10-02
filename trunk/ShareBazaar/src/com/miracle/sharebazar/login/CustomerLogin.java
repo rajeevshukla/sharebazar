@@ -24,7 +24,7 @@ public class CustomerLogin extends ActionSupport implements ModelDriven<Customer
     	
         DatabaseUtils db=new DatabaseUtils();
         Connection connection=db.getConnectionDb();
-	      PreparedStatement ps=connection.prepareStatement("select * from customerlogin where memberShipId=? and loginName=? and password=?");
+	      PreparedStatement ps=connection.prepareStatement("select * from CUSTOMER_LOGIN where MEMBERSHIP_ID=? and LOGIN_ID=? and PASSWORD=?");
 	         ps.setString(1, bean.getMemberShipId());
 	         ps.setString(2, bean.getLoginName());
 	         ps.setString(3, bean.getPassword());

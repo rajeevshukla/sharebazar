@@ -2,6 +2,7 @@ package com.miracle.sharebazar.payment;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Timestamp;
 
 import javax.servlet.http.HttpSession;
 
@@ -29,19 +30,19 @@ public class CustomerPayment extends ActionSupport implements
 		Connection connection = db.getConnectionDb();
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		PreparedStatement ps2 = connection
-				.prepareStatement("update customerlogin set status=? where memberShipId=?");
+				.prepareStatement("update CUSTOMER_LOGIN set IS_PAID=? where MEMBERSHIP_ID=?");
 
 		ps2.setInt(1, 1);
 
 		ps2.setString(2, (String) session.getAttribute("memberId"));
 
 		PreparedStatement ps3 = connection
-				.prepareStatement("update customerregister set balance=? where memberShipId=?");
+				.prepareStatement("update CUSTOMER_MASTER set BALANCE=? where MEMBERSHIP_ID=?");
 		ps3.setDouble(1, 1000);
 		ps3.setString(2, (String) session.getAttribute("memberId"));
 
 		PreparedStatement ps = connection
-				.prepareStatement("insert into customerfunds values(?,?,?,?,?,?,?)");
+				.prepareStatement("insert into CUSTOMER_TRANSACTION values(?,?,?,?,?,?,?,?)");
 		ps.setString(1, (String) session.getAttribute("memberId"));
 		ps.setString(2, bean.getCardHolderName());
 		ps.setString(3, bean.getCardNumber());
@@ -50,6 +51,7 @@ public class CustomerPayment extends ActionSupport implements
 		ps.setString(5, bean.getMonth() + "/" + bean.getYear());
 		ps.setInt(6, 1000);
 		ps.setString(7, "registration");
+		ps.setTimestamp(8, new Timestamp(System.currentTimeMillis()));
 		int b = ps.executeUpdate();
 		int a = ps3.executeUpdate();
 		int c = ps2.executeUpdate();
