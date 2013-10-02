@@ -5,17 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-
-
-import org.apache.struts2.ServletActionContext;
-
-
 import com.miracle.sharebazar.connection.DatabaseUtils;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-
-import freemarker.ext.servlet.HttpSessionHashModel;
 
 public class CustomerRegister extends ActionSupport implements
 		ModelDriven<CustomerBean> {
@@ -50,7 +42,7 @@ public class CustomerRegister extends ActionSupport implements
 					.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
 							ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs = stmt
-					.executeQuery("select memberShipId from customerlogin");
+					.executeQuery("select MEMBERSHIP_ID from CUSTOMER_LOGIN");
 			if (!rs.first()) {
 				memberShipId = "CS200019";
 			} else {
@@ -70,27 +62,28 @@ public class CustomerRegister extends ActionSupport implements
 			}
 
 			PreparedStatement ps = connection
-					.prepareStatement("insert into customerregister values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+					.prepareStatement("insert into CUSTOMER_MASTER values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			PreparedStatement ps2 = connection
-					.prepareStatement("insert into customerlogin values(? ,?,?,?)");
+					.prepareStatement("insert into CUSTOMER_LOGIN values(? ,?,?,?)");
 			ps.setString(1, getMemberShipId());
 			ps.setString(2, bean.getFirstName());
 			ps.setString(3, bean.getLastName());
-			ps.setString(4, bean.getEmail());
-			ps.setString(5, bean.getAddress());
-			ps.setString(6, bean.getCity());
-			ps.setString(7, bean.getState());
-			ps.setString(8, bean.getCountry());
-			ps.setLong(9, bean.getPin());
-			ps.setString(10, bean.getDob());
-			ps.setString(11, bean.getOccupation());
-			ps.setString(12, bean.getIncomeGroup());
-			ps.setLong(13, bean.getMobileNo());
+			ps.setString(4, bean.getAddress());
+			ps.setString(5, bean.getCity());
+			ps.setString(6, bean.getState());
+			ps.setString(7, bean.getCountry());
+			ps.setLong(8, bean.getPin());
+			ps.setString(9, bean.getDob());
+			ps.setString(10, bean.getOccupation());
+			ps.setString(11, bean.getIncomeGroup());
+			ps.setLong(12, bean.getMobileNo());
+			ps.setString(13, bean.getEmail());
             ps.setInt(14,0);
             ps.setDouble(15, 0.0);
 			ps2.setString(1, memberShipId);
 			ps2.setString(2, bean.getLoginName());
 			ps2.setString(3, bean.getPassword());
+			//ps2.setInt(4, ApplicationConstants.LOGIN_TYPE_CUSTOMER);
 			ps2.setInt(4, 0);
 
 			int status = ps.executeUpdate();

@@ -16,7 +16,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class AddFund extends ActionSupport implements ModelDriven<PaymentBean>{
-	 PaymentBean bean=new PaymentBean();
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	PaymentBean bean=new PaymentBean();
 	 private double amount;
 	 
 	public double getAmount() {
