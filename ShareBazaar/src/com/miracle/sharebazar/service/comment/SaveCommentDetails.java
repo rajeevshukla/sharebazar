@@ -1,14 +1,12 @@
 package com.miracle.sharebazar.service.comment;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.comment.CommentBean;
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;

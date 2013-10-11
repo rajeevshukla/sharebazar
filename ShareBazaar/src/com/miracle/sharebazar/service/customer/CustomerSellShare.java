@@ -1,6 +1,5 @@
 package com.miracle.sharebazar.service.customer;
 
-import com.miracle.sharebazar.customerLogic.ShareBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
