@@ -10,7 +10,6 @@ import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.Result;
 
 public class GetFund extends ActionSupport{
 
