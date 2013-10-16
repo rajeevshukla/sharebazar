@@ -4,15 +4,15 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Contact us</title>
-<link href="style/header.css" rel="stylesheet" type="text/css" />
+<link href="../style/header.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
 
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="../common/header.jsp"></jsp:include>
 
-	<jsp:include page="leftpan.jsp"></jsp:include>
+	<jsp:include page="../common/leftpan.jsp"></jsp:include>
 
 	<div class="rightPan">
 
@@ -72,6 +72,6 @@
 			</form>
 		</div>
 	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

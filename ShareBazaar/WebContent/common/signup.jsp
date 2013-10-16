@@ -7,23 +7,23 @@
 <title>Register</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
-	<jsp:include page="leftpan.jsp"></jsp:include>
+	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../common/leftpan.jsp"></jsp:include>
 	<div class="rightPan">
 
 		<div>
-			<a href="customersignup.jsp"><img alt="customersignup.png"
-				src="images/customersignup.png" height="30px"
+			<a href="../customer/customersignup.jsp"><img alt="customersignup.png"
+				src="../images/customersignup.png" height="30px"
 				style="margin-left: 200px; margin-top: 150px;" /> </a>
 		</div>
 		<div>
-			<a href="companysignup.jsp"><img alt="companysignup.png"
-				src="images/companysignup.png" height="30px"
+			<a href="../company/companysignup.jsp"><img alt="companysignup.png"
+				src="../images/companysignup.png" height="30px"
 				style="margin-left: 200px; margin-top: 20px;" /> </a>
 		</div>
 
 
 	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

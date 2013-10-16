@@ -7,8 +7,8 @@
 <title>Do's and Don't</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"></jsp:include>
-	<jsp:include page="leftpan.jsp"></jsp:include>
+	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../common/leftpan.jsp"></jsp:include>
 	<div class="rightPan">
 
 
@@ -61,6 +61,6 @@
 
 
 	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

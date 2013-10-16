@@ -17,14 +17,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 
-<link rel="stylesheet" type="text/css" href="style/header.css">
+<link rel="stylesheet" type="text/css" href="../style/header.css">
 
 
 </head>
 
 <body>
 	<div class="header" style="height: 100px;">
-		<img src="images/homelogo.png" alt=" image not found " height="100px"
+		<img src="../images/homelogo.png" alt=" image not found " height="100px"
 			width="200px;" /> <img src="images/graph.png"
 			alt=" image not found " height="100px" width="200px;" align="right" />
 	</div>
@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				up </marquee>
 		</div>
 		<div style="float: right; padding-right: 10px;">
-			<a href="logout.jsp">Logout</a>
+			<a href="../common/logout.jsp">Logout</a>
 		</div>
 	</div>
 
