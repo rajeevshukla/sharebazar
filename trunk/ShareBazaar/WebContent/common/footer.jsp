@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<link href="style/header.css" rel="stylesheet" type="text/css" />
+<link href="../style/header.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -17,9 +17,9 @@
 
 
 		<div style="border-bottom-style: none; padding-left: 300px;">
-			|<a href="index.jsp"><u>Home</u></a> | <a href="privacyandpolicy.jsp"><u>Privacy
+			|<a href="../common/index.jsp"><u>Home</u></a> | <a href="../common/privacyandpolicy.jsp"><u>Privacy
 					and policy</u></a>|<a href="t&c.jsp"><u>Terms and conditions</u></a>|<a
-				href="sitemap.jsp">Site Map</a>| </br> Copyright &copy; Miracle
+				href="../common/sitemap.jsp">Site Map</a>| </br> Copyright &copy; Miracle
 			Techonologies
 		</div>
 	</div>

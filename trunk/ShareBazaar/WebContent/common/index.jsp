@@ -5,29 +5,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome</title>
-<link rel="stylesheet" type="text/css" href="style/header.css">
+<link rel="stylesheet" type="text/css" href="../style/header.css">
 </head>
 <body>
 
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="../common/header.jsp"></jsp:include>
 
 	<!-- Side bar here  -->
-	<jsp:include page="leftpan.jsp"></jsp:include>
+	<jsp:include page="../common/leftpan.jsp"></jsp:include>
 	<div class="rightPan">
 		<div style="float: left;">
 			<div>
-				<a href="customerlogin.jsp"><img alt="customermenu.png"
-					src="images/customermenu.png" height="30px"
+				<a href="../customer/customerlogin.jsp"><img alt="customermenu.png"
+					src="../images/customermenu.png" height="30px"
 					style="margin-left: 200px; margin-top: 100px;" /> </a>
 			</div>
 			<div>
-				<a href="companylogin.jsp"><img alt="customermenu.png"
-					src="images/companymenu.png" height="30px"
+				<a href="../company/companylogin.jsp"><img alt="customermenu.png"
+					src="../images/companymenu.png" height="30px"
 					style="margin-left: 200px; margin-top: 20px;" /> </a>
 			</div>
 			<div>
-				<a href="signup.jsp"><img alt="customermenu.png"
-					src="images/register.png" height="30px"
+				<a href="../common/signup.jsp"><img alt="customermenu.png"
+					src="../images/register.png" height="30px"
 					style="margin-left: 200px; margin-top: 20px;" /> </a>
 			</div>
 		</div>
@@ -37,9 +37,9 @@
 
 
 		<div align="right">
-			<img alt="add.jif" src="images/gif.gif"
+			<img alt="add.jif" src="../images/gif.gif"
 				style="padding-right: 10px; padding-top: 10px;" /> <img
-				alt="add.jif" src="images/gif.gif" style="padding-right: 10px;" "/>
+				alt="add.jif" src="../images/gif.gif" style="padding-right: 10px;" "/>
 		</div>
 
 
@@ -52,6 +52,6 @@
 
 
 
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>
