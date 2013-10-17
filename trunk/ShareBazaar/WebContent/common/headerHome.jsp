@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				up </marquee>
 		</div>
 		<div style="float: right; padding-right: 10px;">
-			<a href="../common/logout.jsp">Logout</a>
+			<a href="./common/logout.jsp">Logout</a>
 		</div>
 	</div>
 

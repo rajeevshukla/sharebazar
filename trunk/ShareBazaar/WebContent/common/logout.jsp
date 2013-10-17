@@ -25,6 +25,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<%session.invalidate(); %>
 	Logout Successfully .
-	<a href="index.jsp">Click here </a>to go home page
+	<a href="./common/index.jsp">Click here </a>to go home page
 </body>
 </html>
