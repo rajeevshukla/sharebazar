@@ -5,12 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class CustomerRegister extends ActionSupport implements
-		ModelDriven<CustomerBean> {
+ModelDriven<CustomerBean> {
 	/**
 	 * 
 	 */
@@ -78,8 +82,8 @@ public class CustomerRegister extends ActionSupport implements
 			ps.setString(11, bean.getIncomeGroup());
 			ps.setLong(12, bean.getMobileNo());
 			ps.setString(13, bean.getEmail());
-            ps.setInt(14,0);
-            ps.setDouble(15, 0.0);
+			ps.setInt(14,0);
+			ps.setDouble(15, 0.0);
 			ps2.setString(1, memberShipId);
 			ps2.setString(2, bean.getLoginName());
 			ps2.setString(3, bean.getPassword());
@@ -88,12 +92,9 @@ public class CustomerRegister extends ActionSupport implements
 
 			int status = ps.executeUpdate();
 			int status2 = ps2.executeUpdate();
-			if (status == 1 && status2 == 1) {
-/*
-			Htt	`
-				
-				(( session).setAttribute("memberId", getMemberShipId());*/
-
+			if (status == 1 && status2 == 1) {	
+				HttpSession session=		ServletActionContext.getRequest().getSession();
+				session.setAttribute("memberId", getMemberShipId());
 				return "success";
 			} else
 				return "error";

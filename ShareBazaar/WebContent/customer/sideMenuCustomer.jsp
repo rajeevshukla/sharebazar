@@ -19,8 +19,8 @@
 <body>
 	<div class="header1" style="height: 500px; width: 240px; float: left;">
 		<ul>
-			<li style="list-style-image: url('images\menu.png');"><a
-				href="crHome.jsp">Home</a></li>
+			<li style="list-style-image: url('../images/menu.png');"><a
+				href="./customer/crHome.jsp">Home</a></li>
 			<li><a href="buyShareGet.action"> Buy Share</a></li>
 			<li><a href="sellShareGet.action"> Sell Share</a></li>
 			<li><a href="getFund.action">Funds</a>
@@ -29,7 +29,7 @@
 			<li><a href="contactwithcompanyGet.action"> Contact
 					companies</a></li>
 			<li><a href="editCustomerProfile.action">Edit Profile</a></li>
-			<li><a href="customerAccountSetting.jsp"> Account Setting</a></li>
+			<li><a href="./customer/customerAccountSetting.jsp"> Account Setting</a></li>
 			<li><a href="commentGet.action">Post comment</a></li>
 		</ul>
 	</div>
