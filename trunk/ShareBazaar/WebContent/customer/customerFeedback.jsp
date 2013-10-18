@@ -3,6 +3,7 @@
 <%@page import="com.miracle.sharebazar.service.comment.CommentBean"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:if test="${empty session.name }">
 	<c:redirect url="index.jsp"></c:redirect>
 
@@ -86,7 +87,7 @@
 					<c:forEach items="${list}" var="bean2">
 
 						<div class="commentHeader" style="background-color: navy;">${bean2.userName
-							} says on : ${bean2.date }</div>
+							} says on : <fmt:formatDate value="${bean2.date}"  type="both" pattern="dd-MMM-yyyy hh:mm a" /> </div>
 						<div class="commentBox">${bean2.comment }</div>
 
 
@@ -94,7 +95,7 @@
 
 
 					</c:forEach>
-					<div class="commentHeader">Total (${size }) Comments</div>
+					<div class="commentHeader">Total (${size}) Comments</div>
 				</c:otherwise>
 			</c:choose>
 
@@ -133,6 +134,6 @@
 
 
 
-	<!-- <jsp:include page="footerHome.jsp"></jsp:include>  -->
+	<%-- <jsp:include page="../common/footerHome.jsp"></jsp:include>  --%>
 </body>
 </html>

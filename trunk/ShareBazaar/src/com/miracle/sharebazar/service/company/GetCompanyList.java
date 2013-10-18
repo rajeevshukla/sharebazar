@@ -69,7 +69,7 @@ public class GetCompanyList extends ActionSupport {
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 		PreparedStatement ps = connection
-				.prepareStatement("select  companyName,remainShare,  shareType ,ratePerShare , memberShipId from sharemaster");
+				.prepareStatement("select  COMPANY_NAME,AVAILABLE_SHARE,  SHARE_TYPE ,RATE_PER_SHARE , MEMBERSHIP_ID from COMPANY_SHARE_MASTER");
 		
 		ResultSet set = ps.executeQuery();
 		while(set.next())

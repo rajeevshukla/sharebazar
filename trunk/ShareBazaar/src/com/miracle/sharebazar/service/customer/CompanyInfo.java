@@ -27,7 +27,7 @@ PaymentBean paymentBean=new PaymentBean();
 	
 		DatabaseUtils db=new DatabaseUtils();
 	Connection connection=	db.getConnectionDb();
-	  PreparedStatement ps=            connection.prepareStatement("select * from companyregister c, sharemaster s where c.memberShipId=s.memberShipId and c.memberShipId=?" );
+	  PreparedStatement ps=            connection.prepareStatement("select * from COMPANY_MASTER c, COMPANY_SHARE_MASTER s where c.MEMBERSHIP_ID=s.MEMBERSHIP_ID and c.MEMBERSHIP_ID=?" );
 	     ps.setString(1, memberShipId);
 	  ResultSet rs=   ps.executeQuery();
 	   if(!rs.next())
@@ -36,18 +36,16 @@ PaymentBean paymentBean=new PaymentBean();
 	   }
 	   else
 	   {
-		   bean.setCompanyName(rs.getString("companyName"));
-		   bean.setEmail(rs.getString("email"));
-		   bean.setAddress(rs.getString("address"));
-		   bean.setCity(rs.getString("city"));
-		   bean.setState(rs.getString("state"));
-		   bean.setCountry(rs.getString("country"));
-		   bean.setPin(rs.getLong("pin"));
-		   bean.setPhone(rs.getLong("phone"));
-		   bean.setMobile(rs.getLong("mobile"));
-		   bean.setAboutCompany(rs.getString("aboutCompany"));
-		   
-		   
+		   bean.setCompanyName(rs.getString("COMPANY_NAME"));
+		   bean.setEmail(rs.getString("EMAIL"));
+		   bean.setAddress(rs.getString("ADDRESS"));
+		   bean.setCity(rs.getString("CITY"));
+		   bean.setState(rs.getString("STATE"));
+		   bean.setCountry(rs.getString("COUNTRY"));
+		   bean.setPin(rs.getLong("PIN"));
+		   bean.setPhone(rs.getLong("PHONE"));
+		   bean.setMobile(rs.getLong("MOBILE"));
+		   bean.setAboutCompany(rs.getString("ABOUT_COMPANY"));
 		   return SUCCESS;
 		   
 	   }

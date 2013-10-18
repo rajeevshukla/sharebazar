@@ -13,7 +13,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class CustomerLogin extends ActionSupport implements ModelDriven<CustomerLoginBean> {
-    CustomerLoginBean bean=new CustomerLoginBean();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	CustomerLoginBean bean=new CustomerLoginBean();
 
 	public CustomerLoginBean getModel() {
 		// TODO Auto-generated method stub

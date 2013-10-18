@@ -18,7 +18,7 @@ public String execute() throws Exception {
   Connection connection=db.getConnectionDb();
   HttpSession session=ServletActionContext.getRequest().getSession();
   
-  PreparedStatement statement=connection.prepareStatement("select balance,share from customerregister  where memberShipId= ?" );
+  PreparedStatement statement=connection.prepareStatement("select BALANCE,SHARE from CUSTOMER_MASTER  where MEMBERSHIP_ID= ?" );
   statement.setString(1,(String) session.getAttribute("memberId"));
   ResultSet set=statement.executeQuery();
    if(set.next())

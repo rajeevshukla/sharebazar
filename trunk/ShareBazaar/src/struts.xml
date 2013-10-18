@@ -52,7 +52,7 @@
 		<action name="buyShareGet"
 			class="com.miracle.sharebazar.service.company.GetCompanyList"> <!-- provide the selected company info about shares , rates , etc to buy -->
 
-			<result name="success">buyShare.jsp</result>
+			<result name="success">/customer/buyShare.jsp</result>
 
 		</action>
 		<action name="sellShareGet"

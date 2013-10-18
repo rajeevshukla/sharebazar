@@ -36,7 +36,7 @@ public void setMemberShipId(String memberShipId) {
 	    HttpSession session=ServletActionContext.getRequest().getSession();
 	     String userName=   (String)       session.getAttribute("name");
 		String memberIdOfUser=(String)session.getAttribute("memberId");
-	  PreparedStatement ps=  connection.prepareStatement("insert into messagetocompany values( ?,?,?,? )");
+	  PreparedStatement ps=  connection.prepareStatement("insert into MESSAGE_TO_COMAPNY values( ?,?,?,? )");
 	           
 		 ps.setString(1, memberShipId);
 		 ps.setString(2, memberIdOfUser);
