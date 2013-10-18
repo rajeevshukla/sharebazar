@@ -38,7 +38,7 @@ private	String memberShipId;
 					.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
 							ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs = stmt
-					.executeQuery("select memberShipId from companylogin");
+					.executeQuery("select MEMBERSHIP_ID from COMPANY_LOGIN");
 			if (!rs.first()) {
 				memberShipId = "CY200019";
 			} else {
@@ -59,7 +59,7 @@ private	String memberShipId;
 			}
 
 			PreparedStatement ps = connection
-					.prepareStatement("insert into companyregister values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+					.prepareStatement("insert into COMPANY_MASTER values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1, getMemberShipId());
 			ps.setString(2, bean.getCompanyName());
 			
@@ -76,7 +76,7 @@ private	String memberShipId;
 			ps.setDouble(13, 0.0);
 
 			PreparedStatement ps2 = connection
-					.prepareStatement("insert into companylogin values(?,?,?,?)");
+					.prepareStatement("insert into COMPANY_LOGIN values(?,?,?,?)");
 			ps2.setString(1, memberShipId);
 			ps2.setString(2, bean.getCompanyLogin());
 			ps2.setString(3, bean.getPassword());

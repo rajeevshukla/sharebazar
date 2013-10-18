@@ -1,6 +1,7 @@
 package com.miracle.sharebazar.service.comment;
 
 
+import java.sql.Timestamp;
 import java.util.Calendar;
 
 import javax.servlet.http.HttpSession;
@@ -11,7 +12,7 @@ public class CommentBean {
 	private String memberShipId;
 	private String userName;
 	private String comment;
-	private String date;
+	private Timestamp date;
 	public String getMemberShipId() {
 		HttpSession session=ServletActionContext.getRequest().getSession();
 		memberShipId=(String)	session.getAttribute("memberId");
@@ -38,18 +39,15 @@ public class CommentBean {
 		System.out.println(comment);
 		this.comment = comment;
 	}
-	public String getDate() {
-		
-
+	
+	public Timestamp getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
-	
-	
-	
-	
+
 	public String generateDate()
 	{
 		Calendar calendar=Calendar.getInstance();

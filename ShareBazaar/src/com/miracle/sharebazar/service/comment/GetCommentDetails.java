@@ -22,7 +22,7 @@ public String execute() throws Exception {
 	DatabaseUtils db=new DatabaseUtils();
 	Connection connection=db.getConnectionDb();
 	HttpSession  session=ServletActionContext.getRequest().getSession();
-	     PreparedStatement ps=         connection.prepareStatement("select * from comment ");
+	     PreparedStatement ps=         connection.prepareStatement("SELECT * FROM CUSTOMER_FEEDBACK ");
 	          ResultSet rs=        ps.executeQuery();
 	
 	ArrayList<CommentBean> list=new ArrayList<CommentBean>();
@@ -31,9 +31,9 @@ public String execute() throws Exception {
 	    	  
 	      {
 	    	  CommentBean bean2=new CommentBean();
-	    	bean2.setUserName( rs.getString("userName"));
-	    	bean2.setComment(rs.getString("comment"));
-	    	bean2.setDate(rs.getString("commentDate"));
+	    	bean2.setUserName( rs.getString("USER_NAME"));
+	    	bean2.setComment(rs.getString("FEEDBACK"));
+	    	bean2.setDate(rs.getTimestamp("FEEDBACK_DATE"));
 	    	
 	    	list.add(bean2);
 	    	size++;

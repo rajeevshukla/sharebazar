@@ -82,8 +82,8 @@ public class GetCompanyListWithCustomerShare extends ActionSupport {
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 		PreparedStatement ps = connection
-				.prepareStatement("select  companyName,remainShare,  shareType ,ratePerShare , memberShipId from sharemaster");
-		PreparedStatement ps2=connection.prepareStatement("select share from customerregister where memberShipId=?");
+				.prepareStatement("select  COMPANY_NAME,AVAILABLE_SHARE,  SHARE_TYPE ,RATE_PER_SHARE , MEMBERSHIP_ID from COMPANY_SHARE_MASTER");
+		PreparedStatement ps2=connection.prepareStatement("select share from CUSTOMER_MASTER where MEMBERSHIP_ID=?");
 		HttpSession session=ServletActionContext.getRequest().getSession();
 		String memberId=(String)session.getAttribute("memberId");
 		ps2.setString(1, memberId);

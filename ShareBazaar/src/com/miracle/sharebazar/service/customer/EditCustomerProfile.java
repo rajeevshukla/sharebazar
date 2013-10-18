@@ -27,22 +27,22 @@ public class EditCustomerProfile extends ActionSupport implements
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 		PreparedStatement ps = connection
-				.prepareStatement("select * from customerregister where memberShipId=? ");
+				.prepareStatement("select * from CUSTOMER_MASTER where MEMBERSHIP_ID=? ");
 		ps.setString(1, memberShipId);
 		ResultSet rs = ps.executeQuery();
 		if (rs.next()) {
-			cBean.setFirstName(rs.getString("firstName"));
-			cBean.setLastName(rs.getString("lastName"));
-			cBean.setEmail(rs.getString("email"));
-			cBean.setAddress(rs.getString("address"));
-			cBean.setCity(rs.getString("city"));
-			cBean.setState(rs.getString("state"));
-			cBean.setCountry(rs.getString("country"));
-			cBean.setPin(rs.getLong("pin"));
-			cBean.setDob(rs.getString("dob"));
-			cBean.setOccupation(rs.getString("occupation"));
-			cBean.setMobileNo(rs.getLong("mobileNo"));
-			cBean.setIncomeGroup(rs.getString("incomeGroup"));
+			cBean.setFirstName(rs.getString("FIRST_NAME"));
+			cBean.setLastName(rs.getString("LAST_NAME"));
+			cBean.setEmail(rs.getString("EMAIL"));
+			cBean.setAddress(rs.getString("ADDRESS"));
+			cBean.setCity(rs.getString("CITY"));
+			cBean.setState(rs.getString("STATE"));
+			cBean.setCountry(rs.getString("COUNTRY"));
+			cBean.setPin(rs.getLong("PIN"));
+			cBean.setDob(rs.getString("DOB"));
+			cBean.setOccupation(rs.getString("OCCUPATION"));
+			cBean.setMobileNo(rs.getLong("MOBILE_NUMBER"));
+			cBean.setIncomeGroup(rs.getString("INCOME_GROUP"));
 			
 		}
 		else 

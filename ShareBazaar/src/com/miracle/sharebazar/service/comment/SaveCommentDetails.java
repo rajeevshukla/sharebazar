@@ -1,7 +1,9 @@
 package com.miracle.sharebazar.service.comment;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.Timestamp;
 
 import javax.servlet.http.HttpSession;
 
@@ -21,19 +23,17 @@ public class SaveCommentDetails extends ActionSupport implements ModelDriven<Com
 	Connection connection=	db.getConnectionDb();
 	HttpSession session=ServletActionContext.getRequest().getSession();
 	String userName=(String)session.getAttribute("name");
-	 PreparedStatement ps=connection.prepareStatement("insert into comment(memberShipId,userName,comment,commentDate) values(?,?,?,?)");
+	 PreparedStatement ps=connection.prepareStatement("insert into CUSTOMER_FEEDBACK(MEMBERSHIP_ID,USER_NAME,FEEDBACK,FEEDBACK_DATE) values(?,?,?,?)");
 	 ps.setString(1, bean.getMemberShipId());
 	 ps.setString(2, userName);
 	 ps.setString(3, bean.getComment());
-	 ps.setString(4, bean.generateDate());
+	 ps.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
+	 //ps.setString(4, bean.generateDate());
 	int b= ps.executeUpdate();
 		if(b==1)
 			return SUCCESS;
 		else 
 			return ERROR;
-		
-		
-		
 	}
 	
 	
