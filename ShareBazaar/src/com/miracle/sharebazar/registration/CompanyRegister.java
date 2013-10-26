@@ -87,11 +87,11 @@ private	String memberShipId;
 			
 			
 			
-			PreparedStatement ps3=connection.prepareStatement("insert into sharemaster values(?,?,?,?,?,?,?)");
+			PreparedStatement ps3=connection.prepareStatement("insert into COMPANY_SHARE_MASTER values(?,?,?,?,?,?,?)");
 			ps3.setString(1, memberShipId);
 			ps3.setString(2, bean.getCompanyName());
 			ps3.setInt(3, bean.getNoOfShare());
-			ps3.setDouble(4, bean.getRatePerShare() );
+			ps3.setDouble(4, bean.getRatePerShare());
 			ps3.setString(5, bean.getShareType());
 			ps3.setString(6, bean.getDateOfIssue());
 			ps3.setInt(7, bean.getNoOfShare());

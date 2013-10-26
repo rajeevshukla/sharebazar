@@ -15,7 +15,7 @@
 
 		<action name="companyRegister"
 			class="com.miracle.sharebazar.registration.CompanyRegister">
-			<result name="success" type="redirect">/company/customerMemberIdShow.jsp</result>
+			<result name="success" type="redirect">/company/companyMemberIdShow.jsp</result>
 			<result name="input" type="redirect">/company/companysignup.jsp
 			</result>
 			<result name="error" type="redirect">/company/error.jsp</result>
