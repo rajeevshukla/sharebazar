@@ -6,3 +6,4 @@
 <script type="text/javascript" src="../js/cufon-yui.js"></script>
 <script type="text/javascript" src="../js/cufon-replace.js"></script>	
 <script type="text/javascript" src="../js/Myriad_Pro_300.font.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
