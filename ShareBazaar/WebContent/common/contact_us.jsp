@@ -1,77 +1,105 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Contact us</title>
-<link href="../style/header.css" rel="stylesheet" type="text/css" />
-
-</head>
-
 <body>
+	<jsp:include page="../common/commonHeader.jsp"></jsp:include>
 
-	<jsp:include page="../common/header.jsp"></jsp:include>
-
-	<jsp:include page="../common/leftpan.jsp"></jsp:include>
-
-	<div class="rightPan">
-
-		<div style="width: 80%; margin-left: 30px; margin-top: 60px;">
-			<form id="contact_us.action" method="post">
-				<table>
-					<tbody>
-						<tr>
-							<td colspan="2"><h4 class="commentformTitle">Contact Us</h4>
-								<input type="hidden" id="postId" name="postId" value="11" /></td>
-						</tr>
-						<tr>
-							<td class="row"><label for="visitorFirstName">First
-									Name</label></td>
-							<td class="row"><input type="text" id="visitorFirstName"
-								name="visitorFirstName" class="short" placeholder="John"
-								required="" /></td>
-						</tr>
-						<tr>
-							<td class="row"><label for="visitorLastName">Last
-									Name</label></td>
-							<td class="row"><input type="text" id="visitorLastName"
-								name="visitorLastName" class="short" placeholder="Smith"
-								required="" /></td>
-						</tr>
-						<tr>
-							<td class="row"><label for="visitorEmail">Email</label></td>
-							<td class="row"><input type="email" id="visitorEmail"
-								name="visitorEmail" placeholder="jsmith@yahoo.com" required="" />
-								&nbsp; <!--<input type="button" id="verifyVisitorBtn"
-						name="verifyVisitorBtn" value="Verify" onclick="verifyVisitor();"
-						style="font-size: 10pt;"> <img id="verifyVisitorImg"
-						src="./Html5 File Upload with Progress On Matlus_files/ok.png"
-						alt="Visitor Verified"
-						style="display: none; vertical-align: middle;"> <input
-						type="hidden" id="visitorIsVerified" name="visitorIsVerified"
-						value="false">  --></td>
-						</tr>
-
-
-						<tr>
-							<td class="row" style="vertical-align: top;"><label
-								for="visitorComment">Your<br>Comment </label></td>
-							<td class="row"><textarea id="visitorComment"
-									name="visitorComment" rows="6" cols="50" required=""></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-				<input id="submitBtn" type="submit" value="Submit" /> <span
-					id="submitConfirm" style="display: none;"> <img
-					id="submitConfirmImg"
-					src="./Html5 File Upload with Progress On Matlus_files/ok.png"
-					alt="Your Comment has been submitted"
-					style="vertical-align: middle;" /> Your Comment has been submitted.
-					Thankyou!
-				</span>
-			</form>
+	<div class="body2">
+		<div class="main">
+			<!-- content -->
+			<section id="content">
+			<div class="marg_top wrapper">
+				<article class="col1">
+				<div class="box1_out">
+					<div class="box1">
+						<h2>Our Contacts</h2>
+						<div class="wrapper">
+							<article class="col2">
+							<p>
+								<strong> Country:<br> City:<br> Telephone:<br>
+												Email: </strong>
+							</p>
+							</article>
+							<article class="col3">
+							<p>
+								USA<br> San Diego<br> +354 5635600<br> <a
+											href="mailto:">businessco@mail.com</a>
+							</p>
+							</article>
+						</div>
+						<a href="#" class="button"><span><span>headquarters</span></span></a>
+					</div>
+				</div>
+				<div class="box1_bot">
+					<div class="box1_bot_left">
+						<div class="box1_bot_right"></div>
+					</div>
+				</div>
+				</article>
+				<article class="col2 pad_left1">
+				<div class="box1_out">
+					<div class="box1">
+						<h2>Miscellaneous Info</h2>
+						<p>At vero eos et accusamus et iusto odio dignissimos ducimus
+							qui blanditiis praesentium voluptatum deleniti atque corrupti
+							quos dolores et quas molestias excepturi sint occaecati
+							cupiditate non provident, similique sunt in culpa qui officia
+							deserunt mollitia animi, id est laborum et dolorum fuga. Et harum
+							quidem rerum facilis est et expedita distinctio. Nam libero
+							tempore, cum soluta nobis est eligendi optio cumque.</p>
+					</div>
+				</div>
+				<div class="box1_bot">
+					<div class="box1_bot_left">
+						<div class="box1_bot_right"></div>
+					</div>
+				</div>
+				</article>
+			</div>
+			<div class="wrapper marg_top2">
+				<div class="pad">
+					<h2>Contact Form</h2>
+					<form id="ContactForm" action="">
+						<div class="wrapper pad_bot1">
+							<div class="wrapper">
+								<div class="bg">
+									<input type="text" class="input" />
+								</div>
+								Your Name:<br />
+							</div>
+							<div class="wrapper">
+								<div class="bg">
+									<input type="text" class="input" />
+								</div>
+								Your E-mail:<br />
+							</div>
+							<div class="wrapper">
+								<div class="bg">
+									<div class="textarea">
+										<textarea name="textarea" cols="1" rows="1"></textarea>
+									</div>
+								</div>
+								Your Message:<br />
+							</div>
+							<div class="wrapper">
+								<a href="#" class="button"
+									onClick="document.getElementById('ContactForm').submit()"><span><span>send</span></span></a>
+								<a href="#" class="button marg_right1"
+									onClick="document.getElementById('ContactForm').reset()"><span><span>clear</span></span></a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			</section>
+			<!-- / content -->
 		</div>
 	</div>
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+
+
+
+
+	<jsp:include page="../common/commonFooter.jsp"></jsp:include>
+
+
 </body>
 </html>

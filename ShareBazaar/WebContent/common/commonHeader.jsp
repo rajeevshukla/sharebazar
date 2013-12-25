@@ -8,7 +8,7 @@
 <!-- header -->
 		<header>
 			<div id="logo_box">
-				<h1><a href="index.html" id="logo">ShareBazar.com <span>Clients Choose Us!</span></a></h1>
+				<h1><a href="../common/index.jsp" id="logo">ShareBazar.com <span>Clients Choose Us!</span></a></h1>
 			</div>
 			<nav>
 				<ul id="menu">
@@ -16,7 +16,7 @@
 					<li><a href="../common/about.jsp">About</a></li>
 					<li><a href="../common/market_news.jsp">Market News</a></li>
 					<li id="menu_active"><a href="../common/contact_us.jsp">Contacts</a></li>
-					<li class="bg_none"><a href="SiteMap.html">Member area</a></li>
+					<li class="bg_none"><a href="#" onclick="alert('Opening login pannel')">Member area</a></li>
 				</ul>
 			</nav>
 			<div class="wrapper">
