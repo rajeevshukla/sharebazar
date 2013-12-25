@@ -4,18 +4,19 @@
 
 	<package name="pack" extends="struts-default">
 
-
-
 		<action name="customerRegister"
 			class="com.miracle.sharebazar.registration.CustomerRegister" method="process">
-			<result name="success" type="redirect">/customer/customerMemberIdShow.jsp</result>
-			<result name="input" type="redirect">/customer/customersignup.jsp</result>
+			<result name="success" type="redirect">/customer/customerMemberIdShow.jsp
+			</result>
+			<result name="input" type="redirect">/customer/customersignup.jsp
+			</result>
 			<result name="error" type="redirect">/customer/error.jsp</result>
 		</action>
 
 		<action name="companyRegister"
 			class="com.miracle.sharebazar.registration.CompanyRegister">
-			<result name="success" type="redirect">/company/companyMemberIdShow.jsp</result>
+			<result name="success" type="redirect">/company/companyMemberIdShow.jsp
+			</result>
 			<result name="input" type="redirect">/company/companysignup.jsp
 			</result>
 			<result name="error" type="redirect">/company/error.jsp</result>
@@ -26,7 +27,8 @@
 			<result name="input" type="redirect">/company/companyLogin.jsp</result>
 			<result name="success" type="redirect">/company/cyHome.jsp</result>
 			<result name="error" type="redirect">/company/error.jsp</result>
-			<result name="payment" type="redirect">/company/companyPayment.jsp</result>
+			<result name="payment" type="redirect">/company/companyPayment.jsp
+			</result>
 
 		</action>
 		<action name="customerLogin" class="com.miracle.sharebazar.login.CustomerLogin">
@@ -34,7 +36,8 @@
 			<result name="input" type="redirect">/customer/ustomerLogin.jsp</result>
 			<result name="success" type="redirect">/customer/crHome.jsp</result>
 			<result name="error" type="redirect">/customer/error.jsp</result>
-			<result name="payment" type="redirect">/customer/customerPayment.jsp</result>
+			<result name="payment" type="redirect">/customer/customerPayment.jsp
+			</result>
 		</action>
 
 
@@ -112,7 +115,8 @@
 
 
 		</action>
-		<action name="companyInfo" class="com.miracle.sharebazar.service.customer.CompanyInfo">    <!-- Retriving the information according to the selected company -->
+		<action name="companyInfo"
+			class="com.miracle.sharebazar.service.customer.CompanyInfo">    <!-- Retriving the information according to the selected company -->
 			<result>/customer/companyInfo.jsp</result>
 			<result name="none">/customer/error.jsp</result>
 		</action>
@@ -132,21 +136,33 @@
 
 		</action>
 
-		<action name="commentPost" class="com.miracle.sharebazar.service.comment.SaveCommentDetails">
+		<action name="commentPost"
+			class="com.miracle.sharebazar.service.comment.SaveCommentDetails">
 			<result type="redirectAction">commentGet</result>
 
 
 		</action>
-		<action name="commentGet" class="com.miracle.sharebazar.service.comment.GetCommentDetails">
+		<action name="commentGet"
+			class="com.miracle.sharebazar.service.comment.GetCommentDetails">
 			<result type="redirect">/customer/customerFeedback.jsp</result>
 		</action>
+
+		<action name="getCurrencyDetails"
+			class="com.miracle.sharebazar.service.common.CurrencyCoverterAction">
+			<result name="success">
+				/common/index.jsp
+			</result>
+
+
+		</action>
+
 	</package>
-	
-	
-	
+
+
+
 	<include file="company-config.xml"></include>
 	<include file="admin-config.xml"></include>
 	<include file="customer-config.xml"></include>
-	
-	
+
+
 </struts>    

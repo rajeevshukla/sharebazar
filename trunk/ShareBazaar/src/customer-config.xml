@@ -4,7 +4,7 @@
 
 	<package name="customer" extends="struts-default">
 
-		<action name="customerRegister"
+		<!-- <action name="customerRegister"
 			class="com.miracle.sharebazar.registration.CustomerRegister" method="process">
 			<result name="success" type="redirect">customerMemberIdShow.jsp</result>
 			<result name="input" type="redirect">customersignup.jsp</result>
@@ -17,6 +17,6 @@
 			</result>
 			<result name="error">/error.jsp</result>
 		</action>
-
+ -->
 	</package>
 </struts>

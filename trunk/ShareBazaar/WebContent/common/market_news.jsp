@@ -7,9 +7,15 @@
 <title>Market news</title>
 </head>
 <body>
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<%-- <jsp:include page="../common/header.jsp"></jsp:include>
 	<jsp:include page="../common/leftpan.jsp"></jsp:include>
-	<div class="rightPan">Market news will be here</div>
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+ --%>'
+ <%@include file="../common/commonHeader.jsp" %>
+ 
+ 
+ 	
+
+<%@include  file="../common/commonFooter.jsp"%>
+
 </body>
 </html>
