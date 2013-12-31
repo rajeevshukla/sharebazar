@@ -1,5 +1,5 @@
 
-<%@include file="../common/common.jsp"%>
+
 <div class="main">
 <!-- footer -->
 	<footer>

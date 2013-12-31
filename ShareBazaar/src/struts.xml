@@ -146,16 +146,14 @@
 			class="com.miracle.sharebazar.service.comment.GetCommentDetails">
 			<result type="redirect">/customer/customerFeedback.jsp</result>
 		</action>
+	</package>
 
+	<package name="common-package" namespace="/common" extends="struts-default,json-default">
 		<action name="getCurrencyDetails"
 			class="com.miracle.sharebazar.service.common.CurrencyCoverterAction">
-			<result name="success">
-				/common/index.jsp
+			<result name="success" type="json">
 			</result>
-
-
 		</action>
-
 	</package>
 
 

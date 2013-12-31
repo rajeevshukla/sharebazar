@@ -17,3 +17,12 @@
 #page5 .col1 .col2 {width:80px;letter-spacing:-1px}
 #page5 .col1 .col3 {width:140px}
 /* page6 */
+
+.loginTable {
+	
+	width:400px;
+	height: 110px; 
+}
+input {
+	background-color: #D6D6D6;
+}
