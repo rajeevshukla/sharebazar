@@ -58,8 +58,7 @@ private	String memberShipId;
 				}
 			}
 
-			PreparedStatement ps = connection
-					.prepareStatement("insert into COMPANY_MASTER values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps = connection.prepareStatement("insert into COMPANY_MASTER values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1, getMemberShipId());
 			ps.setString(2, bean.getCompanyName());
 			
@@ -74,9 +73,7 @@ private	String memberShipId;
 			ps.setLong(11, bean.getMobile());
 			ps.setString(12, bean.getAboutCompany());
 			ps.setDouble(13, 0.0);
-
-			PreparedStatement ps2 = connection
-					.prepareStatement("insert into COMPANY_LOGIN values(?,?,?,?)");
+			PreparedStatement ps2 = connection.prepareStatement("insert into COMPANY_LOGIN values(?,?,?,?)");
 			ps2.setString(1, memberShipId);
 			ps2.setString(2, bean.getCompanyLogin());
 			ps2.setString(3, bean.getPassword());

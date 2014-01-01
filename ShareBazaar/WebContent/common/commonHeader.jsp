@@ -76,6 +76,7 @@
 					<input type="submit" class="button icon search" value="Login">
 					<input type="button" class="button " value="Cancel" onclick="$('#dialog').dialog('close')">
 
+<a href="#" onclick="openSignUpPage();">Sign Up</a>
 				</form>
 
 			
