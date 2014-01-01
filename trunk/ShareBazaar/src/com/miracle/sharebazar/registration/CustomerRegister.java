@@ -13,8 +13,7 @@ import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class CustomerRegister extends ActionSupport implements
-ModelDriven<CustomerBean> {
+public class CustomerRegister extends ActionSupport implements ModelDriven<CustomerBean> {
 	/**
 	 * 
 	 */
