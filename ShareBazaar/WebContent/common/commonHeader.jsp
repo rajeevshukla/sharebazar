@@ -39,7 +39,7 @@
 	</div>
 	<div style="top: 160px;">
 		<div id="dialog" title="Login Pannel" style="width: 430px;">
-				<form action="customerLogin.action" method="post">
+				<form action="commonLogin.action" method="post">
 					<table class="loginTable"  >
 						<tbody>
 							<tr >

@@ -1,6 +1,6 @@
 package com.miracle.sharebazar.login;
 
-public class CompanyLoginBean {
+public class CommonLoginBean {
 	private String loginName;
 	private String password;
 	private String memberShipId;
@@ -23,4 +23,5 @@ public class CompanyLoginBean {
 		this.memberShipId = memberShipId;
 	}
 	
+
 }
