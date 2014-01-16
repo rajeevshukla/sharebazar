@@ -3,6 +3,8 @@ package com.miracle.sharebazar.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import com.miracle.sharebazar.utils.ApplicationUtilities;
+
 public class DatabaseUtils {
 
 	Connection connection;
@@ -10,7 +12,7 @@ public class DatabaseUtils {
 	public DatabaseUtils() {
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName(ApplicationUtilities.getCustomProperty("mysql.driverClass", "com.mysql.jdbc.Driver"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -20,12 +22,9 @@ public class DatabaseUtils {
 
 	public Connection getConnectionDb() {
 		try {
-			connection = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/sharebazar", "root", "password");
-
+			connection = DriverManager.getConnection(ApplicationUtilities.getCustomProperty("mysql.connectionUrl",null), ApplicationUtilities.getCustomProperty("mysql.userName", "root"), ApplicationUtilities.getCustomProperty("mysql.password", "password"));
 			return connection;
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
 		return null;

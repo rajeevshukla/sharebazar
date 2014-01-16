@@ -17,10 +17,9 @@
 		<filter-name>struts2</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!-- <listener>
+	<listener>
 		<listener-class>com.miracle.sharebazar.utils.BootLoader</listener-class>
-
-	</listener> -->
+	</listener> 
 
 	<!-- <error-page> <error-code>404</error-code> <location>/WEB-INF/404.jsp</location> 
 		</error-page> -->
