@@ -72,11 +72,7 @@ public class SendMail {
 			transport.close();
 			return true;	    
 
-
-
-
-		}catch(Exception e)
-		{
+		}catch(Exception e)	{
 			e.printStackTrace();
 			return false;
 		}
