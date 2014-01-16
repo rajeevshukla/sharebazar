@@ -3,6 +3,7 @@ package com.miracle.sharebazar.registration;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.http.HttpSession;
@@ -15,10 +16,10 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class CompanyRegister implements ModelDriven<CompanyBean> {
 
-private	String memberShipId;
+	private	String memberShipId;
 
 	CompanyBean bean = new CompanyBean();
-	
+
 
 	public String getMemberShipId() {
 		return memberShipId;
@@ -31,6 +32,12 @@ private	String memberShipId;
 	public String execute() {
 		DatabaseUtils conn = new DatabaseUtils();
 		Connection connection = conn.getConnectionDb();
+		try {
+			connection.setAutoCommit(false);
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 
 		try {
 
@@ -61,7 +68,6 @@ private	String memberShipId;
 			PreparedStatement ps = connection.prepareStatement("insert into COMPANY_MASTER values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1, getMemberShipId());
 			ps.setString(2, bean.getCompanyName());
-			
 			ps.setString(3, bean.getEmail());
 			ps.setString(4, bean.getAddress());
 			ps.setString(5, bean.getCity());
@@ -72,38 +78,43 @@ private	String memberShipId;
 			ps.setLong(10, bean.getFax());
 			ps.setLong(11, bean.getMobile());
 			ps.setString(12, bean.getAboutCompany());
-			ps.setDouble(13, 0.0);
+			ps.setDouble(13, 0.0); //total available balance
 			PreparedStatement ps2 = connection.prepareStatement("insert into COMPANY_LOGIN values(?,?,?,?)");
 			ps2.setString(1, memberShipId);
 			ps2.setString(2, bean.getCompanyLogin());
 			ps2.setString(3, bean.getPassword());
 			ps2.setInt(4, 0); // status to check wheather the company pay money
-								// or not not. 0 means first time it does no pay
-								// the money
+			// or not not. 0 means first time it does no pay
+			// the money
 
-			
-			
-			
-			PreparedStatement ps3=connection.prepareStatement("insert into COMPANY_SHARE_MASTER values(?,?,?,?,?,?,?)");
+			PreparedStatement ps3=connection.prepareStatement("insert into COMPANY_SHARE_MASTER values(?,?,?,?,?,?)");
 			ps3.setString(1, memberShipId);
 			ps3.setString(2, bean.getCompanyName());
 			ps3.setInt(3, bean.getNoOfShare());
-			ps3.setDouble(4, bean.getRatePerShare());
-			ps3.setString(5, bean.getShareType());
-			ps3.setString(6, bean.getDateOfIssue());
-			ps3.setInt(7, bean.getNoOfShare());
+			ps3.setString(4, bean.getShareType());
+			ps3.setString(5, bean.getDateOfIssue());
+			ps3.setDouble(6, bean.getRatePerShare());
 			int a=ps.executeUpdate();
-	     int b=		ps2.executeUpdate();
-		 int c=	ps3.executeUpdate();
+			int b=		ps2.executeUpdate();
+			int c=	ps3.executeUpdate();
+			connection.commit();
 			if(a==b && b==c && c==1)
 			{
-				 HttpSession session=ServletActionContext.getRequest().getSession();
-                 session.setAttribute("memberId", getMemberShipId());
+				HttpSession session=ServletActionContext.getRequest().getSession();
+				session.setAttribute("memberId", getMemberShipId());
 				return "success";
 			}
-			
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+
+			}
 
 		}
 		finally {

@@ -13,10 +13,7 @@ $(document).ready(function() {
 
 	$("#dialog").parent("div").css("top","160px;");
 
-	$(function() {
-		$("#tabs").tabs();
-	});
-
+	
 
 
 });

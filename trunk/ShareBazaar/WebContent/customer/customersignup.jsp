@@ -1,22 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
+<%@include file="../common/common.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Register as a Customer</title>
-<link rel="stylesheet" type="text/css" href="style/header.css">
+
 </head>
-<body>
-	<jsp:include page="../common/header.jsp"></jsp:include>
-	<jsp:include page="../common/leftpan.jsp"></jsp:include>
-	<div class="rightPan">
+
+<%-- <jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../common/leftpan.jsp"></jsp:include> --%>
+<%@include file="../common/commonHeader.jsp"%>
+<div class="body2">
+	<div class="main">
+		<!-- Content -->
+		<section id="content">
+		<div class="marg_top wrapper">
 		<form action="customerRegister.action" class="text" method="post">
 			<s:token></s:token>
 			<h4 class="commentformTitle">Please fill the following
 				Details...</h4>
-			<div style="padding: 20px;">
+			<div style="padding: 20px;" >
 
 
 				<table>
@@ -130,10 +136,11 @@
 
 			</div>
 		</form>
-
-
-
+		</section>
+		<!-- Content -->
 	</div>
-	<jsp:include page="../common/footer.jsp" flush="true"></jsp:include>
-</body>
+</div>
+</div>
+<%-- <jsp:include page="../common/footer.jsp" flush="true"></jsp:include> --%>
+<%@include file="../common/commonFooter.jsp"%>
 </html>

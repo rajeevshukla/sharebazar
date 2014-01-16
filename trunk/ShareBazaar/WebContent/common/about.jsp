@@ -13,9 +13,9 @@
 				<article class="col1">
 					<div class="box1_out">
 						<div class="box1">
-							<h2>Team Member One</h2>
+							<h2 class="bigHeading">Team Member One</h2>
 							<div class="wrapper pad_bot1">
-								<figure><img src="images/page2_img1.jpg" alt="" class="left marg_right1"></figure>
+								<figure><img src="../images/page2_img1.jpg" alt="" class="left marg_right1"></figure>
 								He is the most impor- tant member. Usually this is the person who started the website. 
 							</div>
 							<a href="#" class="button"><span><span>know More</span></span></a>
@@ -26,9 +26,9 @@
 				<article class="col1 pad_left1">
 					<div class="box1_out">
 						<div class="box1">
-							<h2>Another Member</h2>
+							<h2 class="bigHeading">Another Member</h2>
 							<div class="wrapper pad_bot1">
-								<figure><img src="images/page2_img2.jpg" alt="" class="left marg_right1"></figure>
+								<figure><img src="../images/page2_img2.jpg" alt="" class="left marg_right1"></figure>
 							We are completly lost on what he's respon- sible for, but we hope that you will tell us.
 						</div>
 						<a href="#" class="button"><span><span>know More</span></span></a></div>
@@ -38,9 +38,9 @@
 				<article class="col1 pad_left1">
 					<div class="box1_out">
 						<div class="box1">
-							<h2>Another Member</h2>
+							<h2 class="bigHeading">Another Member</h2>
 							<div class="wrapper pad_bot1">
-								<figure><img src="images/page2_img3.jpg" alt="" class="left marg_right1"></figure>
+								<figure><img src="../images/page2_img3.jpg" alt="" class="left marg_right1"></figure>
 								We are completly lost on what he's respon- sible for, but we hope that you will tell us.
 							</div>
 							<a href="#" class="button"><span><span>know More</span></span></a>
@@ -53,7 +53,7 @@
 				<article class="col1">
 					<div class="box2">
 						<div class="pad">
-							<h2>Our Services</h2>
+							<h2 class="bigHeading">Our Services</h2>
 							<ul class="list1 pad_bot1">
 								<li><a href="#">At vero eos et accusamus</a></li>
 								<li><a href="#">Lusto odio dignissimos ducimus</a></li>
@@ -69,9 +69,9 @@
 				</article>
 				<article class="col2 pad_left1">
 					<div class="pad">
-						<h2>About Website</h2>
+						<h2 class="bigHeading">About Website</h2>
 						<div class="wrapper under">
-							<figure><img src="images/page2_img4.jpg" alt="" class="left marg_right1"></figure>
+							<figure><img src="../images/page2_img4.jpg" alt="" class="left marg_right1"></figure>
 							<strong>ShareBazar.com</strong>  is a portal designed to facilitate companies and customers who deals in direct equity market to come online and do transactions. It offers services like online share purchase, and sell, Making on line payment. As we know that buying and selling in share markets needs to be very quick and accurate. 
 						</div>
 						<p><strong>The main objective</strong>  of this application is to provide buyers and sellers a very fast medium to trade shares online and from anywhere. You can buy and sell in real time, which means that you know the exact price at which you are dealing. ShareBazar.com is also aims at providing up to date information about current prizes of shares and there position in the market. Main motto of the clinic is to provide the buyers and sellers of equity a common platform where they can transact fast and securely using latest web technologies all that with<strong> "ANY TIME ANY WHERE"</strong> feature.</p>
