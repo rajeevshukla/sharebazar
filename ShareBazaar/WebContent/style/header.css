@@ -1,17 +1,17 @@
-html,body,div,h1,h2,h3,h4,h5,h6,dl,dt,dd,p,blockquote,pre,form,fieldset,table,th,td,article,aside,footer,header,nav,section
+/* html,body,div,h1,h2,h3,h4,h5,h6,dl,dt,dd,p,blockquote,pre,form,fieldset,table,th,td,article,aside,footer,header,nav,section
 	{
 	margin: 0;
 	padding: 0;
 	font-style: normal;
 	text-decoration: none;
 	vertical-align: baseline;
-}
+} */
 
-html,body {
+/* html,body {
 	border: 0
-}
+} */
 
-body {
+/* body {
 	margin: 0;
 	font-family: Tohoma, Verdana, Arial, Sans-Serif;
 	color: #555;
@@ -22,12 +22,12 @@ body {
 	background-image: url("images/flower1.png");
 	background-repeat: repeat;
 }
-
-header,footer,aside,nav,article {
+ */
+/* header,footer,aside,nav,article {
 	display: block
-}
- this is used to make rounded shape
-.header {
+} */
+/*  this is used to make rounded shape
+ */.header {
 	width: 1000px;
 	padding: 20px;
 	margin-left: 100px;
@@ -115,13 +115,13 @@ this works when we click in the text box then no border will be assigned
 	border-radius: 10px;
 }
 
-h1,h2,h3,h4,h5,h6 {
+  h1,h2,h3,h4,h5,h6 {
 	color: #7f3300;
-	margin-top: 1.5em;
-	margin-bottom: .3em;
+/* 	/* margin-top: 1.5em; */
+	margin-bottom: .3em; */
 	font-family: DaxCompact-RegularRegular, Georgia, Helvetica, Times,
 		'Times New Roman', serif
-}
+}  
 
 #mainNav ul,#recentsAside ul,.customGroupCloud ul {
 	margin: 0;
@@ -215,57 +215,32 @@ input:focus,textarea:focus,select:focus {
 	transform: scale(1.05)
 }
 
-input
-
-
-:not
-
- 
-
-(
-:focus
-
- 
-
-){
-opacity
-
-
-:
-
- 
-
-.5
-
-
-
-
+input:not(:focus){
+opacity:.5
 }
-
 select 
 {
-	
-	background: url("images/dropdown.jpg") no-repeat 340px 3px
+	background: url("../images/dropdown.jpg") no-repeat 340px 3px
 }
  
 input:required {
-	background: url("images/dropdown.jpg") no-repeat 340px 3px
+	background: url("../images/dropdown.jpg") no-repeat 340px 3px
 }
 
 input[class=short]:required {
-	background: url("images/required.png") no-repeat 190px 3px
+	background: url("../images/required.png") no-repeat 190px 3px
 }
 
 input[class=short]:focus:invalid {
-	background: url("images/error.png") no-repeat 190px 3px
+	background: url("../images/error.png") no-repeat 190px 3px
 }
 
 input:valid:not ([type=submit] ){
-	background: url("images/ok.png") no-repeat 340px 3px
+	background: url("../images/ok.png") no-repeat 340px 3px
 }
 
 input[class=short]:valid {
-	background: url("images/ok.png") no-repeat 190px 3px
+	background: url("../images/ok.png") no-repeat 190px 3px
 }
 
 

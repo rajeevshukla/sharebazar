@@ -45,7 +45,7 @@
 				<article class="col1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2>Effective Solutions</h2>
+						<h2 class="bigHeading">Effective Solutions</h2>
 						<p class="pad_bot1">
 							At vero eos et accusamus<br>et iusto odio dignissimos<br>ducimus
 							qui.
@@ -63,7 +63,7 @@
 				<article class="col1 pad_left1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2>Fresh Ideas</h2>
+						<h2 class="bigHeading">Fresh Ideas</h2>
 						<p class="pad_bot1">
 							Praesentium voluptatum<br>deleniti atque corrupti<br>quos
 							dolores.
@@ -81,7 +81,7 @@
 				<article class="col1 pad_left1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2>Business Planning</h2>
+						<h2 class="bigHeading">Business Planning</h2>
 						<p class="pad_bot1">
 							Quas molestias excepturi<br>sint occaecati cupidiate<br>non
 							provident.
@@ -101,13 +101,13 @@
 				<article class="col1">
 				<div class="box2">
 					<div class="pad">
-						<h2>Currency Converter</h2>
+						<h2 class="bigHeading">Currency Converter</h2>
 						<div class="wrapper pad_bot1" style="width: 300px;">
 							<!-- <figure><img src="../images/page1_img1.jpg" alt="" class="left marg_right1"></figure>
 								<span class="color1">Michael Donovan</span><br>
 								Sit amet, ectetuer adgipi scing elit.<a href="#">More</a> -->
 							<span>
-							From :<select id="currency_from">
+							From :<select id="currency_from" style="width: 215px;">
 								<currency:IterateCurrency>
 									<option value="${key}">${value}(${key})</option>
 								</currency:IterateCurrency>
@@ -115,7 +115,7 @@
 							</span>
 							<br>
 							<span style="margin-top: 10px;">
-							 To : <select id="currency_to" style="padding-left: 14px;">
+							 To : <select id="currency_to" style="padding-left: 14px; width: 230px;">
 								<currency:IterateCurrency>
 									<option value="${key}">${value}(${key})</option>
 								</currency:IterateCurrency>
@@ -134,7 +134,7 @@
 				</article>
 				<article class="col2 pad_left1">
 				<div class="pad">
-					<h2>Solutions That You Need!</h2>
+					<h2 class="bigHeading">Solutions That You Need!</h2>
 					<p>
 						<strong>The Art of Business</strong> is a free web template
 						created by TemplateMonster.com team. This website template is

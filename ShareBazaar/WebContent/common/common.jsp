@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="../css/layout.css" type="text/css" media="all">
 <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
 <link rel="stylesheet" href="../css/jquery-ui.css" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="../style/header.css" media="all">
 <script type="text/javascript" src="../js/cufon-yui.js"></script>
 <script type="text/javascript" src="../js/cufon-replace.js"></script>	
 <script type="text/javascript" src="../js/Myriad_Pro_300.font.js"></script>

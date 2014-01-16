@@ -8,7 +8,7 @@
 			<!-- header -->
 			<header>
 				<div id="logo_box">
-					<h1>
+					<h1 style="font-size: 30px;	line-height: 40px;	padding-left: 47px">
 						<a href="../common/index.jsp" id="logo">ShareBazar.com <span>Clients
 								Choose Us!</span></a>
 					</h1>
@@ -38,7 +38,7 @@
 		</div>
 	</div>
 	<div style="top: 160px;">
-		<div id="dialog" title="Login Pannel">
+		<div id="dialog" title="Login Pannel" style="width: 430px;">
 				<form action="customerLogin.action" method="post">
 					<table class="loginTable"  >
 						<tbody>
@@ -64,7 +64,7 @@
 							</tr>
 							<tr>
 								<td ><label for="visitorLastName">Password</label></td>
-								<td ><input type="text" id="password"
+								<td ><input type="password" id="password"
 									name="password" class="short" placeholder="***********"
 									required="" /></td>
 							</tr>
@@ -73,10 +73,13 @@
 
 						</tbody>
 					</table>
-					<input type="submit" class="button icon search" value="Login">
-					<input type="button" class="button " value="Cancel" onclick="$('#dialog').dialog('close')">
+					<input type="submit" value="Login">
+					<input type="button"  value="Cancel" onclick="$('#dialog').dialog('close')">
 
-<a href="#" onclick="openSignUpPage();">Sign Up</a>
+<a href="#" onclick="openSignUpPage();">Forget Password?</a> 
+<br>
+<a href="../company/companysignup.jsp" >Register as company</a><br>
+ <a href="../customer/customersignup.jsp" >Register as customer</a>
 				</form>
 
 			
