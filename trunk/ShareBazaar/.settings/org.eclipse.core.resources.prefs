@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
 encoding//WebContent/common/commonFooter.jsp=UTF-8
 encoding//WebContent/common/index.jsp=UTF-8
+encoding//WebContent/company/companyFooter.jsp=UTF-8
+encoding//WebContent/customer/customerFooter.jsp=UTF-8
