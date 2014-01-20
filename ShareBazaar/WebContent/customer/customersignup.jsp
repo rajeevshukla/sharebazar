@@ -16,7 +16,7 @@
 <div class="body2">
 	<div class="main">
 		<!-- Content -->
-		<section id="content">
+		
 		<div class="marg_top wrapper">
 		<form action="customerRegister.action" class="text" method="post">
 			<s:token></s:token>

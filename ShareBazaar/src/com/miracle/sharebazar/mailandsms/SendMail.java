@@ -8,12 +8,14 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.miracle.sharebazar.utils.ApplicationUtilities;
+
 public class SendMail {
 
 
 	private String HOST_NAME = "smtp.gmail.com";
-	private String USER_MAIL_ID = "deliverybazaar";  // username
-	private String AUTH_PWD = "jayintech";      // passwd
+	private String USER_MAIL_ID =ApplicationUtilities.getCustomProperty("mail.username", "noreplyatsharebazar");  // username
+	private String AUTH_PWD = ApplicationUtilities.getCustomProperty("mail.password", "sharebazar@123");     // passwd
 	public boolean sendMessageToMail(String mailid,String subject , String msg)
 	{
 

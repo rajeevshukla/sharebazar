@@ -19,7 +19,7 @@
 						<li><a href="../common/about.jsp">About</a></li>
 						<li><a href="../common/market_news.jsp">Market News</a></li>
 						<li id="menu_active"><a href="../common/contact_us.jsp">Contacts</a></li>
-						<li class="bg_none"><a href="#" onclick="openLoginDialog();">Member
+						<li class="bg_none"><a href="#memberLogin" id="memberLogin" onclick="openLoginDialog();">Member
 								area</a></li>
 					</ul>
 				</nav>

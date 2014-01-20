@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sx" uri="/struts-dojo-tags"%>
+<%@include file="../common/common.jsp"%>
 <c:if test="${empty session.name}">
 	<c:redirect url="index.jsp"></c:redirect>
 
@@ -25,7 +26,7 @@
 		var len = getSelect.selectedIndex;
 		var memberShipId = companyId.options[len].value;
 		/* alert(memberShipId);
- */
+		 */
 		window.location = "companyInfo.action?memberShipId=" + memberShipId; // companyinfo gives the details of selected comapny by forwording it to action class and attacing all the info in dispatcher. resp. objecct
 
 	}
@@ -33,50 +34,42 @@
 </head>
 
 <body>
-	<jsp:include page="../common/headerHome.jsp"></jsp:include>
-	<jsp:include page="sideMenuCustomer.jsp"></jsp:include>
+
+	<jsp:include page="../customer/customerHeader.jsp"></jsp:include>
 
 
-	<div class="abc" style="float: left;">
-		<div style="margin: 20px; padding: 20px;">
+	<div class="body2">
+		<div class="main">
+			<div class="marg_top wrapper">
+
+				<div style="margin: 20px; padding: 20px;">
 
 
-			<h4 class="commentformTitle">Check company Details..</h4>
-			<div style="padding: 20px; font-size: 10px;">
+					<h4 class="commentformTitle">Check company Details..</h4>
+					<div style="padding: 20px; font-size: 10px;">
 
 
-				<table style="font-size: 13px;">
-					<tbody>
+						<table style="font-size: 13px;">
+							<tbody>
 
-						<tr>
-							<td class="row"><label>company Name</label></td>
-							<td class="row"><sx:autocompleter id="companyName"
-									list="companyList" name="companyName"
-									onchange="changeCompany()"></sx:autocompleter> <sx:autocompleter
-									list="companyId" cssStyle="display : none;" id="getcompanyid"></sx:autocompleter>
-							</td>
+								<tr>
+									<td class="row"><label>company Name</label></td>
+									<td class="row"><sx:autocompleter id="companyName"
+											list="companyList" name="companyName"
+											onchange="changeCompany()"></sx:autocompleter> <sx:autocompleter
+											list="companyId" cssStyle="display : none;" id="getcompanyid"></sx:autocompleter>
+									</td>
 
-						</tr>
+								</tr>
 
-					</tbody>
-				</table>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
 			</div>
-
 		</div>
-
-
-
-
-
-
-
-
-
 	</div>
-
-
-
-
-	<jsp:include page="../common/footerHome.jsp"></jsp:include>
+	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
 </body>
 </html>

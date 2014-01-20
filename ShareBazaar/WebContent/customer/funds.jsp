@@ -1,7 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="../common/common.jsp" %>
 <c:if test="${empty session.name}">
-	<c:redirect url="index.jsp"></c:redirect>
+	<c:redirect url="../common/index.jsp"></c:redirect>
 
 
 </c:if>
@@ -44,11 +45,11 @@ var value=document.getElementById("credit").checked;
 </head>
 
 <body onload="block();">
-	<jsp:include page="../common/headerHome.jsp"></jsp:include>
-	<jsp:include page="sideMenuCustomer.jsp"></jsp:include>
-
-
-	<div class="abc" style="float: left; height: 540px;">
+<%-- 	<jsp:include page="../common/headerHome.jsp"></jsp:include> --%>
+	<jsp:include page="../customer/customerHeader.jsp"></jsp:include>
+<div class="body2">
+		<div class="main">
+			<div class="marg_top wrapper">
 
 		<div style="padding-left: 30px; font-size: 13px;">
 
@@ -67,9 +68,10 @@ var value=document.getElementById("credit").checked;
 					onchange="displayScreen()"> Credit your balance
 			</h4>
 			<br>
+			<div id="screen">
 			<form action="addFund.action" method="post">
 
-				<div id="screen">
+				
 					<table style="font-size: 13px;">
 						<tbody>
 							<tr>
@@ -162,20 +164,15 @@ var value=document.getElementById("credit").checked;
 									type="reset" value="Reset" /></td>
 						</tbody>
 					</table>
-
-
-
-				</div>
-
-
-
 			</form>
+			</div>
 		</div>
 	</div>
+</div>
+</div>
 
 
 
-
-	<jsp:include page="../common/footerHome.jsp"></jsp:include>
+	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
 </body>
 </html>
