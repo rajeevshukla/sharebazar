@@ -60,33 +60,33 @@ nav ul ul {
 			<header>
 				<div id="logo_box">
 					<h1 style="font-size: 30px; line-height: 40px; padding-left: 47px">
-						<a href="../common/index.jsp" id="logo">ShareBazar.com <span>Clients
+						<a href="../customer/crHome.jsp" id="logo">ShareBazar.com <span>Clients
 								Choose Us!</span></a>
 					</h1>
 				</div>
 				<nav>
 					<ul id="menu">
-						<li><a href="../common/index.jsp">Home</a></li>
-						<li><a href="../common/about.jsp">Manage Share</a>
+						<li><a href="../customer/crHome.jsp">Home</a></li>
+						<li><a href="#">Manage Share</a>
 							<ul>
-								<li><a href="../common/about.jsp">Buy Share</a></li>
-								<li><a href="../common/about.jsp">Sell Share</a></li>
+								<li><a href="buyShareGet.action">Buy Share</a></li>
+								<li><a href="sellShareGet.action">Sell Share</a></li>
 								<li><a href="../common/about.jsp">View Share</a></li>
 							</ul></li>
-						<li><a href="../common/market_news.jsp">Manage Transaction</a>
+						<li><a href="#">Manage Transaction</a>
 								
 								<ul>
-								 <li><a href="">Add Fund</a> </li>
-								<li><a href="">Transaction History</a></li>
+								 <li><a href="getFund.action">Manage funds</a></li>
+								<li><a href="transactionHistory.action">Transaction History</a></li>
 								</ul>
 								</li>
-						<li id="menu_active"><a href="../common/contact_us.jsp">Contact	company</a>
+						<li id="menu_active"><a href="#">Contact	company</a>
 						  <ul>
-						   <li><a href="#">View comapny details</a> </li>
-						    <li><a  href="#">Contact companies</a></li>
+						   <li><a href="companyDetailGet.action">View comapny details</a> </li>
+						    <li><a  href="contactwithcompanyGet.action">Contact companies</a></li>
 						  </ul>
 						</li>
-						<li class="bg_none"><a href="#">Comment</a></li>
+						<li class="bg_none"><a href="commentGet.action">Comment</a></li>
 					</ul>
 				</nav>
 				<div class="wrapper">

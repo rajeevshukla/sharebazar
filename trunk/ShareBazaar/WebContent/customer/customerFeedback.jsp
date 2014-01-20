@@ -2,9 +2,10 @@
 <%@page import="com.miracle.sharebazar.service.comment.CommentBean"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@include file="../common/common.jsp"%>
 <c:if test="${empty session.name }">
-	<c:redirect url="index.jsp"></c:redirect>
+	<c:redirect url="../common/index.jsp"></c:redirect>
 
 
 </c:if>
@@ -56,83 +57,91 @@
 </head>
 
 <body>
-	<jsp:include page="../common/headerHome.jsp"></jsp:include>
-	<jsp:include page="sideMenuCustomer.jsp"></jsp:include>
+	<%-- <jsp:include page="../common/headerHome.jsp"></jsp:include> --%>
+	<jsp:include page="../customer/customerHeader.jsp"></jsp:include>
 
-	<div class="rightpan">
-		<!-- class=rightpan added here -->
+	<div class="body2">
+		<div class="main">
+			<div class="marg_top wrapper">
 
-		<div style="width: 80%; margin-left: 30px; margin-top: 60px;">
+				<!-- class=rightpan added here -->
 
-			<!-- Now comments are being displayed according to the condition -->
+				<div style="width: 80%; margin-left: 30px; margin-top: 60px;">
 
-
-			<c:choose>
-
-
-				<c:when test="${size<=0}">
-
-					<div>
-						<div class="commentHeader">(0) Comments</div>
-						<div class="commentBox">Please give your feedback</div>
-
-					</div>
-				</c:when>
+					<!-- Now comments are being displayed according to the condition -->
 
 
+					<c:choose>
 
-				<c:otherwise>
 
-					<c:forEach items="${list}" var="bean2">
+						<c:when test="${size<=0}">
 
-						<div class="commentHeader" style="background-color: navy;">${bean2.userName
-							} says on : <fmt:formatDate value="${bean2.date}"  type="both" pattern="dd-MMM-yyyy hh:mm a" /> </div>
-						<div class="commentBox">${bean2.comment }</div>
+							<div>
+								<div class="commentHeader">(0) Comments</div>
+								<div class="commentBox">Please give your feedback</div>
+
+							</div>
+						</c:when>
 
 
 
+						<c:otherwise>
 
+							<c:forEach items="${list}" var="bean2">
 
-					</c:forEach>
-					<div class="commentHeader">Total (${size}) Comments</div>
-				</c:otherwise>
-			</c:choose>
+								<div class="commentHeader" style="background-color: navy;">${bean2.userName
+							}
+									says on :
+									<fmt:formatDate value="${bean2.date}" type="both"
+										pattern="dd-MMM-yyyy hh:mm a" />
+								</div>
+								<div class="commentBox">${bean2.comment }</div>
 
 
 
 
 
+							</c:forEach>
+							<div class="commentHeader">Total (${size}) Comments</div>
+						</c:otherwise>
+					</c:choose>
 
 
 
-			<form action="commentPost.action" method="post">
 
 
 
-				<table>
-					<tbody>
-						<tr>
-							<td colspan="2"><div class="commentHeader" style="">Leave
-									a comment</div></td>
-						<tr>
-							<td class="row" style="vertical-align: top;">Your <br>Comment
-							</td>
-							<td class="row"><textarea id="visitorComment" name="comment"
-									rows="6" cols="50" required=""></textarea></td>
-						</tr>
-						<tr>
-							<td><input id="submitBtn" type="submit" value="Post" /></td>
 
-						</tr>
-					</tbody>
-				</table>
 
-			</form>
+					<form action="commentPost.action" method="post">
+
+
+
+						<table>
+							<tbody>
+								<tr>
+									<td colspan="2"><div class="commentHeader" style="">Leave
+											a comment</div></td>
+								<tr>
+									<td class="row" style="vertical-align: top;">Your <br>Comment
+									</td>
+									<td class="row"><textarea id="visitorComment"
+											name="comment" rows="6" cols="50" required=""></textarea></td>
+								</tr>
+								<tr>
+									<td><input id="submitBtn" type="submit" value="Post" /></td>
+
+								</tr>
+							</tbody>
+						</table>
+
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 
 
-
-	<%-- <jsp:include page="../common/footerHome.jsp"></jsp:include>  --%>
+	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
 </body>
 </html>

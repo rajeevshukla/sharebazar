@@ -1,7 +1,6 @@
 package com.miracle.sharebazar.service.comment;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Timestamp;
 
@@ -14,6 +13,10 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class SaveCommentDetails extends ActionSupport implements ModelDriven<CommentBean> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9220415920791388660L;
 	CommentBean bean=new CommentBean();
 	
 	@Override

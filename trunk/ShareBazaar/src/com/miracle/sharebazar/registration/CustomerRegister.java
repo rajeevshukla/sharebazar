@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.connection.DatabaseUtils;
+import com.miracle.sharebazar.mailandsms.SendMail;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -93,6 +94,14 @@ public class CustomerRegister extends ActionSupport implements ModelDriven<Custo
 			int status2 = ps2.executeUpdate();
 			if (status == 1 && status2 == 1) {	
 				HttpSession session=		ServletActionContext.getRequest().getSession();
+				
+			new Thread() {
+				public void run (){
+					SendMail mail=new SendMail();
+					mail.sendMessageToMail(bean.getEmail(), "Thank you for registration", "Thank you for registarion in sharebazar your membership Id is :"+getMemberShipId() +" and your password is : "+bean.getPassword());	
+				}
+			}.start();
+				
 				session.setAttribute("memberId", getMemberShipId());
 				return "success";
 			} else

@@ -28,9 +28,20 @@
 
 <jsp:include page="../customer/customerHeader.jsp"></jsp:include>
 
-	
+<div class="body2">
+		<div class="main">
+			<div class="marg_top wrapper">
 
+<div style="float: left;">
+	<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100012867032945674529/XSensex.xml&amp;up_refresh_secs=600&amp;synd=open&amp;w=580&amp;h=435&amp;title=Indian+Stock+Market&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+</div>
+<div>
+<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100343953499244689209/LiveForeignExchangeRatesTableWithCharts.xml&amp;synd=open&amp;w=250&amp;h=480&amp;title=Live+Foreign+Exchange+Rates+Table+With+Charts+&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
 
+</div>
+ </div>
+ </div>
+ </div>
 
 	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
 </body>
