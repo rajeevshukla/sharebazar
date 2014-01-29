@@ -3,8 +3,6 @@
 <%@include file="../common/common.jsp" %>
 <c:if test="${empty session.name}">
 	<c:redirect url="../common/index.jsp"></c:redirect>
-
-
 </c:if>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -35,11 +33,7 @@
 <div style="float: left;">
 	<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100012867032945674529/XSensex.xml&amp;up_refresh_secs=600&amp;synd=open&amp;w=580&amp;h=435&amp;title=Indian+Stock+Market&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
 </div>
-<div>
-<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100343953499244689209/LiveForeignExchangeRatesTableWithCharts.xml&amp;synd=open&amp;w=250&amp;h=480&amp;title=Live+Foreign+Exchange+Rates+Table+With+Charts+&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
-
 </div>
- </div>
  </div>
  </div>
 
