@@ -141,7 +141,7 @@ header {
 	vertical-align: baseline
 }
 
-header nav {
+ header nav {
 	border: 1px solid #bebebe;
 	background: url(../images/menu_bg.gif) bottom repeat-x;
 	padding-top: 36px;
@@ -160,11 +160,11 @@ header nav {
 	width: 948px
 }
 
-#menu li {
+#menu>li {
 	float: left;
 	padding-left: 36px;
 	background: url(../images/menu_line.gif) right 18px no-repeat;
-	padding-right: 37px
+ 	padding-right: 37px
 }
 
 #menu .bg_none {
@@ -173,7 +173,7 @@ header nav {
 	margin-right: 0
 }
 
-#menu li a {
+#menu>li a {
 	display: block;
 	font-size: 17px;
 	color: #2c2d2e;
@@ -181,7 +181,7 @@ header nav {
 	line-height: 47px
 }
 
-#menu li a:hover,#menu #menu_active a {
+#menu>li a:hover,#menu #menu_active a {
 	color: #0665a2
 }
 
