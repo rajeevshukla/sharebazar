@@ -10,7 +10,7 @@ public class DatabaseUtils {
 	Connection connection;
 
 	public DatabaseUtils() {
-
+ 
 		try {
 			Class.forName(ApplicationUtilities.getCustomProperty("mysql.driverClass", "com.mysql.jdbc.Driver"));
 
