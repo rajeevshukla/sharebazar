@@ -62,10 +62,8 @@ public class CurrencyCoverterAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		
-	
-		 setFromCountryName(ApplicationUtilities.getCountryNameFromCurrencyId(getFrom()));
-		 setToCountryName(ApplicationUtilities.getCountryNameFromCurrencyId(getTo()));
+		setFromCountryName(ApplicationUtilities.getCountryNameFromCurrencyId(getFrom()));
+		setToCountryName(ApplicationUtilities.getCountryNameFromCurrencyId(getTo()));
 		CurrencyConvertor convertor=new CurrencyConvertor();
 		CurrencyConvertorSoap convertorSoap= convertor.getCurrencyConvertorSoap();
 	    double response=  convertorSoap.conversionRate(Currency.fromValue(getFrom()), Currency.fromValue(getTo()));

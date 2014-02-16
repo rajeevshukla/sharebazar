@@ -3,6 +3,7 @@ package com.miracle.sharebazar.service.customer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -51,10 +52,10 @@ public String getDate()
 		DatabaseUtils db=new DatabaseUtils();
 	Connection connection=	db.getConnectionDb();
 	HttpSession session=ServletActionContext.getRequest().getSession();
-		PreparedStatement statement1=connection.prepareStatement("select balance from customerregister where memberShipId=?");
+		PreparedStatement statement1=connection.prepareStatement("select BALANCE from CUSTOMER_MASTER where MEMBERSHIP_ID=?");
 		statement1.setString(1, (String)session.getAttribute("memberId"));
 		PreparedStatement ps = connection
-				.prepareStatement("insert into customerfunds values(?,?,?,?,?,?,?,?)");
+				.prepareStatement("insert into CUSTOMER_TRANSACTION values(?,?,?,?,?,?,?,?)");
 		ps.setString(1, (String) session.getAttribute("memberId"));
 		ps.setString(2, bean.getCardHolderName());
 		ps.setString(3, bean.getCardNumber());
@@ -63,7 +64,7 @@ public String getDate()
 		ps.setString(5, bean.getMonth() + "/" + bean.getYear());
 		ps.setDouble(6, getAmount());
 		ps.setString(7, "credit");
-		ps.setString(8, getDate());
+		ps.setTimestamp(8, new Timestamp(System.currentTimeMillis()));
 		double bal=0.0;
 		ResultSet set=statement1.executeQuery();
 		if(set.next())
@@ -74,7 +75,7 @@ public String getDate()
 		}
 		bal=bal+getAmount(); // adding the amount
 		PreparedStatement ps3 = connection
-				.prepareStatement("update customerregister set balance=? where memberShipId=?");
+				.prepareStatement("update CUSTOMER_MASTER set BALANCE=? where MEMBERSHIP_ID=?");
 		ps3.setDouble(1, bal);
 		ps3.setString(2, (String) session.getAttribute("memberId"));
 		int a=ps.executeUpdate();
