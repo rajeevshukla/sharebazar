@@ -51,7 +51,8 @@ body {
 }
 
 .body2 {
-	background: #f7f7f7
+	background: #f7f7f7;
+	min-height: 400px;
 }
 
 .body3 {
