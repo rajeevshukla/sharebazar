@@ -7,8 +7,6 @@ import javax.servlet.ServletContextListener;
 
 import org.apache.log4j.Logger;
 
-import com.miracle.sharebazar.connection.DatabaseUtils;
-
 public class BootLoader implements ServletContextListener {
 
 	Logger logger=Logger.getLogger(getClass());
@@ -23,10 +21,7 @@ public class BootLoader implements ServletContextListener {
 
 		try {
 			ApplicationUtilities.SHARE_BAZAR_PROPERTIES.load(this.getClass().getResourceAsStream("/sharebazar.properties"));
-		     /*System.out.println(ApplicationUtilities.getCustomProperty("mysql.userName", "i dont now"));*/
-			logger.info("Application started successfully...");
-			/*DatabaseUtils databaseUtils=new DatabaseUtils();
-			System.out.println(databaseUtils.getConnectionDb());*/
+				logger.info("Application started successfully...");
 		} catch (IOException e) {
 
 			e.printStackTrace();

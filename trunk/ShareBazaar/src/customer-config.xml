@@ -4,19 +4,119 @@
 
 	<package name="customer" extends="struts-default">
 
-		<!-- <action name="customerRegister"
-			class="com.miracle.sharebazar.registration.CustomerRegister" method="process">
-			<result name="success" type="redirect">customerMemberIdShow.jsp</result>
-			<result name="input" type="redirect">customersignup.jsp</result>
-			<result name="error" type="redirect">error.jsp</result>
+		<!-- <action name="customerRegister" class="com.miracle.sharebazar.registration.CustomerRegister" 
+			method="process"> <result name="success" type="redirect">customerMemberIdShow.jsp</result> 
+			<result name="input" type="redirect">customersignup.jsp</result> <result 
+			name="error" type="redirect">error.jsp</result> </action> <action name="updateProfile" 
+			class="com.miracle.sharebazar.customerLogic.UpdateProfile"> <result name="success" 
+			type="redirect">/updateProfileSuccessfull.jsp </result> <result name="error">/error.jsp</result> 
+			</action> -->
+
+		<action name="commentPost"
+			class="com.miracle.sharebazar.service.comment.SaveCommentDetails">
+			<result type="redirectAction">commentGet</result>
+
+
+		</action>
+		<action name="commentGet"
+			class="com.miracle.sharebazar.service.comment.GetCommentDetails">
+			<result type="redirect">/customer/customerFeedback.jsp</result>
+		</action>
+
+		<action name="editCustomerProfile"
+			class="com.miracle.sharebazar.service.customer.EditCustomerProfile">
+			<result>/customer/editCustomerProfile.jsp</result>
 		</action>
 
 		<action name="updateProfile"
-			class="com.miracle.sharebazar.customerLogic.UpdateProfile">
-			<result name="success" type="redirect">/updateProfileSuccessfull.jsp
+			class="com.miracle.sharebazar.service.customer.UpdateProfile">
+			<result name="success" type="redirect">/customer/updateProfileSuccessfull.jsp
 			</result>
 			<result name="error">/error.jsp</result>
+
+
 		</action>
- -->
+		<action name="transactionHistory"
+			class="com.miracle.sharebazar.service.customer.TransactionHistory">  <!-- getting the details of all transactions -->
+			<result type="redirect">/customer/transactionHistory.jsp</result>
+
+
+		</action>
+		<action name="companyInfo"
+			class="com.miracle.sharebazar.service.customer.CompanyInfo">    <!-- Retriving the information according to the selected company -->
+			<result>/customer/companyInfo.jsp</result>
+			<result name="none">/customer/error.jsp</result>
+		</action>
+
+		<action name="sellShareGet"
+			class="com.miracle.sharebazar.service.customer.GetCompanyListWithCustomerShare"><!-- get list of shares and companies only -->
+
+			<result name="success">/customer/sellShare.jsp</result>
+
+		</action>
+		<action name="companyDetailGet"
+			class="com.miracle.sharebazar.service.company.GetCompanyList">      <!-- for get list of companies only -->
+
+			<result name="success">/customer/companyDetail.jsp</result>
+
+		</action>
+		<action name="contactwithcompanyGet"
+			class="com.miracle.sharebazar.service.company.GetCompanyList">
+
+			<result name="success">/customer/contactwithcompany.jsp</result>
+
+		</action>
+		<action name="contactwithcompanyPost"
+			class="com.miracle.sharebazar.service.customer.ContactWithCompany">
+			<result type="redirect">/customer/sendMessageSuccessfull.jsp</result>
+			<result name="error" type="redirect">/customer/error.jsp</result>
+		</action>
+
+		<action name="customerBuyShare"
+			class="com.miracle.sharebazar.service.customer.CustomerBuyShare">   <!-- Buying shares -->
+			<result>/buySuccessfull.jsp</result>
+			<result name="error">/customer/errorBuy.jsp</result>
+			<result name="input">/customer/buyShare.jsp</result>
+		</action>
+		<action name="customerSellShare"
+			class="com.miracle.sharebazar.service.customer.CustomerSellShare">
+
+			<result name="success">/customer/sellSuccessfull.jsp</result>
+			<result name="input">/customer/sellShare.jsp</result>
+		</action>
+
+		<action name="getFund" class="com.miracle.sharebazar.service.customer.GetFund"> <!-- find the total fund and shares -->
+			<result name="success" type="redirect">/customer/funds.jsp</result>
+			<result name="error" type="redirect">/customer/error.jsp</result>
+
+		</action>
+
+		<action name="addFund" class="com.miracle.sharebazar.service.customer.AddFund"> <!-- adding fund and redirecting to getfund -->
+			<result name="success" type="redirectAction">getFund</result>
+			<result name="error">/customer/error.jsp</result>
+
+		</action>
+
+
+		<action name="customerRegister"
+			class="com.miracle.sharebazar.registration.CustomerRegister" method="process">
+			<result name="success" type="redirect">/customer/customerMemberIdShow.jsp
+			</result>
+			<result name="input" type="redirect">/customer/customersignup.jsp
+			</result>
+			<result name="error" type="redirect">/customer/error.jsp</result>
+		</action>
+
+		<action name="buyShareGet"
+			class="com.miracle.sharebazar.service.company.GetCompanyList"> <!-- provide the selected company info about shares , rates , etc to buy -->
+			<result name="success">/customer/buyShare.jsp</result>
+		</action>
+
+		<action name="customerPayment" class="com.miracle.sharebazar.payment.CustomerPayment">
+			<result name="success">/customer/crHome.jsp</result>
+			<result name="error">/customer/error.jsp</result>
+			<result name="input">/customer/customerPayment.jsp</result>
+		</action>
+
 	</package>
 </struts>
