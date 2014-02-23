@@ -33,19 +33,6 @@ public class AddFund extends ActionSupport implements ModelDriven<PaymentBean>{
 		System.out.println(" in set "+amount);
 		this.amount = amount;
 	}
-public String getDate()
-{
-	
-	Calendar cal = new GregorianCalendar();
-	  int month = cal.get(Calendar.MONTH);
-	  int year = cal.get(Calendar.YEAR);
-	  int day = cal.get(Calendar.DAY_OF_MONTH);
-	  System.out.println("Current date : " 
-	  + day + "/" + (month + 1) + "/" + year);
-	String date=day+"/"+(month+1)+"/"+year;
-	return date;
-	
-}
 
 	@Override
 	public String execute() throws Exception {
