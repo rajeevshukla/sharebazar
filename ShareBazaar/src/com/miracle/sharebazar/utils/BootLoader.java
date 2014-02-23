@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 public class BootLoader implements ServletContextListener {
 
 	Logger logger=Logger.getLogger(getClass());
+	
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
 		logger.info("Context destroyed....");

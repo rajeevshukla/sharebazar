@@ -4,8 +4,6 @@
 
 	<package name="pack" extends="struts-default">
 
-
-
 		<!-- <action name="companyLogin" class="com.miracle.sharebazar.login.CompanyLogin">
 
 			<result name="input" type="redirect">/company/companyLogin.jsp</result>
@@ -24,24 +22,12 @@
 			<result name="error" type="redirect">/customer/error.jsp</result>
 		</action>
 
-
-
-		
-		
-
-
-		
-
-		
-
-	
 	</package>
 
 	<package name="common-package" namespace="/common" extends="struts-default,json-default">
 		<action name="getCurrencyDetails"
 			class="com.miracle.sharebazar.service.common.CurrencyCoverterAction">
-			<result name="success" type="json">
-			</result>
+			<result name="success" type="json"></result>
 		</action>
 	</package>
 
