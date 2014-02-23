@@ -1,9 +1,5 @@
 package com.miracle.sharebazar.service.common;
 
-import net.webservicex.currencyconvertor.Currency;
-import net.webservicex.currencyconvertor.CurrencyConvertor;
-import net.webservicex.currencyconvertor.CurrencyConvertorSoap;
-
 import com.miracle.sharebazar.utils.ApplicationUtilities;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -64,11 +60,11 @@ public class CurrencyCoverterAction extends ActionSupport {
 	public String execute() throws Exception {
 		setFromCountryName(ApplicationUtilities.getCountryNameFromCurrencyId(getFrom()));
 		setToCountryName(ApplicationUtilities.getCountryNameFromCurrencyId(getTo()));
-		CurrencyConvertor convertor=new CurrencyConvertor();
+/*		CurrencyConvertor convertor=new CurrencyConvertor();
 		CurrencyConvertorSoap convertorSoap= convertor.getCurrencyConvertorSoap();
 	    double response=  convertorSoap.conversionRate(Currency.fromValue(getFrom()), Currency.fromValue(getTo()));
 	    setResult(response);
-		return SUCCESS;
+*/		return SUCCESS;
 	}
 
 }
