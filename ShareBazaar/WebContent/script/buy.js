@@ -1,4 +1,4 @@
-function fill() {
+function setBuyShareProperties() {
 	var getSelect = document.getElementById("company");
 	var noofshare = document.getElementById("shareno");
 	var sharetype = document.getElementById("sharetype");

@@ -61,7 +61,7 @@
 												Name</label></td>
 										<td class="row"><sx:autocompleter list="companyList"
 												name="companyNamePost" id="company" autoComplete="true"
-												showDownArrow="" onchange="fill();"></sx:autocompleter></td>
+												showDownArrow="" onchange="setBuyShareProperties();"></sx:autocompleter></td>
 
 									</tr>
 									<tr>
@@ -69,16 +69,12 @@
 										<sx:autocompleter list="noOfShare" cssStyle="display : none;"
 											id="shareno"></sx:autocompleter>
 
-										<sx:autocompleter list="shareType" cssStyle="display : none;"
-											id="sharetype"></sx:autocompleter>
+										<sx:autocompleter list="shareType" cssStyle="display : none;" id="sharetype"></sx:autocompleter>
 
-										<sx:autocompleter cssStyle="display : none;"
-											list="ratePerShare" id="rateget"></sx:autocompleter>
-										<sx:autocompleter list="companyId" cssStyle="display : none;"
-											id="getcompanyid"></sx:autocompleter>
+										<sx:autocompleter cssStyle="display : none;" list="ratePerShare" id="rateget"></sx:autocompleter>
+										<sx:autocompleter list="companyId" cssStyle="display : none;"	id="getcompanyid"></sx:autocompleter>
 
-										<td class="row"><label for="visitorLastName"> No
-												of shares (available)</label></td>
+										<td class="row"><label for="visitorLastName"> No 	of shares (available)</label></td>
 										<td class="row"><input type="text" style="width: 100px;"
 											class="short" required="" disabled="disabled" id="noOfShare" />
 											<input type="text" name="shareType" style="width: 180px;"
@@ -87,38 +83,26 @@
 
 									</tr>
 									<tr>
-										<td class="row"><label for="visitorLastName">Rate
-												per Share</label></td>
-										<td class="row"><input type="text" class="short"
-											required="" style="width: 100px;" disabled="disabled"
+										<td class="row"><label for="visitorLastName">Rate	per Share</label></td>
+										<td class="row"><input type="text" class="short" required="" style="width: 100px;" disabled="disabled"
 											id="ratePerShare" />Rs.</td>
 
 									</tr>
 									<tr>
 
-										<td class="row"><label for="visitorLastName"> No
-												of shares <font style="font-size: 8px; color: green;">(for
-													buying)</font>
+										<td class="row"><label for="visitorLastName"> No of shares <font style="font-size: 8px; color: green;">(for	buying)</font>
 										</label></td>
-										<td class="row"><input type="text" id="buyshare"
-											name="buySharePost" class="short" required=""
-											style="width: 180px;" onkeyup="calculateAmount(this.value)" />&nbsp;&nbsp;<font
-											color="red" size="1">(Becarefull)</font></td>
+										<td class="row"><input type="text" id="buyshare"	name="buySharePost" class="short" required=""
+											style="width: 180px;" onkeyup="calculateAmount(this.value)" />&nbsp;&nbsp;<font	color="red" size="1">(Becarefull)</font></td>
 
 									</tr>
 									<tr>
-										<td class="row"><label for="visitorLastName">Total
-												amount</label></td>
-										<td class="row"><input type="text"
-											name="tranPasswordPost" id="showamount" class="short"
-											required="" style="width: 100px;" disabled="disabled" />(this
-											amount will be deducted from your account)</td>
-
+										<td class="row"><label for="visitorLastName">Total amount</label></td>
+										<td class="row"><input type="text"		name="tranPasswordPost" id="showamount" class="short"
+											required="" style="width: 100px;" disabled="disabled" />(this amount will be deducted from your account)</td>
 									</tr>
 
 									<tr>
-
-
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 										<td class="row"><input type="submit" value="Buy"
 											onclick="return buy();" /> <input type="reset" value="Reset" />

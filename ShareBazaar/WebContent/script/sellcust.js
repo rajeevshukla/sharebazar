@@ -25,7 +25,7 @@ function fill() {
 	document.getElementById("noOfShareH").value = val;
 	
 	document.getElementById("rateH").value = val3;
-	alert("h");
+	
 	document.getElementById("typeH").value = val2;
 	
 	document.getElementById("companyH").value = val4;

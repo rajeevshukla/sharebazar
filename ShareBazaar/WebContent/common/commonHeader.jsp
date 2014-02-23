@@ -43,8 +43,7 @@
 					<table class="loginTable"  >
 						<tbody>
 							<tr >
-								<td colspan="2"><h4 >Login As
-										Customer....</h4> <input type="hidden" id="postId" name="postId"
+								<td colspan="2"><h4 >Enter your login details....</h4> <input type="hidden" id="postId" name="postId"
 									value="11" /></td>
 
 							</tr>
