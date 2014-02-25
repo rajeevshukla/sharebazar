@@ -34,9 +34,9 @@
 </script>
 </head>
 <body>
-
+ <!-- including header -->
 	<jsp:include page="../common/commonHeader.jsp"></jsp:include>
-
+ 
 	<div class="body2">
 		<div class="main">
 			<!-- content -->
