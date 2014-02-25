@@ -24,11 +24,7 @@ function getCurrencyValue(){
 	var from=$("#currency_from").val();
 	var to=$("#currency_to").val();
 
-	/*$.get("../common/getCurrencyDetails.action",{from:from, to: to},function(data){
 
-		alert(data);
-
-	});*/
 
 	if(from!=to) {
 		$.ajax({
