@@ -45,11 +45,23 @@
 			
 			<div class="marg_top wrapper">
 				<article class="col3">
-				<h2 class="bigHeading">Todays Market Update</h2><br>
-				<h4><a href="update1.jsp" >Coal India officers serve three-day strike notice</a></h4><br>
-				<h4><a href="update2.jsp" >Petrol price hiked by 60 paise per litre, diesel by 50 p</a></h4><br>
-				<h4><a href="update3.jsp" >Bank of Maharashtra to sell Rs 520cr worth of NPAs</a></h4><br>
-				<h4><a href="update4.jsp" >Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</a></h4><br>
+				<p>
+				<h2 class="bigHeading">IPO's</h2>
+				An initial public offering (IPO) or stock market launch is a type of public offering where shares of stock in a company are sold to the general public, on a securities exchange, for the first time. Through this process, a private company transforms into a public company. Initial public offerings are used by companies to raise expansion capital, to possibly monetize the investments of early private investors, and to become publicly traded enterprises. A company selling shares is never required to repay the capital to its public investors. After the IPO, when shares trade freely in the open market, money passes between public investors. Although an IPO offers many advantages, there are also significant disadvantages, chief among these the costs associated with the process and the requirement to disclose certain information that could prove helpful to competitors, or create difficulties with vendors.
+				</p>
+				<p>
+				Details of the proposed offering are disclosed to potential purchasers in the form of a lengthy document known as a prospectus. Most companies undertake an IPO with the assistance of an investment banking firm acting in the capacity of an underwriter. Underwriters provide several services, including help with correctly assessing the value of shares (share price), and establishing a public market for shares (initial sale). Alternative methods such as the dutch auction have also been explored. In terms of size and public participation, the most notable example of this method is the Google IPO. China has recently emerged as a major IPO market, with several of the largest IPOs taking place in that country.
+				</p>
+				<p>
+				<b>Largest IPOs</b><br><br>
+1.Agricultural Bank of China US$22.1 billion (2010)<br>
+2.Industrial and Commercial Bank of China US$21.9 billion (2006) <br>
+3.American International Assurance US$20.5 billion (2010)<br>
+4.Visa Inc. US$19.7 billion (2008)<br>
+5.General Motors US$18.15 billion (2010)<br>
+6.Facebook, Inc. US$16 billion (2012)<br>
+				
+				</p>	
 				</article>
 			</div>
 			

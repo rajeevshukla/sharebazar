@@ -45,11 +45,10 @@
 			
 			<div class="marg_top wrapper">
 				<article class="col3">
-				<h2 class="bigHeading">Todays Market Update</h2><br>
-				<h4><a href="update1.jsp" >Coal India officers serve three-day strike notice</a></h4><br>
-				<h4><a href="update2.jsp" >Petrol price hiked by 60 paise per litre, diesel by 50 p</a></h4><br>
-				<h4><a href="update3.jsp" >Bank of Maharashtra to sell Rs 520cr worth of NPAs</a></h4><br>
-				<h4><a href="update4.jsp" >Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</a></h4><br>
+				<h2 class="bigHeading">Petrol price hiked by 60 paise per litre, diesel by 50 p</h2><br>	
+				<p>
+				Petrol price was today hiked by 60 paise a litre, the second increase this year, and diesel by 50 paise per litre, the 14th hike since January 2013. The hikes, effective from midnight tonight, are excluding local sales tax or VAT and actual increase will be higher and will vary from city to city. Petrol price, which was last hiked by 91 paise on January 4, will cost Rs 73.16 a litre in Delhi from midnight tonight, up 73 paise from Rs 72.43 at present. In Mumbai, the fuel will cost Rs 82.07 a litre as against Rs 81.31 at present.
+				</p>
 				</article>
 			</div>
 			

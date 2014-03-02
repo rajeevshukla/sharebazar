@@ -45,11 +45,25 @@
 			
 			<div class="marg_top wrapper">
 				<article class="col3">
-				<h2 class="bigHeading">Todays Market Update</h2><br>
-				<h4><a href="update1.jsp" >Coal India officers serve three-day strike notice</a></h4><br>
-				<h4><a href="update2.jsp" >Petrol price hiked by 60 paise per litre, diesel by 50 p</a></h4><br>
-				<h4><a href="update3.jsp" >Bank of Maharashtra to sell Rs 520cr worth of NPAs</a></h4><br>
-				<h4><a href="update4.jsp" >Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</a></h4><br>
+				<p>
+				<h2 class="bigHeading">Bond</h2>
+				The bond market (also debt market or credit market) is a financial market where participants can issue new debt, known as the primary market, or buy and sell debt securities, known as the secondary market. This is usually in the form of bonds, but it may include notes, bills, and so on. The primary goal of the bond market is to provide a mechanism for long term funding of public and private expenditures. Traditionally, the bond market was largely dominated by the United States, but today the US is about 44% of the market.  As of 2009, the size of the worldwide bond market (total debt outstanding) is an estimated $82.2 trillion, of which the size of the outstanding U.S. bond market debt was $31.2 trillion according to Bank for International Settlements (BIS), or alternatively $35.2 trillion as of Q2 2011 according to Securities Industry and Financial Markets Association (SIFMA).
+				</p>
+				<p>
+				Nearly all of the $822 billion average daily trading volume in the U.S. bond market takes place between broker-dealers and large institutions in a decentralized, over-the-counter (OTC) market. However, a small number of bonds, primarily corporate, are listed on exchanges.
+				</p>
+				<p>References to the "bond market" usually refer to the government bond market, because of its size, liquidity, relative lack of credit risk and, therefore, sensitivity to interest rates. Because of the inverse relationship between bond valuation and interest rates, the bond market is often used to indicate changes in interest rates or the shape of the yield curve. The yield curve is the measure of "cost of funding".</p>
+				<p>
+				<b>Types of Bond</b><br><br>
+				<p>The Securities Industry and Financial Markets Association (SIFMA) classifies the broader bond market into five specific bond markets.</p>
+			1.Corporate<br>
+			2.Government & agency <br>
+			3.Municipal<br>
+			4.Mortgage backed, asset backed, and collateralized debt obligation<br>
+			5.Funding<br>
+
+				
+				</p>	
 				</article>
 			</div>
 			
