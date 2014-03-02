@@ -26,7 +26,7 @@ private String getBuyer()
 	
 	return buyer;
 }
-
+ 
 	public String execute()
 	{
 
@@ -36,10 +36,10 @@ private String getBuyer()
 		int remainShare=bean.getAvailableShare()-bean.getBuySharePost();
 		try {
 		
-		PreparedStatement ps=connection.prepareStatement("insert into buyandsell values(?,?,?,?,?,?)");
-	    PreparedStatement ps2=connection.prepareStatement("update customerregister set balance=? where memberShipId=?");	
-		PreparedStatement ps3=connection.prepareStatement("update sharemaster set remainShare=? where memberShipId=?");
-		PreparedStatement ps4=connection.prepareStatement("select share from customerregister where memberShipId=? ");
+		PreparedStatement ps=connection.prepareStatement("insert into BUYER_MASTER values(?,?,?,?,?,?)");
+	    PreparedStatement ps2=connection.prepareStatement("update CUSTOMER_MASTER set BALANCE=? where MEMBERSHIP_ID=?");	
+		PreparedStatement ps3=connection.prepareStatement("update COMPANY_SHARE_MASTER set AVAILABLE_SHARE=? where MEMBERSHIP_ID=?");
+		PreparedStatement ps4=connection.prepareStatement("select SHARE from CUSTOMER_MASTER where MEMBERSHIP_ID=? ");
 		
 		
 		ps4.setString(1, getBuyer());
@@ -65,7 +65,7 @@ private String getBuyer()
 	   }
 	
 	   share=share+bean.getBuySharePost();
-		PreparedStatement ps5=connection.prepareStatement("update customerregister set share=? where memberShipId=?");
+		PreparedStatement ps5=connection.prepareStatement("update CUSTOMER_MASTER set SHARE=? where MEMBERSHIP_ID=?");
 		ps5.setInt(1, share);
 		ps5.setString(2, getBuyer());
 		int e=ps5.executeUpdate();
@@ -96,21 +96,21 @@ private String getBuyer()
 	DatabaseUtils db=new DatabaseUtils();
 	Connection connection=db.getConnectionDb();
 	try {
-	PreparedStatement ps2=connection.prepareStatement("select balance from customerregister where memberShipId=?");
+	PreparedStatement ps2=connection.prepareStatement("select BALANCE from CUSTOMER_MASTER where MEMBERSHIP_ID=?");
 	ps2.setString(1,getBuyer());
 	ResultSet set=ps2.executeQuery();
 	if(set.next())
 	{
-		availabeBal=set.getDouble("balance");
+		availabeBal=set.getDouble("BALANCE");
 		System.out.println("available balance is "+availabeBal);
 	}
 	if(availabeBal<bean.getTotalAmount())
-		addFieldError("insuffBal", "You have insufficient balance .Please credit  your balance using funds menu");
+		addFieldError("insuffBal", "You have insufficient balance .Please credit  your balance using manage funds menu");
 	
 	}
 	
 	catch (Exception e) {
-		// TODO: handle exception
+		e.printStackTrace();
 	}
 	}
 	

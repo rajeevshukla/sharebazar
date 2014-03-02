@@ -74,7 +74,7 @@
 
 		<action name="customerBuyShare"
 			class="com.miracle.sharebazar.service.customer.CustomerBuyShare">   <!-- Buying shares -->
-			<result>/buySuccessfull.jsp</result>
+			<result name="success">/customer/buySuccessfull.jsp</result>
 			<result name="error">/customer/errorBuy.jsp</result>
 			<result name="input">/customer/buyShare.jsp</result>
 		</action>
