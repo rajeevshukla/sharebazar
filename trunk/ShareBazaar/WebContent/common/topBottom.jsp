@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome</title>
+<title>Top/Bottom Stocks</title>
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -45,11 +45,32 @@
 			
 			<div class="marg_top wrapper">
 				<article class="col3">
-				<h2 class="bigHeading">Todays Market Update</h2><br>
-				<h4><a href="update1.jsp" >Coal India officers serve three-day strike notice</a></h4><br>
-				<h4><a href="update2.jsp" >Petrol price hiked by 60 paise per litre, diesel by 50 p</a></h4><br>
-				<h4><a href="update3.jsp" >Bank of Maharashtra to sell Rs 520cr worth of NPAs</a></h4><br>
-				<h4><a href="update4.jsp" >Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</a></h4><br>
+				<h2 class="bigHeading">Top/Bottom Stock</h2>
+				<table style="width: 940px;" align="center">
+					<tr>
+						<td>Stock</td> <td>% Change</td> <td>Price</td>
+					</tr>	
+					<tr>
+						<td>HINDALCO</td> <td>5 %</td> <td>98.05</td>
+					</tr>
+					<tr>
+						<td>TCS</td> <td> 4 % </td> <td>2,182.15</td>
+					</tr>
+					<tr>
+						<td>LUPIN</td> <td>3.5 5</td> <td>960.15</td>
+					</tr>
+					<tr>
+						<td>TATA MOTORS</td> <td>3 %</td> <td>401.10</td>
+					</tr>
+					<tr>
+						<td>CIPLA</td> <td>2.5 %</td> <td>375.05</td>
+					</tr>
+					<tr>
+						<td>AXIS BANK</td> <td>2.4 %</td> <td>1239.25</td>
+					</tr>
+				</table>
+				
+					
 				</article>
 			</div>
 			

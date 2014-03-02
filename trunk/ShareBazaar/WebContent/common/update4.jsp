@@ -45,11 +45,10 @@
 			
 			<div class="marg_top wrapper">
 				<article class="col3">
-				<h2 class="bigHeading">Todays Market Update</h2><br>
-				<h4><a href="update1.jsp" >Coal India officers serve three-day strike notice</a></h4><br>
-				<h4><a href="update2.jsp" >Petrol price hiked by 60 paise per litre, diesel by 50 p</a></h4><br>
-				<h4><a href="update3.jsp" >Bank of Maharashtra to sell Rs 520cr worth of NPAs</a></h4><br>
-				<h4><a href="update4.jsp" >Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</a></h4><br>
+				<h2 class="bigHeading">Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</h2><br>	
+				<p>
+				Abu Dhabi National Energy Co (TAQA)-led consortium is planning to acquire Jaiprakash Power Venture's two hydropower units in Himachal Pradesh, sources, privy to the development, told CNBC-TV18, adding that the deal will be announced shortly. The enterprise value of the hydro units, which have a combined capacity of 1400 MW, is pegged at Rs 10,500 crore, including Rs 6,500-crore debt. Jaypee Power is expected to get around Rs 4,000 crore cash from the deal, sources said. Post deal, TAQA will own 51 percent, Canada's PSP will own 39 percent and IDFC will hold 10 percent in the hydropower units. TAQA will operate both units. Ernst & Young is the M&A advisor to Jaypee Power for the deal and Vaish&Assoc&Bansi S Mehta are its legal advisors. Trilegal is the advisor to TAQA. CNBC-TV18 on December 12, 2013, had reported that TAQA is looking at an investment of USD 700 million in Himachal Pradesh in the electricity sector.
+				</p>
 				</article>
 			</div>
 			

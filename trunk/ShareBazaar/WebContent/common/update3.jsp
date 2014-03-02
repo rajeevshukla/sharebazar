@@ -45,11 +45,10 @@
 			
 			<div class="marg_top wrapper">
 				<article class="col3">
-				<h2 class="bigHeading">Todays Market Update</h2><br>
-				<h4><a href="update1.jsp" >Coal India officers serve three-day strike notice</a></h4><br>
-				<h4><a href="update2.jsp" >Petrol price hiked by 60 paise per litre, diesel by 50 p</a></h4><br>
-				<h4><a href="update3.jsp" >Bank of Maharashtra to sell Rs 520cr worth of NPAs</a></h4><br>
-				<h4><a href="update4.jsp" >Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</a></h4><br>
+				<h2 class="bigHeading">Bank of Maharashtra to sell Rs 520cr worth of NPAs</h2><br>	
+				<p>
+				In an effort to reduce stress on burgeoning bad asset book, Bank of Maharashtra is looking to sell Rs 520 crore NPAs. "By this month-end, we want to close the deal and come out of some of these problem accounts," executive director R Athmaram told CNBC-TV18's SumairaAbidi and Reema Tendulkar.
+				</p>
 				</article>
 			</div>
 			

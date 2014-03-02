@@ -45,11 +45,10 @@
 			
 			<div class="marg_top wrapper">
 				<article class="col3">
-				<h2 class="bigHeading">Todays Market Update</h2><br>
-				<h4><a href="update1.jsp" >Coal India officers serve three-day strike notice</a></h4><br>
-				<h4><a href="update2.jsp" >Petrol price hiked by 60 paise per litre, diesel by 50 p</a></h4><br>
-				<h4><a href="update3.jsp" >Bank of Maharashtra to sell Rs 520cr worth of NPAs</a></h4><br>
-				<h4><a href="update4.jsp" >Abu Dhabi's TAQA to acquire 2 Jaypee Power plants</a></h4><br>
+				<h2 class="bigHeading">Coal India officers serve three-day strike notice</h2><br>	
+				<p>
+				State-owned Coal India (CIL) today said a group of executives has served a three-day strike notice from March 13 for not finalising their demands for performance related pay and new pension scheme, among others. "Coal Mines officers' Association of India (CMOAI) has served strike notice for 3 days with effect from March 13, 2014 to March 15, 2014 against non-finalisation of PRP (Performance Related Pay), New Pension Scheme and other demands," CIL said in a filing to BSE, adding that efforts are being made to reconcile the same. The CMOAI had earlier said that it may resort a three-day strike if its demands were not met. "Significantly, all the Maharatna PSUs except Coal India Ltd have already been given order for payment of Performance Related Pay (PRP) by their ministries concerned...We are constrained to communicate to you our strike notice w.e.f March 13, 2014 to meet our genuine and justified demands," CMOAI had said in a letter to Coal India CMD.
+				</p>
 				</article>
 			</div>
 			
