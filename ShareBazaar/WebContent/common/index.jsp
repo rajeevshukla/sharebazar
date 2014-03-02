@@ -45,12 +45,11 @@
 				<article class="col1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2 class="bigHeading">Effective Solutions</h2>
+						<h2 class="bigHeading">Bonds</h2>
 						<p class="pad_bot1">
-							At vero eos et accusamus<br>et iusto odio dignissimos<br>ducimus
-							qui.
+							Get updated <br>with current market<br>situation
 						</p>
-						<a href="#" class="button"><span><span>Read More</span></span></a>
+						<a href="bond.jsp" class="button"><span><span>Read More</span></span></a>
 						<img src="../images/img1.png" class="img" alt="">
 					</div>
 				</div>
@@ -63,12 +62,12 @@
 				<article class="col1 pad_left1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2 class="bigHeading">Fresh Ideas</h2>
+						<h2 class="bigHeading">Top/Bottom Stock</h2>
 						<p class="pad_bot1">
-							Praesentium voluptatum<br>deleniti atque corrupti<br>quos
-							dolores.
+							We have found <br>list of Top and Bottom <br>stocks 
+							for you.
 						</p>
-						<a href="#" class="button"><span><span>Read More</span></span></a>
+						<a href="topBottom.jsp" class="button"><span><span>Read More</span></span></a>
 						<img src="../images/img2.png" class="img" alt="">
 					</div>
 				</div>
@@ -81,12 +80,11 @@
 				<article class="col1 pad_left1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2 class="bigHeading">Business Planning</h2>
+						<h2 class="bigHeading">IPO's</h2>
 						<p class="pad_bot1">
-							Quas molestias excepturi<br>sint occaecati cupidiate<br>non
-							provident.
+							IPO stands for <br>initial public <br>offer<br>
 						</p>
-						<a href="#" class="button"><span><span>Read More</span></span></a>
+						<a href="ipo.jsp" class="button"><span><span>Read More</span></span></a>
 						<img src="../images/img3.png" class="img" alt="">
 					</div>
 				</div>
