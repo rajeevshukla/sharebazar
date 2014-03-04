@@ -34,6 +34,9 @@ nav ul ul {
 	padding: 0;
 	position: absolute;
 	top: 100%;
+	z-index:999;
+	background-color:#EEEEEE;
+	
 }
 
 nav ul ul li {

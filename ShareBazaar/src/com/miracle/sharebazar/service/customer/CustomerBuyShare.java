@@ -3,6 +3,8 @@ package com.miracle.sharebazar.service.customer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,8 +37,9 @@ private String getBuyer()
 		double remainBal=availabeBal-bean.getTotalAmount();
 		int remainShare=bean.getAvailableShare()-bean.getBuySharePost();
 		try {
-		
+			connection.setAutoCommit(false);
 		PreparedStatement ps=connection.prepareStatement("insert into BUYER_MASTER values(?,?,?,?,?,?)");
+		PreparedStatement sellerStatement=connection.prepareStatement("insert into SELLER_MASTER value(?,?,?,?,?)");
 	    PreparedStatement ps2=connection.prepareStatement("update CUSTOMER_MASTER set BALANCE=? where MEMBERSHIP_ID=?");	
 		PreparedStatement ps3=connection.prepareStatement("update COMPANY_SHARE_MASTER set AVAILABLE_SHARE=? where MEMBERSHIP_ID=?");
 		PreparedStatement ps4=connection.prepareStatement("select SHARE from CUSTOMER_MASTER where MEMBERSHIP_ID=? ");
@@ -48,12 +51,13 @@ private String getBuyer()
 		ps3.setString(2, bean.getCompanyId());
 	    ps2.setDouble(1, remainBal);
 		  ps2.setString(2, getBuyer());
+		  
 		ps.setString(1, getBuyer());
 		ps.setString(2, bean.getCompanyId());
 		ps.setString(3, bean.getShareTypePost());
-		ps.setString(4, "buy");
+		ps.setInt(4, bean.getBuySharePost());
 		ps.setDouble(5, bean.getTotalAmount());
-		ps.setString(6, bean.getCurrentDate());
+		ps.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
 		int b=ps2.executeUpdate();
 		int c=ps.executeUpdate();
 		int d=ps3.executeUpdate();
@@ -69,6 +73,7 @@ private String getBuyer()
 		ps5.setInt(1, share);
 		ps5.setString(2, getBuyer());
 		int e=ps5.executeUpdate();
+		connection.commit();
 		
 		if(b==1 && c==1 && d==1 && e==1)
 		{
@@ -76,11 +81,17 @@ private String getBuyer()
 		}
 		else
 			return ERROR;
-		
 		}
+      
 		catch (Exception e) {
             e.printStackTrace();
-		
+              try {
+            	  connection.rollback();
+            	  connection.close();
+              }catch(SQLException se){
+            	  se.printStackTrace();
+              }
+            
 		}
 		
 		
