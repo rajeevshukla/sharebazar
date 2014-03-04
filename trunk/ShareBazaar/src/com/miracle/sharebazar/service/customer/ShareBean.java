@@ -38,16 +38,7 @@ public class ShareBean {
 	//-----------------------------------------------------------------------
 	
 	
-	public String getCurrentDate()
-	   {
-		   Calendar calendar=Calendar.getInstance();
-		   int day=calendar.get(Calendar.DATE);
-		   int month=calendar.get(Calendar.MONTH);
-		   int year=calendar.get(Calendar.YEAR);
-		   return  day+"/"+month+"/"+year;
-		   
-		   
-	   }
+
 	public int getAvailableShare() {
 		return availableShare;
 	}
