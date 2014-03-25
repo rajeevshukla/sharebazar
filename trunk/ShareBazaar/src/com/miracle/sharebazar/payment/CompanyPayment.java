@@ -26,14 +26,13 @@ public class CompanyPayment  extends ActionSupport implements ModelDriven<Paymen
     	  DatabaseUtils db = new DatabaseUtils();
   		Connection connection = db.getConnectionDb();
   		HttpSession session = ServletActionContext.getRequest().getSession();
-  		PreparedStatement ps2 = connection
-  				.prepareStatement("UPDATE COMPANY_LOGIN set IS_PAID=? where MEMBERSHIP_ID=?");
+  		PreparedStatement ps2 = connection.prepareStatement("UPDATE COMPANY_LOGIN set IS_PAID=? where MEMBERSHIP_ID=?");
   		
   		ps2.setInt(1, 1);
   		
   		ps2.setString(2, (String) session.getAttribute("memberId"));
   		
-  		PreparedStatement ps3=connection.prepareStatement("UPDATE COMAPNY_MASTER set BALANCE=? where MEMBERSHIP_ID=?");
+  		PreparedStatement ps3=connection.prepareStatement("UPDATE COMPANY_MASTER set BALANCE=? where MEMBERSHIP_ID=?");
         ps3.setDouble(1, 1000);
         ps3.setString(2,(String) session.getAttribute("memberId"));
 		

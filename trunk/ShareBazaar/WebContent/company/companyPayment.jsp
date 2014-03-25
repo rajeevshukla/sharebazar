@@ -8,8 +8,6 @@
 <title>Make Payment</title>
 </head>
 <body>
-	<%-- <jsp:include page="../common/header.jsp"></jsp:include>
-	<jsp:include page="../common/leftpan.jsp"></jsp:include> --%>
 
 	<jsp:include page="../common/commonHeader.jsp"></jsp:include>
 
