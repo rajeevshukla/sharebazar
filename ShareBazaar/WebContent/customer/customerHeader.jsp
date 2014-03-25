@@ -105,8 +105,8 @@ nav ul ul ul {
 						<li><a href="../customer/crHome.jsp">Home</a></li>
 						<li><a href="#">Manage Share</a>
 							<ul>
-								<li><a href="buyShareGet.action">Buy Share</a></li>
-								<li><a href="sellShareGet.action">Sell Share</a></li>
+								<li><a href="buyShareGet.action">Add Share</a></li>
+								<li><a href="sellShareGet.action">Update Share</a></li>
 								<li><a href="../common/about.jsp">View Share</a></li>
 							</ul></li>
 						<li><a href="#">Manage Transaction</a>
@@ -116,12 +116,10 @@ nav ul ul ul {
 								<li><a href="transactionHistory.action">Transaction
 										History</a></li>
 							</ul></li>
-						<li><a href="#">Contact company</a>
+						<li><a href="#">Contact Shareholders</a>
 							<ul>
-								<li><a href="companyDetailGet.action">View comapny
-										details</a></li>
-								<li><a href="contactwithcompanyGet.action">Contact
-										companies</a></li>
+								<li><a href="companyDetailGet.action">View Shareholders</a></li>
+								<li><a href="contactwithcompanyGet.action">Contact Shareholders</a></li>
 							</ul></li>
 						<li class="bg_none"><a href="commentGet.action">Comment</a></li>
 					</ul>
