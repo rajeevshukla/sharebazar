@@ -1,0 +1,158 @@
+<project name="ShareBazaar" basedir="." default="create.war">
+	<!-- <property file="build.properties"></property> -->
+
+	<target name="create.jar"
+		description="this will create a jar file for all the custom classes"
+		depends="clean, compile, createLog4jConfFile">
+		<mkdir dir="${dist.dir}/jar/" />
+		<jar destfile="${dist.dir}/jar/${destination.jar}">
+			<manifest>
+				<attribute name="Built-By" value="Pensar Solutions Pvt Ltd" />
+			</manifest>
+			<fileset dir="${dist.dir}/${classes.dir}" includes="**/*.class" />
+		</jar>
+	</target>
+	<target name="createPropFile">
+		<mkdir dir="${dist.dir}/prop" />
+		<propertyfile file="${dist.dir}/prop/tabkids.properties">
+			<entry key="db.dbType" value="${db.dbType}" />
+			<entry key="${db.dbType}.connectionUrl" value="${db.connectionUrl}" />
+			<entry key="${db.dbType}.dialect" value="${db.dialect}" />
+			<entry key="${db.dbType}.driverClass" value="${db.driverClass}" />
+			<entry key="${db.dbType}.autoSchemaUpdate" value="${db.autoSchemaUpdate}" />
+			<entry key="${db.dbType}.username" value="${db.username}" />
+			<entry key="${db.dbType}.password" value="${db.password}" />
+			<entry key="${db.dbType}.showSQL" value="${db.showSQL}" />
+			<entry key="mail.userName" value="${mail.userName}" />
+			<entry key="mail.password" value="${mail.password}" />
+					
+		</propertyfile>
+	</target>
+	<target name="createLog4jConfFile" depends="createPropFile">
+		<propertyfile file="${dist.dir}/prop/log4j.properties">
+			<entry key="log4j.debug" value="${log4j.debug}" />
+			<entry key="log4j.rootLogger" value="${log4j.logLevel}, tabkidsLogger" />
+			<entry key="log4j.logger.org" value="${log4j.logLevel}, springLogger" />
+			<entry key="log4j.appender.exceptionLogger" value="${log4j.appender.type}" />
+			<entry key="log4j.appender.exceptionLogger.layout" value="${log4j.appender.layout}" />
+			<entry key="log4j.appender.exceptionLogger.layout.ConversionPattern"	value="${log4j.appender.layout.ConversionPattern}" />
+			<entry key="log4j.appender.exceptionLogger.File"	value="${log4j.logDir}${file.separator}${log4j.exceptionLogger.file}" />
+			<entry key="log4j.appender.exceptionLogger.Append" value="${log4j.appender.Append}" />
+			<entry key="log4j.appender.exceptionLogger.MaxFileSize" value="${log4j.appender.MaxFileSize}" />
+			<entry key="log4j.appender.exceptionLogger.MaxBackupIndex" value="${log4j.appender.MaxBackupIndex}" />
+		
+			
+		</propertyfile>
+	</target>
+
+	<target name="clean">
+		<delete dir="${dist.dir}"></delete>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${dist.dir}/${classes.dir}" />
+		<javac target="${compile.to}" srcdir="src"
+			destdir="${dist.dir}/${classes.dir}" debug="on">
+			<classpath>
+				<!-- <fileset dir="${libs.dir}" includes="*.jar"></fileset> -->
+				<fileset dir="WebContent${file.separator}WEB-INF${file.separator}lib"
+					includes="*.jar"></fileset>
+				<fileset dir="${tomcatLibDir}" includes="*.jar"></fileset>
+			</classpath>
+		</javac>
+	</target>
+	<property name="temp" value="${dist.dir}${file.separator}temp"></property>
+	<property name="temp.web-inf" value="${temp}${file.separator}WEB-INF"></property>
+	<property name="temp.meta-inf" value="${temp}${file.separator}META-INF"></property>
+	<property name="temp.resources" value="${temp}${file.separator}resources"></property>
+	<property name="temp.web-inf.classes" value="${temp.web-inf}${file.separator}classes"></property>
+	<property name="temp.web-inf.classes.template" value="${temp.web-inf}${file.separator}classes${file.separator}template"></property>
+	<property name="temp.web-inf.lib" value="${temp.web-inf}${file.separator}lib"></property>
+	<property name="temp.web-inf.jsp" value="${temp.web-inf}${file.separator}jsp"></property>
+	<property name="temp.web-inf.spring" value="${temp.web-inf}${file.separator}spring"></property>
+	<property name="actualWebDir" value="WebContent"></property>
+	<tstamp>
+		<format property="buildDateAndTime" pattern="ddMMyy-HHmm" />
+	</tstamp>
+	<target name="create.war" depends="create.jar"	description="this will create WAR file for deployment">
+		<mkdir dir="${temp}" />
+		<mkdir dir="${temp.web-inf}" />
+		<mkdir dir="${temp.meta-inf}" />
+		<mkdir dir="${temp.resources}" />
+		<mkdir dir="${temp.web-inf.classes}" />
+		<mkdir dir="${temp.web-inf.classes.template}" />
+		<mkdir dir="${temp.web-inf.jsp}" />
+		<mkdir dir="${temp.web-inf.lib}" />
+
+		<copy todir="${temp.resources}">
+			<fileset dir="${actualWebDir}${file.separator}resources"></fileset>
+		</copy>
+		
+		<copy todir="${temp.meta-inf}">
+			<fileset dir="${actualWebDir}${file.separator}META-INF"></fileset>
+		</copy>
+		
+		<copy todir="${dist.dir}${file.separator}externalLib">
+			<fileset	dir="${actualWebDir}${file.separator}WEB-INF${file.separator}lib"></fileset>
+		</copy>
+		
+		
+	<!-- 	<copy todir="${dist.dir}${file.separator}template">
+			<fileset
+				dir="${src.dir}${file.separator}template{file.separator}tabkids.properties"></fileset>
+			<fileset dir="${src.dir}${file.separator}template${file.separator}" includes="*.vm*"/>
+		</copy>
+		 -->
+		
+		<copy todir="${temp.web-inf.jsp}">
+			<fileset
+				dir="${actualWebDir}${file.separator}WEB-INF${file.separator}jsp"></fileset>
+		</copy>
+		<copy todir="${temp.web-inf.spring}">
+			<fileset
+				dir="${actualWebDir}${file.separator}WEB-INF${file.separator}spring"></fileset>
+		</copy>
+		<copy todir="${temp.web-inf}">
+			<fileset dir="${actualWebDir}${file.separator}WEB-INF">
+				<include name="*.xml" />
+			</fileset>
+		</copy>
+		<copy todir="${temp.web-inf.classes}">
+			<fileset dir="${src.dir}${file.separator}" includes="*.p*">
+				
+				<excludesfile name="${src.dir}${file.separator}tabkids.properties" />
+				<excludesfile name="${src.dir}${file.separator}log4j.properties" />
+			</fileset>
+			<fileset dir="${src.dir}${file.separator}" includes="*.vm*"/>
+			<fileset dir="${dist.dir}${file.separator}prop" includes="*.properties"></fileset>
+		</copy>
+		
+		<copy todir="${temp.web-inf.classes.template}">
+			<fileset dir="${src.dir}${file.separator}template${file.separator}" includes="*.vm*">
+			</fileset>
+		</copy>
+		
+		
+		<copy todir="${temp}">
+			<fileset dir="${actualWebDir}">
+				<include name="*.gif" />
+				<include name="*.jpg" />
+				<include name="*.ico" />
+				<include name="*.html" />
+			</fileset>
+		</copy>
+		<copy
+			file="${dist.dir}${file.separator}jar${file.separator}${destination.jar}"
+			todir="${temp.web-inf.lib}"></copy>
+		<war destfile="${dist.dir}${file.separator}${destination.war}"
+			webxml="${temp.web-inf}${file.separator}web.xml">
+			<zipfileset dir="${temp}"></zipfileset>
+		</war>
+		<mkdir dir="${finalOutputDir}${file.separator}${buildDateAndTime}" />
+		<copy todir="${finalOutputDir}${file.separator}${buildDateAndTime}"
+			overwrite="true">
+			<fileset dir="${dist.dir}"></fileset>
+		</copy>
+		<delete dir="${dist.dir}"></delete>
+	</target>
+</project>
