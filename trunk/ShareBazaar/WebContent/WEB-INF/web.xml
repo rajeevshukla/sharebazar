@@ -8,8 +8,7 @@
 	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>
-			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
-		</filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
 	</filter>
 
 
@@ -19,10 +18,12 @@
 	</filter-mapping>
 	<listener>
 		<listener-class>com.miracle.sharebazar.utils.BootLoader</listener-class>
-	</listener> 
+	</listener>
 
-	<!-- <error-page> <error-code>404</error-code> <location>/WEB-INF/404.jsp</location> 
-		</error-page> -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/404.jsp</location>
+	</error-page>
 
 	<session-config>
 		<session-timeout>5</session-timeout>
