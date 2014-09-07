@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <base href="<%=basePath%>">
 
-<title>404</title>
+<title>Web page not found </title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -22,6 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </head>
 
-<body>page not found.
+<body>
+
+<a href="common/index.jsp">  <img style="margin-left: 28%;" alt="404.jpg" src="images/404.jpg"></a>
 </body>
 </html>

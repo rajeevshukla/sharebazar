@@ -16,8 +16,6 @@ import com.opensymphony.xwork2.ModelDriven;
 public class GetCommentDetails extends ActionSupport implements ModelDriven<CommentBean> {
 	CommentBean bean=new CommentBean();
 
-
-
 	public String execute() throws Exception {
 		DatabaseUtils db=new DatabaseUtils();
 		Connection connection=db.getConnectionDb();
