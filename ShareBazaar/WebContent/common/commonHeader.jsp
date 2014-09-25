@@ -58,7 +58,7 @@
 								<td ><label for="visitorLastName">MemberShip
 										Id</label></td>
 								<td ><input type="text" id="memberShipId"
-									name="memberShipId" class="short" placeholder="C000028"
+									name="memberShipId" class="short" placeholder="CY000028"
 									required="" /></td>
 							</tr>
 							<tr>
@@ -75,7 +75,7 @@
 					<input type="submit" value="Login">
 					<input type="button"  value="Cancel" onclick="$('#dialog').dialog('close')">
 
-<a href="#" onclick="openSignUpPage();">Forget Password?</a> 
+<a href="../common/forgetPassword.jsp" >Forget Password ?</a> 
 <br>
 <a href="../company/companysignup.jsp" >Register as company</a><br>
  <a href="../customer/customersignup.jsp" >Register as customer</a>
