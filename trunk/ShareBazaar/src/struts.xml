@@ -4,29 +4,34 @@
 
 	<package name="pack" extends="struts-default">
 
-		<!-- <action name="companyLogin" class="com.miracle.sharebazar.login.CompanyLogin">
-
-			<result name="input" type="redirect">/company/companyLogin.jsp</result>
-			<result name="success" type="redirect">/company/cyHome.jsp</result>
-			<result name="error" type="redirect">/company/error.jsp</result>
-			<result name="payment" type="redirect">/company/companyPayment.jsp
-			</result>
-
-		</action> -->
+		<!-- <action name="companyLogin" class="com.miracle.sharebazar.login.CompanyLogin"> 
+			<result name="input" type="redirect">/company/companyLogin.jsp</result> <result 
+			name="success" type="redirect">/company/cyHome.jsp</result> <result name="error" 
+			type="redirect">/company/error.jsp</result> <result name="payment" type="redirect">/company/companyPayment.jsp 
+			</result> </action> -->
 		<action name="commonLogin" class="com.miracle.sharebazar.login.CommonLogin">
 			<result name="input" type="redirect">/customer/customerLogin.jsp</result>
 			<result name="cssuccess" type="redirect">/customer/crHome.jsp</result>
 			<result name="cysuccess" type="redirect">/company/cyHome.jsp</result>
-			<result name="cspayment" type="redirect">/customer/customerPayment.jsp</result>
-			<result name="cypayment" type="redirect">/company/companyPayment.jsp</result>
-			<result name="error" type="redirect">/customer/error.jsp</result>
+			<result name="cspayment" type="redirect">/customer/customerPayment.jsp
+			</result>
+			<result name="cypayment" type="redirect">/company/companyPayment.jsp
+			</result>
+			<result name="error" type="redirect">/common/loginError.jsp</result>
 		</action>
 
 	</package>
 
-	<package name="common-package" namespace="/common" extends="struts-default,json-default">
+	<package name="common-package" namespace="/common"
+		extends="struts-default,json-default">
+
 		<action name="getCurrencyDetails"
 			class="com.miracle.sharebazar.service.common.CurrencyCoverterAction">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="sendForgetPasswordMail"
+			class="com.miracle.sharebazar.service.common.SendForgetPasswordMail">
 			<result name="success" type="json"></result>
 		</action>
 	</package>
