@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="company-package" extends="struts-default">
+
+
+
+		<action name="companyRegister"
+			class="com.miracle.sharebazar.registration.CompanyRegister">
+			<result name="success" type="redirect">/company/companyMemberIdShow.jsp
+			</result>
+			<result name="input" type="redirect">/company/companysignup.jsp
+			</result>
+			<result name="error" type="redirect">/company/error.jsp</result>
+		</action>
+
+		<action name="companyPayment" class="com.miracle.sharebazar.payment.CompanyPayment">
+			<result name="success">/company/cyHome.jsp</result>
+			<result name="error">/company/error.jsp</result>
+			<result name="input">/company/companyPayment.jsp</result>
+		</action>
+
+
+	</package>
+
+
+
+</struts>
