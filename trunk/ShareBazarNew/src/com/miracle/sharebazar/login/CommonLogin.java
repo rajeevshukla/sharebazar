@@ -55,6 +55,7 @@ public class CommonLogin extends ActionSupport implements ModelDriven<CommonLogi
 			{
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				session.setAttribute("memberId", bean.getMemberShipId());
+				session.setAttribute("name", bean.getLoginName());
 				if(set.getInt(4)==0)
 					return "cypayment";
 				else 
