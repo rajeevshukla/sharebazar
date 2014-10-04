@@ -91,7 +91,7 @@ nav ul ul ul {
 				<div id="logo_box">
 					<div id="sharebazar_box">
 						<h1 style="font-size: 30px; line-height: 40px; padding-left: 47px">
-							<a href="../customer/crHome.jsp" id="logo">ShareBazar.com <span>Clients
+							<a href="../company/cyHome.jsp" id="logo">ShareBazar.com <span>Clients
 									Choose Us!</span></a>
 						</h1>
 					</div>
@@ -99,7 +99,7 @@ nav ul ul ul {
 						<a href="../common/logout.jsp">Logout</a>
 					</div>
 				</div>
-				<div id="welcome_name"><h3>Welcome ${session.name}</h3></div>
+				<div id="welcome_name"><h3>Welcome ${name}</h3></div>
 				<nav>
 					<ul id="menu">
 						<li><a href="../customer/crHome.jsp">Home</a></li>
@@ -118,12 +118,10 @@ nav ul ul ul {
 							</ul></li>
 						<li><a href="#">Contact company</a>
 							<ul>
-								<li><a href="companyDetailGet.action">View comapny
-										details</a></li>
-								<li><a href="contactwithcompanyGet.action">Contact
-										companies</a></li>
+								<li><a href="companyDetailGet.action">Share Holders</a></li>
+								<li><a href="contactwithcompanyGet.action">Search Share Holders</a></li>
 							</ul></li>
-						<li class="bg_none"><a href="commentGet.action">Comment</a></li>
+						<li class="bg_none"><a href="commentGet.action">Feedbacks</a></li>
 					</ul>
 				</nav>
 				<div class="wrapper" style="height: 123px;">
