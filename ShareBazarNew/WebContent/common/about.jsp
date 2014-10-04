@@ -102,33 +102,28 @@
 				</article>
 				<article class="col2 pad_left1">
 				<div class="pad">
-					<h2 class="bigHeading">Solutions That You Need!</h2>
-					<p>
-						<strong>The Art of Business</strong> is a free web template
-						created by TemplateMonster.com team. This website template is
-						optimized for 1024X768 screen resolution.
+					<h4 class="bigHeading">Purpose</h4>
+					<h3 style="color:blue;">Committed to improve the financial well-being of people.</h3>
+
+              <h4><b> Vision</b></h4><br>
+				<ul style="list-style: inside;">
+                  <li>To continue to be a leader.</li>
+                   <li>establish global presence.</li>
+                   <li>facilitate the financial well being of people.</li>
+                  </ul>
+           <h4><b>Values</b></h4><br>
+             <b><font color="blue">ShareBazar is committed to the following core values :</font></b>
+				<ul style="list-style: inside;">
+   				<li> Integrity</li>		
+    			<li>Customer focused culture</li>
+    			<li>Trust, respect and care for the individual</li>
+    			<li>Passion for excellence</li>
+    			<li>Teamwork</li>
+                </ul>
+ 
+						
 					</p>
-					<p class="under">
-						This website template can be delivered in two packages - with PSD
-						source files included and without them. This website template has
-						several pages: <a href="Home.html">Home</a>, <a href="About.html">About</a>,
-						<a href="Projects.html">Projects</a> (with <a href="Project.html">Project
-							Page</a>), <a href="Contacts.html">Contacts</a> (note that contact us
-						form - doesn't work), <a href="SiteMap.html">Site Map</a>.
-					</p>
-					<div class="wrapper">
-						<ul class="list1 cols">
-							<li><a href="#">At vero eos etaccusamus iusto</a></li>
-							<li><a href="#">Odio dignissmos ducimus blanditiis</a></li>
-							<li><a href="#">Praesentum voluptum deleniti</a></li>
-						</ul>
-						<ul class="list1 cols pad_left1">
-							<li><a href="#">Molestias exceutpturi sint occaecati</a></li>
-							<li><a href="#">Cupiditate nogn proghvident, similique</a></li>
-							<li><a href="#">Sunt in culpa qui offiutrucia deserunt</a></li>
-						</ul>
 					</div>
-				</div>
 				</article>
 			</div>
 			</section>
