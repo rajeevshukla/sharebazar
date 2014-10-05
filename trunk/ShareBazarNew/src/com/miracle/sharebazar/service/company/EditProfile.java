@@ -27,22 +27,30 @@ public class EditProfile extends ActionSupport implements ModelDriven<CompanyBea
 	
 		 String memberId;
 		  HttpSession session=ServletActionContext.getRequest().getSession();
-		  memberId=(String)session.getAttribute("memberId");
+		memberId=(String)session.getAttribute("memberId");
 	
 		  DatabaseUtils databaseUtils=new DatabaseUtils();
-		  Connection  connection= databaseUtils.getConnectionDb();
+		 Connection  connection= databaseUtils.getConnectionDb();
 		 
-		  PreparedStatement preparedStatement=    connection.prepareStatement("SELECT * FROM COMPANY_MASTER WHERE MEMBERSHIP_ID=?");
-		  preparedStatement.setString(1, memberId);
+		     PreparedStatement preparedStatement=    connection.prepareStatement("SELECT * FROM COMPANY_MASTER WHERE MEMBERSHIP_ID=?");
+		      preparedStatement.setString(1, memberId);
 		
 		     ResultSet rs= preparedStatement.executeQuery();
 		      
 		      if(rs.next()){
 		    	  
 		    	  companyBean.setEmail(rs.getString("EMAIL"));
-		    	  companyBean.setCompanyName("COMPANY_NAME"); 
-		    	  
-		      }
+		    	  companyBean.setCompanyName(rs.getString("COMPANY_NAME"));
+		    	  companyBean.setAddress(rs.getString("Address"));  
+		    	  companyBean.setCity(rs.getString("City"));  
+		    	  companyBean.setState(rs.getString("State"));  
+		    	  companyBean.setCountry(rs.getString("Country"));  
+		    	  companyBean.setPin(rs.getLong("Pin"));  
+		    	  companyBean.setPhone(rs.getLong("Phone")); 
+		    	  companyBean.setFax(rs.getLong("Fax")); 
+		    	  companyBean.setMobile(rs.getLong("Moblie"));
+		    	  companyBean.setAboutCompany(rs.getString("AboutCompany"));
+		    	  }
 		     
 		return SUCCESS;
 		
