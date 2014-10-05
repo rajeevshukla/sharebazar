@@ -50,7 +50,7 @@ public class EditProfile extends ActionSupport implements ModelDriven<CompanyBea
 		    	  companyBean.setPhone(rs.getLong("PHONE")); 
 		    	  companyBean.setFax(rs.getLong("FAX")); 
 		    	  companyBean.setMobile(rs.getLong("MOBILE"));
-		    	  companyBean.setAboutCompany(rs.getString("ABOUTCOMPANY"));
+		    	  companyBean.setAboutCompany(rs.getString("ABOUT_COMPANY"));
 		    	  }
 		     
 		return SUCCESS;
