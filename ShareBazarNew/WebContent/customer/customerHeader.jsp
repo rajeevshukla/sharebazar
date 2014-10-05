@@ -115,7 +115,7 @@ nav ul ul ul {
 							<ul>
 								<li><a href="buyShareGet.action">Buy Share</a></li>
 								<li><a href="sellShareGet.action">Sell Share</a></li>
-								<li><a href="viewCustomerShare.action">View Share</a></li>
+								<li><a href="viewCustomerShare.action">Share History</a></li>
 							</ul></li>
 						<li><a href="#">Manage Transaction</a>
 
