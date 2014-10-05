@@ -43,7 +43,6 @@ public class UpdateProfile extends ActionSupport implements
 			String memberShipId = (String) session.getAttribute("memberId");
 			ps.setString(13, memberShipId);
 			ps.executeUpdate();
-			int x=2/0;
 			status = true;
 		} catch (Exception e) {
 			e.printStackTrace();
