@@ -107,21 +107,21 @@ nav ul ul ul {
 							<ul>
 								<li><a href="../company/buyShareGet.action">Buy Share</a></li>
 								<li><a href="sellShareGet.action">Sell Share</a></li>
-								<li><a href="../common/about.jsp">View Share</a></li>
+								<li><a href="../company/viewShareDetails.action">View Share</a></li>
 							</ul></li>
 						<li><a href="#">Manage Transaction</a>
 
 							<ul>
-								<li><a href="getFund.action">Manage funds</a></li>
-								<li><a href="transactionHistory.action">Transaction
+								<li><a href="../company/manageCompanyFund.action">Manage funds</a></li>
+								<li><a href="../company/viewTransaction.action">Transaction
 										History</a></li>
 							</ul></li>
 						<li><a href="#">Contact company</a>
 							<ul>
-								<li><a href="viewListOfShareHolders.action">Share Holders</a></li>
-								<li><a href="searchShareHolder.action">Search Share Holders</a></li>
+								<li><a href="../company/viewShareHolders.action">Share Holders</a></li>
+								<li><a href="../company/searchShareHolders.action">Search Share Holders</a></li>
 							</ul></li>
-						<li class="bg_none"><a href="commentGet.action">Feedbacks</a></li>
+						<li class="bg_none"><a href="#">Feedbacks</a></li>
 					</ul>
 				</nav>
 				<div class="wrapper" style="height: 123px;">
