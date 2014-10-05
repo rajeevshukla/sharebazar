@@ -98,8 +98,11 @@ nav ul ul ul {
 					<div id="logout_box" align="right">
 						<a href="../common/logout.jsp">Logout</a>
 					</div>
+					<div id="logout_box" align="right">
+						<a href="../company/changePassword.action" style="color: white;">Change Password</a>
+					</div>
 				</div>
-				<div id="welcome_name"><h3>Welcome ${name}</h3></div>
+				<div id="welcome_name"><h3>Welcome   <a href="../company/editProfile.action" style="color: white;"> ${name}</a></h3></div>
 				<nav>
 					<ul id="menu">
 						<li><a href="../company/cyHome.jsp">Home</a></li>

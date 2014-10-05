@@ -10,6 +10,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.company.model.CompanyBean;
 import com.miracle.sharebazar.connection.DatabaseUtils;
+import com.miracle.sharebazar.customer.model.CustomerBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -41,19 +42,21 @@ public class EditProfile extends ActionSupport implements ModelDriven<CompanyBea
 		    	  
 		    	  companyBean.setEmail(rs.getString("EMAIL"));
 		    	  companyBean.setCompanyName(rs.getString("COMPANY_NAME"));
-		    	  companyBean.setAddress(rs.getString("Address"));  
-		    	  companyBean.setCity(rs.getString("City"));  
-		    	  companyBean.setState(rs.getString("State"));  
-		    	  companyBean.setCountry(rs.getString("Country"));  
-		    	  companyBean.setPin(rs.getLong("Pin"));  
-		    	  companyBean.setPhone(rs.getLong("Phone")); 
-		    	  companyBean.setFax(rs.getLong("Fax")); 
-		    	  companyBean.setMobile(rs.getLong("Moblie"));
-		    	  companyBean.setAboutCompany(rs.getString("AboutCompany"));
+		    	  companyBean.setAddress(rs.getString("ADDRESS"));  
+		    	  companyBean.setCity(rs.getString("CITY"));  
+		    	  companyBean.setState(rs.getString("STATE"));  
+		    	  companyBean.setCountry(rs.getString("COUNTRY"));  
+		    	  companyBean.setPin(rs.getLong("PIN"));  
+		    	  companyBean.setPhone(rs.getLong("PHONE")); 
+		    	  companyBean.setFax(rs.getLong("FAX")); 
+		    	  companyBean.setMobile(rs.getLong("MOBILE"));
+		    	  companyBean.setAboutCompany(rs.getString("ABOUTCOMPANY"));
 		    	  }
 		     
 		return SUCCESS;
+	}
+		
 		
 	}
 	
-}
+

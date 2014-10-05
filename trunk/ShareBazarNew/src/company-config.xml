@@ -25,7 +25,12 @@
 			<result name="error">/company/error.jsp</result>
 			<result name="input">/company/companyPayment.jsp</result>
 		</action>
-
+  
+        <action name="editProfile" class="com.miracle.sharebazar.service.company.EditProfile">
+        	<result name="success">/company/editProfile.jsp</result>
+        	<result name="error">/company/error.jsp</result>
+        </action>
+         
 
 	</package>
 </struts>
