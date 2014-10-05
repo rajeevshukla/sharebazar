@@ -102,10 +102,10 @@ nav ul ul ul {
 				<div id="welcome_name"><h3>Welcome ${name}</h3></div>
 				<nav>
 					<ul id="menu">
-						<li><a href="../customer/crHome.jsp">Home</a></li>
+						<li><a href="../company/cyHome.jsp">Home</a></li>
 						<li><a href="#">Manage Share</a>
 							<ul>
-								<li><a href="buyShareGet.action">Buy Share</a></li>
+								<li><a href="../company/buyShareGet.action">Buy Share</a></li>
 								<li><a href="sellShareGet.action">Sell Share</a></li>
 								<li><a href="../common/about.jsp">View Share</a></li>
 							</ul></li>
@@ -118,8 +118,8 @@ nav ul ul ul {
 							</ul></li>
 						<li><a href="#">Contact company</a>
 							<ul>
-								<li><a href="companyDetailGet.action">Share Holders</a></li>
-								<li><a href="contactwithcompanyGet.action">Search Share Holders</a></li>
+								<li><a href="viewListOfShareHolders.action">Share Holders</a></li>
+								<li><a href="searchShareHolder.action">Search Share Holders</a></li>
 							</ul></li>
 						<li class="bg_none"><a href="commentGet.action">Feedbacks</a></li>
 					</ul>
