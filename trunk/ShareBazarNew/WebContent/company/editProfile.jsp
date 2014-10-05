@@ -39,7 +39,7 @@
              
              </c:if>
 
-				<c:set value="${sessionScope.bean}" var="bean" scope="session"></c:set>
+				<c:set value="${companyBean}" var="bean" scope="session"></c:set>
 				<!--   Getting the object from the session and setting it to bean name -->
 
 
@@ -61,7 +61,7 @@
 									<td class="row"><label for="visitorFirstName">Company
 											Name</label></td>
 									<td class="row"><input type="text" id="visitorFirstName"
-										name="firstName" class="short" value="${bean.firstName}"
+										name="firstName" class="short" value="${bean.companyName}"
 										required="" tabindex="1" /></td>
 									<td class="row" style="padding-left: 40px;"><label
 										for="visitorLastName">Country</label></td>
@@ -73,7 +73,7 @@
 
 									<td class="row"><label for="visitorLastName">Email</label></td>
 									<td class="row"><input type="text" id="visitorLastName"
-										name="dob" class="short" value="${bean.dob}" required=""
+										name="dob" class="short" value="${bean.}" required=""
 										tabindex="12" /></td>
 									<td class="row" style="padding-left: 80px;"><input
 										id="submitBtn" type="submit" value="Update" tabindex="16" /></td>
