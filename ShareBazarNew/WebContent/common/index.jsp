@@ -97,9 +97,9 @@
 			<div class="wrapper marg_top2">
 				<article class="col1">
 				<div class="box2">
-					<div class="pad">
+					<div class="pad" style="width: 230px">
 						<h2 class="bigHeading">Currency Converter</h2>
-						<div class="wrapper pad_bot1" style="width: 300px;">
+						<div class="wrapper pad_bot1" style="width: 230px;">
 							<!-- <figure><img src="../images/page1_img1.jpg" alt="" class="left marg_right1"></figure>
 								<span class="color1">Michael Donovan</span><br>
 								Sit amet, ectetuer adgipi scing elit.<a href="#">More</a> -->
@@ -112,11 +112,11 @@
 							</span>
 							<br>
 							<span style="margin-top: 10px;">
-							 To : <select id="currency_to" style="padding-left: 14px; width: 230px;">
+							 To : <select id="currency_to" style="padding-left: 14px; width: 216px;">
 								<currency:IterateCurrency>
 									<option value="${key}">${value}(${key})</option>
 								</currency:IterateCurrency>
-							</select></span><br> <input type="button" value="get" onclick="getCurrencyValue();">
+							</select></span><br><br> <input type="button" value="get" onclick="getCurrencyValue();">
 						</div>
 						<div class="wrapper pad_bot1" id="showCurrencyRate"
 							style="height: 32px;"></div>
