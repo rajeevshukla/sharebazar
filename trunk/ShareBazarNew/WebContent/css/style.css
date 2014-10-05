@@ -43,7 +43,7 @@ body {
 /* Global Structure */
 .main {
 	margin: 0 auto;
-	width: 960px
+	width: 963px
 }
 
 .body1 {
@@ -59,10 +59,10 @@ body {
 	background: url(../images/bg_img2.png) center top no-repeat;
 	position: absolute;
 	height: 353px;
-	width: 327px;
-	top: 13px;
+	width: 326px;
+	top: 9px;
 	left: 50%;
-	margin-left: 160px;
+	margin-left: 181px;
 	z-index: 10
 }
 /* main layout */
@@ -237,6 +237,7 @@ header {
 
 .pad_left1 {
 	padding-left: 24px
+	style="width: 254px
 }
 
 .pad {
