@@ -1,4 +1,4 @@
-package com.miracle.sharebazar.service.company;
+package com.miracle.sharebazar.service.customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,31 +8,38 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.miracle.sharebazar.company.model.CompanyBean;
 import com.miracle.sharebazar.connection.DatabaseUtils;
+import com.miracle.sharebazar.customer.model.ChangePasswordForm;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class EditProfile extends ActionSupport implements ModelDriven<CompanyBean> {
+public class ChangePasswordAction extends ActionSupport implements ModelDriven<ChangePasswordForm>{
 
+	
 	@Override
-	public CompanyBean getModel() {
-		return companyBean;
+	public ChangePasswordForm getModel() {
+		// TODO Auto-generated method stub
+		return changePasswordForm;
 	}
 	
-	CompanyBean companyBean=new CompanyBean();
+	ChangePasswordForm changePasswordForm=new ChangePasswordForm();
 	
 	@Override
 	public String execute() throws Exception {
-	
-		 String memberId;
+		
+		HttpSession session=ServletActionContext.getRequest().getSession();
+		  currentPassword=(String)session.getAttribute("Current Pa");
+		  
 		  HttpSession session=ServletActionContext.getRequest().getSession();
-		  memberId=(String)session.getAttribute("memberId");
+		  newPassword=(String)session.getAttribute("New Password");
+		  
+		  HttpSession session=ServletActionContext.getRequest().getSession();
+		  rePassword=(String)session.getAttribute("Re Password");
 	
 		  DatabaseUtils databaseUtils=new DatabaseUtils();
 		  Connection  connection= databaseUtils.getConnectionDb();
 		 
-		  PreparedStatement preparedStatement=    connection.prepareStatement("SELECT * FROM COMPANY_MASTER WHERE MEMBERSHIP_ID=?");
+		  PreparedStatement preparedStatement= connection.prepareStatement("SELECT * FROM COMPANY_MASTER WHERE MEMBERSHIP_ID=?");
 		  preparedStatement.setString(1, memberId);
 		
 		     ResultSet rs= preparedStatement.executeQuery();
@@ -43,9 +50,8 @@ public class EditProfile extends ActionSupport implements ModelDriven<CompanyBea
 		    	  companyBean.setCompanyName("COMPANY_NAME"); 
 		    	  
 		      }
-		     
-		return SUCCESS;
 		
+		
+		return SUCCESS;
 	}
-	
 }

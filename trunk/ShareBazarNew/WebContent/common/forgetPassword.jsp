@@ -69,9 +69,9 @@
 							onclick="sendForgetPasswordMail();"></td>
 					</tr>
 				</table>
+				
 				<span id="result"> </span>
-
-
+				
 			</div>
 		</div>
 	</div>

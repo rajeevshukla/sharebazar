@@ -38,7 +38,7 @@
 		</action>
 		<action name="transactionHistory"
 			class="com.miracle.sharebazar.service.customer.TransactionHistory">  <!-- getting the details of all transactions -->
-			<result type="redirect">/customer/transactionHistory.jsp</result>
+			<result name="success">/customer/transactionHistory.jsp</result>
 
 
 		</action>
@@ -123,5 +123,9 @@
 			<result name="success">/customer/viewCustomerShare.jsp</result>
 		</action>
 		
+		<action name="changePassword"  class="">
+		
+		
+		</action>
 	</package>
 </struts>

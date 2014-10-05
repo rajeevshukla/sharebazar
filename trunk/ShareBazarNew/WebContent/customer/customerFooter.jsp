@@ -27,7 +27,18 @@
 								</div>
 							</form>
 						</article>
-						<article class="cols pad_left1">
+						<article class="col1">
+							<div class="pad" style="margin-left: 50px; width: 200px">
+								<h2>Useful Links</h2>
+								<!-- <p>The latest on keeping your personal info safe and secure.</p> -->
+								<ul class="list1">
+									<li><a href="#">Security Alerts</a></li>
+									<li><a href="#">Avoiding Scams</a></li>
+								</ul>
+							</div>
+						</article>
+						
+						<!-- <article class="cols pad_left1">
 							<h2>Customer Log In</h2>
 							<form id="form_2" action="" method="post">
 								<div>
@@ -37,7 +48,7 @@
 									<a href="#">Forgot password?</a> &nbsp;	<a href="#">Sign up</a>
 								</div>
 							</form>
-						</article>
+						</article> -->
 					</div>
 				</div>	
 			</article>
