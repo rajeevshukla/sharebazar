@@ -35,9 +35,8 @@ nav ul ul {
 	padding: 0;
 	position: absolute;
 	top: 100%;
-	z-index:999;
-	background-color:#EEEEEE;
-	
+	z-index: 999;
+	background-color: #EEEEEE;
 }
 
 nav ul ul li {
@@ -78,8 +77,7 @@ nav ul ul ul {
 	overflow: hidden;
 	padding: 71px 51px 9px;
 	position: absolute;
-	color :white
-	width: 100%;
+	color: white width:  100%;
 	z-index: 2;
 }
 </style>
@@ -98,10 +96,18 @@ nav ul ul ul {
 						</h1>
 					</div>
 					<div id="logout_box" align="right">
-						<a href="../common/logout.jsp">Logout</a>
+						<a href="../common/logout.jsp" style="color: white;">Logout</a>
 					</div>
+					<div id="logout_box" align="right">
+						<a href="../customer/forgetPassword.jsp" style="color: white;">Change Password</a>
+					</div>
+
 				</div>
-				<div id="welcome_name"><h3>Welcome <a href="editProfile.action">${session.name}</a></h3></div>
+				<div id="welcome_name">
+					<h3>
+						Welcome <a href="editProfile.action" style="color: white;">${session.name}</a>
+					</h3>
+				</div>
 				<nav>
 					<ul id="menu">
 						<li><a href="../customer/crHome.jsp">Home</a></li>
@@ -121,7 +127,8 @@ nav ul ul ul {
 						<li><a href="#">Contact Shareholders</a>
 							<ul>
 								<li><a href="companyDetailGet.action">View Shareholders</a></li>
-								<li><a href="contactwithcompanyGet.action">Contact Shareholders</a></li>
+								<li><a href="contactwithcompanyGet.action">Contact
+										Shareholders</a></li>
 							</ul></li>
 						<li class="bg_none"><a href="commentGet.action">Comment</a></li>
 					</ul>

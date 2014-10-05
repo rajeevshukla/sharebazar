@@ -14,4 +14,3 @@
 <script type="text/javascript" src="../script/buy.js"></script>
 <script type="text/javascript" src="../script/sellcust.js"></script>
 <script type="text/javascript" src="../script/validation.js"></script>
-<script type="text/javascript" src="../script/accord.js"></script>

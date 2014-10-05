@@ -43,7 +43,19 @@ private String getBuyer()
 	    PreparedStatement ps2=connection.prepareStatement("update CUSTOMER_MASTER set BALANCE=? where MEMBERSHIP_ID=?");	
 		PreparedStatement ps3=connection.prepareStatement("update COMPANY_SHARE_MASTER set AVAILABLE_SHARE=? where MEMBERSHIP_ID=?");
 		PreparedStatement ps4=connection.prepareStatement("select SHARE from CUSTOMER_MASTER where MEMBERSHIP_ID=? ");
-		
+	
+		PreparedStatement  psTransactionStatement = connection
+				.prepareStatement("insert into CUSTOMER_TRANSACTION values(?,?,?,?,?,?,?,?)");
+		psTransactionStatement.setString(1, getBuyer());
+		psTransactionStatement.setString(2, null);
+		psTransactionStatement.setString(3, null);
+		psTransactionStatement.setString(4, null);
+
+		psTransactionStatement.setString(5, null);
+		psTransactionStatement.setDouble(6, bean.getTotalAmount());
+		psTransactionStatement.setString(7, "debit");
+		psTransactionStatement.setTimestamp(8, new Timestamp(System.currentTimeMillis()));
+
 		
 		ps4.setString(1, getBuyer());
 		
@@ -74,6 +86,9 @@ private String getBuyer()
 		ps5.setString(2, getBuyer());
 		int e=ps5.executeUpdate();
 		connection.commit();
+		
+		psTransactionStatement.executeUpdate();
+		
 		
 		if(b==1 && c==1 && d==1 && e==1)
 		{

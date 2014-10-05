@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@include file="../common/common.jsp"%>
 <%-- <%@taglib prefix="display" uri="http://displaytag.sf.net"%> --%>
 <c:if test="${empty session.name}">
@@ -13,7 +14,25 @@
 <head>
 <style type="text/css">
 </style>
+<script type="text/javascript">
+	$(function() {
+		var icons = {
+			header : "ui-icon-circle-arrow-e",
+			activeHeader : "ui-icon-circle-arrow-s"
+		};
+		$("#accordion").accordion({
+			icons : icons
+		});
+		$("#toggle").button().click(function() {
+			if ($("#accordion").accordion("option", "icons")) {
+				$("#accordion").accordion("option", "icons", null);
+			} else {
+				$("#accordion").accordion("option", "icons", icons);
+			}
+		});
+	});
 
+</script>
 
 <title>Transaction History</title>
 
@@ -38,27 +57,28 @@
 
 
 				<div id="accordion">
-					<dl class="accordion" id="slider">
-						<dt>Credit</dt>
-						<dd>
-							<span> Credit History................ </span>
-						</dd>
-						<dt>Buy</dt>
-						<dd>
-							<span> Credit history.........s </span>
-						</dd>
-						<dt>Sell</dt>
-						<dd>
-							<span> Sell history,,,,,,,,,,,,,,,,,, </span>
-						</dd>
-					</dl>
+					<h3>Credit history</h3>
+					<div>
+				 
+				    <display:table style="width : 500px;" list="${creditHistory}" >
+ 				     <display:column property="cardHolderName" title="Name"></display:column>
+				     <display:column property="amount" title="Amount"></display:column>
+				     <display:column property="transactionDate" title="Date" format="{0,date,dd-MMM-yyyy hh:mm a}"></display:column>
+				    </display:table>
+					</div>
+					<h3>Debit History</h3>
+					<div>
+						
+						
+				</div>
+					<h3>Sell History</h3>
+					<div>
+				
+				
+						</div>
 				</div>
 
 
-				<script type="text/javascript">
-					var slider1 = new accordion.slider("slider1");
-					slider1.init("slider");
-				</script>
 
 			</div>
 
