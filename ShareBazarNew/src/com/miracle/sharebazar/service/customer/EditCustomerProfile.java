@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.connection.DatabaseUtils;
-import com.miracle.sharebazar.registration.CustomerBean;
+import com.miracle.sharebazar.customer.model.CustomerBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 

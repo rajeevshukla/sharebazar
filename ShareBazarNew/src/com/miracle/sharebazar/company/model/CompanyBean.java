@@ -1,4 +1,4 @@
-package com.miracle.sharebazar.service.company;
+package com.miracle.sharebazar.company.model;
 
 
 

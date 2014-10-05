@@ -10,8 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.miracle.sharebazar.company.model.CompanyBean;
 import com.miracle.sharebazar.connection.DatabaseUtils;
-import com.miracle.sharebazar.service.company.CompanyBean;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class CompanyRegister implements ModelDriven<CompanyBean> {
