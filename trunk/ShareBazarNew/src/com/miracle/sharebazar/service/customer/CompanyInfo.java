@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.miracle.sharebazar.company.model.CompanyBean;
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.payment.PaymentBean;
-import com.miracle.sharebazar.service.company.CompanyBean;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 

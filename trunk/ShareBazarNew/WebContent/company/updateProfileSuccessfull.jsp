@@ -25,19 +25,21 @@
 	<%-- <jsp:include page="../common/headerHome.jsp"></jsp:include>
 	<jsp:include page="sideMenuCustomer.jsp"></jsp:include> --%>
 
-	<jsp:include page="../customer/customerHeader.jsp"></jsp:include>
+	<jsp:include page="../company/companyHeader.jsp"></jsp:include>
 
 	<div class="body2">
 		<div class="main">
 			<div class="marg_top wrapper">
 			
-			 welcome to customer
-			
-			
+					<h4 class="commentformTitle"
+						style="font-size: 15px; margin-left: 30px; margin-top: 70px;">Profile
+						updated successfully..........</h4>
+				
 			</div>
 		</div>
 	</div>
 
-	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
+
+	<jsp:include page="../company/companyFooter.jsp"></jsp:include>
 </body>
 </html>

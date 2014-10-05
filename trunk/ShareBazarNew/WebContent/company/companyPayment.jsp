@@ -21,7 +21,7 @@
 					pay an amount of Rs 1000/-.
 
 
-					<form action="companyPayment.action" method="post"
+					<form action="../company/companyPayment.action" method="post"
 						style="width: 400px;">
 						<table>
 							<tbody>

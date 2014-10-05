@@ -23,7 +23,7 @@
 			<result type="redirect">/customer/customerFeedback.jsp</result>
 		</action>
 
-		<action name="editCustomerProfile"
+		<action name="editProfile"
 			class="com.miracle.sharebazar.service.customer.EditCustomerProfile">
 			<result>/customer/editCustomerProfile.jsp</result>
 		</action>
@@ -32,7 +32,7 @@
 			class="com.miracle.sharebazar.service.customer.UpdateProfile">
 			<result name="success" type="redirect">/customer/updateProfileSuccessfull.jsp
 			</result>
-			<result name="error">/error.jsp</result>
+			<result name="error">/customer/editCustomerProfile.jsp</result>
 
 
 		</action>

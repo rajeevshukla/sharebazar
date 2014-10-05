@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	<package namespace="company" name="company-package" extends="struts-default">
+	<package namespace="/company" name="company-package" extends="struts-default">
 
 
 
@@ -13,6 +13,12 @@
 			</result>
 			<result name="error" type="redirect">/company/error.jsp</result>
 		</action>
+		<action name="updateProfile"
+			class="com.miracle.sharebazar.service.company.UpdateProfile">
+			<result name="success" type="redirect">/company/updateProfileSuccessfull.jsp
+			</result>
+			<result name="error">/company/editCompanyProfile.jsp</result>
+			</action>
 
 		<action name="companyPayment" class="com.miracle.sharebazar.payment.CompanyPayment">
 			<result name="success">/company/cyHome.jsp</result>
@@ -22,7 +28,4 @@
 
 
 	</package>
-
-
-
 </struts>

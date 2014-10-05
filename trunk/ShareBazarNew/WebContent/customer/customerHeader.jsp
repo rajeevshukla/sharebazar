@@ -101,7 +101,7 @@ nav ul ul ul {
 						<a href="../common/logout.jsp">Logout</a>
 					</div>
 				</div>
-				<div id="welcome_name"><h3>Welcome <a href="editProfile.action?memberId=${memberId}">${session.name}</a></h3></div>
+				<div id="welcome_name"><h3>Welcome <a href="editProfile.action">${session.name}</a></h3></div>
 				<nav>
 					<ul id="menu">
 						<li><a href="../customer/crHome.jsp">Home</a></li>
