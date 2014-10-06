@@ -20,7 +20,7 @@ public class EditProfile extends ActionSupport implements ModelDriven<CompanyBea
 	public CompanyBean getModel() {
 		return companyBean;
 	}
-	
+	private static final long serialVersionUID = 1L;
 	CompanyBean companyBean=new CompanyBean();
 	
 	@Override
