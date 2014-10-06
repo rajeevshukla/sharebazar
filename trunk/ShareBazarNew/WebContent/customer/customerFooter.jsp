@@ -1,5 +1,5 @@
 <div class="main">
-<!-- footer -->
+	<!-- footer -->
 	<footer>
 		<div class="wrapper">
 			<article class="col1">
@@ -20,9 +20,12 @@
 							<form id="form_1" action="" method="post">
 								<div>
 									<div class="bg">
-										<input class="input" type="text" value="Enter email here" onblur="if(this.value=='') this.value='Enter email here'" onFocus="if(this.value =='Enter email here' ) this.value=''" />
+										<input class="input" type="text" value="Enter email here"
+											onblur="if(this.value=='') this.value='Enter email here'"
+											onFocus="if(this.value =='Enter email here' ) this.value=''" />
 									</div>
-									<a href="#" class="submit" onClick="document.getElementById('form_1').submit()"><span><span>Submit</span></span></a>
+									<a href="#" class="submit"
+										onClick="document.getElementById('form_1').submit()"><span><span>Submit</span></span></a>
 									<a href="#">Unsucscribe</a>
 								</div>
 							</form>
@@ -37,7 +40,7 @@
 								</ul>
 							</div>
 						</article>
-						
+
 						<!-- <article class="cols pad_left1">
 							<h2>Customer Log In</h2>
 							<form id="form_2" action="" method="post">
@@ -50,7 +53,7 @@
 							</form>
 						</article> -->
 					</div>
-				</div>	
+				</div>
 			</article>
 		</div>
 		<div class="under2"></div>
@@ -61,7 +64,7 @@
 			</div>
 		</div> -->
 	</footer>
-<!-- / footer -->
+	<!-- / footer -->
 </div>
 <script type="text/javascript"> Cufon.now(); </script>
 </body>

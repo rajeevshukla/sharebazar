@@ -1,5 +1,5 @@
 <div class="main">
-<!-- footer -->
+	<!-- footer -->
 	<footer>
 		<div class="wrapper">
 			<article class="col1">
@@ -20,14 +20,28 @@
 							<form id="form_1" action="" method="post">
 								<div>
 									<div class="bg">
-										<input class="input" type="text" value="Enter email here" onblur="if(this.value=='') this.value='Enter email here'" onFocus="if(this.value =='Enter email here' ) this.value=''" />
+										<input class="input" type="text" value="Enter email here"
+											onblur="if(this.value=='') this.value='Enter email here'"
+											onFocus="if(this.value =='Enter email here' ) this.value=''" />
 									</div>
-									<a href="#" class="submit" onClick="document.getElementById('form_1').submit()"><span><span>Submit</span></span></a>
+									<a href="#" class="submit"
+										onClick="document.getElementById('form_1').submit()"><span><span>Submit</span></span></a>
 									<a href="#">Unsucscribe</a>
 								</div>
 							</form>
 						</article>
-						<article class="cols pad_left1">
+						<article class="col1">
+							<div class="pad" style="margin-left: 50px; width: 200px">
+								<h2>Useful Links</h2>
+								<!-- <p>The latest on keeping your personal info safe and secure.</p> -->
+								<ul class="list1">
+									<li><a href="#">Security Alerts</a></li>
+									<li><a href="#">Avoiding Scams</a></li>
+								</ul>
+							</div>
+						</article>
+
+						<!-- <article class="cols pad_left1">
 							<h2>Customer Log In</h2>
 							<form id="form_2" action="" method="post">
 								<div>
@@ -37,9 +51,9 @@
 									<a href="#">Forgot password?</a> &nbsp;	<a href="#">Sign up</a>
 								</div>
 							</form>
-						</article>
+						</article> -->
 					</div>
-				</div>	
+				</div>
 			</article>
 		</div>
 		<div class="under2"></div>
@@ -50,7 +64,7 @@
 			</div>
 		</div> -->
 	</footer>
-<!-- / footer -->
+	<!-- / footer -->
 </div>
 <script type="text/javascript"> Cufon.now(); </script>
 </body>
