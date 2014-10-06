@@ -63,11 +63,6 @@
 									<td class="row"><input type="text" id="visitorFirstName"
 										name="companyName" class="short" value="${bean.companyName}"
 										required="" tabindex="1" /></td>
-									<td class="row" style="padding-left: 40px;"><label
-										for="visitorLastName">Country</label></td>
-									<td class="row"><input type="text" id="visitorLastName"
-										name="country" class="short" value="${bean.country}"
-										required="" tabindex="10" /></td>
 								</tr>
 								<tr>
 

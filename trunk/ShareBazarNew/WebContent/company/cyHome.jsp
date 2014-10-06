@@ -15,7 +15,13 @@
 
 	<div class="body2">
 		<div class="main">
-			<div class="marg_top wrapper">Welcome to our home</div>
+			<div class="marg_top wrapper">
+			
+			<img src="../images/company.png" alt="company.png" style="margin-left: 200px;">
+			
+			
+			
+			</div>
 		</div>
 	</div>
 	<jsp:include page="../company/companyFooter.jsp"></jsp:include>

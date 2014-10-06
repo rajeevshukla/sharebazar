@@ -66,14 +66,7 @@
 										</label></td>
 										<td class="row"><input type="text" id="buyshare"	name="buySharePost" class="short" required=""
 											style="width: 180px;" onkeyup="calculateAmount(this.value)" readonly="readonly" value="1200"/>&nbsp;&nbsp;<font	color="red" size="1">(Becarefull)</font></td>
-
 									</tr>
-									<tr>
-										<td class="row"><label for="visitorLastName">Total amount</label></td>
-										<td class="row"><input type="text"		name="tranPasswordPost" id="showamount" class="short"
-											required="" style="width: 100px;" readonly="readonly" value="200"/>(this amount will be deducted from your account)</td>
-									</tr>
-
 									<tr>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 										<td class="row"><input type="submit" value="Buy"
