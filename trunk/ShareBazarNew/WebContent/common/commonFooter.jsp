@@ -37,6 +37,8 @@
 								<ul class="list1">
 									<li><a href="#">Security Alerts</a></li>
 									<li><a href="#">Avoiding Scams</a></li>
+									<li><a href="../common/privacyAndPolicy.jsp">Privacy & Policies</a></li>
+									<li><a href="../common/dosAndDont.jsp">Do's & Don't</a></li>
 								</ul>
 							</div>
 						</article>
