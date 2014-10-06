@@ -23,6 +23,14 @@
 			<div class="marg_top wrapper">
 
 				<div class="text">
+				
+				  <div class="pad">
+				   <h2 class="bigHeading">Congratulation !!</h2>
+				  
+				  
+				  </div>
+				
+				
 					your memberShipid is <b><u><s:property
 								value="#session['memberId']" /> </u></b>
 								In order login as member pleas <a href="#memberLogin" id="memberLogin" onclick="openLoginDialog();">Click Here</a>
