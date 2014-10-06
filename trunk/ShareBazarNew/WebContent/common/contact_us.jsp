@@ -12,12 +12,12 @@
 				<article class="col1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2>Our Contacts</h2>
+						<h2>Our Contacts : INDIA </h2>
 						<div class="wrapper">
 							<article class="col2">
 							<p>
-								<strong> Country:<br> City:<br> Telephone:<br>
-												Email: </strong>
+								<strong>Country: India<br> City:Delhi<br>Telephone:01204646464<br>
+												Email:projects@nielit.in</strong>
 							</p>
 							</article>
 							<article class="col3">
@@ -40,13 +40,18 @@
 				<div class="box1_out">
 					<div class="box1">
 						<h2>Miscellaneous Info</h2>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus
-							qui blanditiis praesentium voluptatum deleniti atque corrupti
-							quos dolores et quas molestias excepturi sint occaecati
-							cupiditate non provident, similique sunt in culpa qui officia
-							deserunt mollitia animi, id est laborum et dolorum fuga. Et harum
-							quidem rerum facilis est et expedita distinctio. Nam libero
-							tempore, cum soluta nobis est eligendi optio cumque.</p>
+						<p>"Emerge as the premier Indian stock exchange with 
+                            best-in-class global practice in technology, products
+                            innovation and customer service."
+                           <strong><samp>CSR-</samp></strong>Corporate Social Responsibility (CSR) in BSE is aligned with 
+                            its tradition of creating wealth in the community with a three
+                             pronged focus on Education, Health and the Environment. Besides
+                             funding charitable causes for the elderly and the physically 
+                             challenged, BSE has been supporting the rehabilitation and 
+                             restoration efforts in earthquake-hit communities of Gujarat.
+                             BSE has been awarded the Golden Peacock Global - CSR Award 
+                             for its initiatives in Corporate Social Responsibility (CSR) 
+                             by the World Council of Corporate Governance.  </p>
 					</div>
 				</div>
 				<div class="box1_bot">

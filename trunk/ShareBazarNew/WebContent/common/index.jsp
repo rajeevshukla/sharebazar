@@ -133,28 +133,27 @@
 				<div class="pad">
 					<h2 class="bigHeading">Solutions That You Need!</h2>
 					<p>
-						<strong>The Art of Business</strong> is a free web template
-						created by TemplateMonster.com team. This website template is
-						optimized for 1024X768 screen resolution.
+						<strong>The sharebazar.com </strong> is a  web site
+						created by <strong> <span title="Shukla & Sons">SAS</span></strong> web development company. This web site is giving
+						you many solutions in Share Bazar.
 					</p>
 					<p class="under">
-						This website template can be delivered in two packages - with PSD
-						source files included and without them. This website template has
+						We offer different type of accounts.You can have more than one demat account with us.
 						several pages: <a href="Home.html">Home</a>, <a href="About.html">About</a>,
 						<a href="Projects.html">Projects</a> (with <a href="Project.html">Project
-							Page</a>), <a href="Contacts.html">Contacts</a> (note that contact us
-						form – doesn’t work), <a href="SiteMap.html">Site Map</a>.
+							Page</a>), <a href="Contacts.html">Contacts</a> (for more information contact us
+						form our Head Office), <a href="SiteMap.html">Site Map</a>.
 					</p>
 					<div class="wrapper">
 						<ul class="list1 cols">
-							<li><a href="#">At vero eos etaccusamus iusto</a></li>
-							<li><a href="#">Odio dignissmos ducimus blanditiis</a></li>
-							<li><a href="#">Praesentum voluptum deleniti</a></li>
+							<li><a href="#">different types of accounts offered</a></li>
+							<li><a href="#">How do I check order status?</a></li>
+							<li><a href="#">How do I place orders?</a></li>
 						</ul>
 						<ul class="list1 cols pad_left1">
-							<li><a href="#">Molestias exceutpturi sint occaecati</a></li>
-							<li><a href="#">Cupiditate nogn proghvident, similique</a></li>
-							<li><a href="#">Sunt in culpa qui offiutrucia deserunt</a></li>
+							<li><a href="#">check my purchase /sell price?</a></li>
+							<li><a href="#">my Login ID and passwords</a></li>
+							<li><a href="#">forgot my Passwords. What do I do?</a></li>
 						</ul>
 					</div>
 				</div>
