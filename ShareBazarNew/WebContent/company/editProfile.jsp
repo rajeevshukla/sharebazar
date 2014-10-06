@@ -167,6 +167,6 @@
 
 
 
-	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
+	<jsp:include page="../company/companyFooter.jsp"></jsp:include>
 </body>
 </html>
