@@ -6,6 +6,7 @@ nav ul ul {
 
 nav ul li:hover>ul {
 	display: block;
+	width: 200px;
 }
 
 /* nav ul li {
@@ -19,12 +20,12 @@ nav ul li:hover {
 }
 
 nav ul li:hover a {
-	color: #fff;
+	color: white;
 }
 
 nav ul li a {
 	display: block;
-	color: #757575;
+	color: white;
 	text-decoration: none;
 }
 
@@ -34,20 +35,20 @@ nav ul ul {
 	padding: 0;
 	position: absolute;
 	top: 100%;
-	z-index:999;
-	background-color:#EEEEEE;
-	
+	z-index: 999;
+	background-color: #EEEEEE;
 }
 
 nav ul ul li {
 	float: none;
+	margin-left: 5px;
 	border-top: 1px solid #6b727c;
 	border-bottom: 1px solid #575f6a;
 	position: relative;
 }
 
 nav ul ul li a {
-	color: #fff;
+	color: white;
 }
 
 nav ul ul li a:hover {
@@ -76,11 +77,11 @@ nav ul ul ul {
 	overflow: hidden;
 	padding: 71px 51px 9px;
 	position: absolute;
-	color :white
-	width: 100%;
+	color: white width:  100%;
 	z-index: 2;
 }
 </style>
+
 
 <body id="page5">
 	<!-- <div class="body3"></div> -->
@@ -108,14 +109,14 @@ nav ul ul ul {
 						<li><a href="../company/cyHome.jsp">Home</a></li>
 						<li><a href="#">Manage Share</a>
 							<ul>
-								<li><a href="../company/buyShareGet.action">Buy Share</a></li>
-								<li><a href="sellShareGet.action">Sell Share</a></li>
-								<li><a href="../company/viewShareDetails.action">View Share</a></li>
+								<li><a href="../company/updateShare.action">Update Share</a></li>
+								<li><a href="../company/sellShare.action">Sell Share</a></li>
+								<li><a href="../company/deleteShare.action">Delete Share</a></li>
 							</ul></li>
 						<li><a href="#">Manage Transaction</a>
 
 							<ul>
-								<li><a href="../company/manageCompanyFund.action">Manage funds</a></li>
+								<li><a href="../company/manageFund.action">Manage funds</a></li>
 								<li><a href="../company/viewTransaction.action">Transaction
 										History</a></li>
 							</ul></li>
@@ -124,7 +125,11 @@ nav ul ul ul {
 								<li><a href="../company/viewShareHolders.action">Share Holders</a></li>
 								<li><a href="../company/searchShareHolders.action">Search Share Holders</a></li>
 							</ul></li>
-						<li class="bg_none"><a href="#">Feedbacks</a></li>
+						<li><a href="#">Feedbacks</a>
+							<ul>
+								<li><a href="../company/contactRequest.action">Contact Request</a></li>
+								<li><a href="../company/commentForum.action">Comments Forum</a></li>
+							</ul></li>
 					</ul>
 				</nav>
 				<div class="wrapper" style="height: 123px;">
