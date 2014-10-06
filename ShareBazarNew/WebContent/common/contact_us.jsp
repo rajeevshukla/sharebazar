@@ -12,7 +12,7 @@
 				<article class="col1">
 				<div class="box1_out">
 					<div class="box1">
-						<h2>Our Contacts : INDIA </h2>
+						<h2>Our Contacts : </h2>
 						<div class="wrapper">
 							<article class="col2">
 							<p>
@@ -22,8 +22,8 @@
 							</article>
 							<article class="col3">
 							<p>
-								USA<br> San Diego<br> +354 5635600<br> <a
-											href="mailto:">businessco@mail.com</a>
+								<a
+											href="mailto:">contactus@sharebazar.com</a>
 							</p>
 							</article>
 						</div>
