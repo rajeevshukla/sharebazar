@@ -123,9 +123,5 @@
 			<result name="success">/customer/viewCustomerShare.jsp</result>
 		</action>
 		
-		<action name="changePassword"  class="">
-		
-		
-		</action>
 	</package>
 </struts>
