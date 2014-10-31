@@ -10,7 +10,9 @@
 <body>
      
       <form:form commandName="facebook" action="facebook.htm">
+      
         <input type="submit" value="Login with facebook">
+      
       </form:form>
       
       <a href="connect/twitter.htm">Connect with twitter</a>
