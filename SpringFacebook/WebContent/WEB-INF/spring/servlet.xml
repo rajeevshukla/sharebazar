@@ -51,10 +51,9 @@
 		</property>
 	</bean>
 
-
 	<bean id="textEncryptor" class="org.springframework.security.crypto.encrypt.Encryptors"
 		factory-method="noOpText" />
-		
+
 	<bean id="usersConnectionRepository"
 		class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository">
 		<constructor-arg ref="dataSource" />
