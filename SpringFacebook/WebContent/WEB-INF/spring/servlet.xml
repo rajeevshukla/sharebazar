@@ -69,11 +69,4 @@
 		<aop:scoped-proxy proxy-target-class="false" />
 	</bean>
 
-	<bean id="connectController"
-		class="org.springframework.social.connect.web.ConnectController">
-		<constructor-arg ref="connectionFactoryLocator"></constructor-arg>
-		<constructor-arg ref="connectionRepository"></constructor-arg>
-		<property name="viewPath" value=""></property>
-	</bean>
-
 </beans>
