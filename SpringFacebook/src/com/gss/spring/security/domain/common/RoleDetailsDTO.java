@@ -20,6 +20,9 @@ public class RoleDetailsDTO implements GrantedAuthority {
 	private String roleDesc;
 	private String roleId;
 
+	public RoleDetailsDTO() {
+		// TODO Auto-generated constructor stub
+	}
 	public RoleDetailsDTO(String roleDesc, String roleId) {
 		super();
 		this.roleDesc = roleDesc;
