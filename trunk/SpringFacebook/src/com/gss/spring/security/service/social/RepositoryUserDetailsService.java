@@ -16,6 +16,7 @@ public class RepositoryUserDetailsService implements SocialUserDetailsService {
 
     public RepositoryUserDetailsService() {
     	
+    	 System.out.println("social details service object is created..");
     	
     }
 
@@ -28,9 +29,11 @@ public class RepositoryUserDetailsService implements SocialUserDetailsService {
   
     @Override
     public SocialUserDetails loadUserByUserId(String userId)  throws UsernameNotFoundException, DataAccessException {
-    
-    	return null;
-    	        
+               
+    	 System.out.println("############################## load by userId method is called ############");
+    	
+    	
+    	   return null;
     	 
     	
     }

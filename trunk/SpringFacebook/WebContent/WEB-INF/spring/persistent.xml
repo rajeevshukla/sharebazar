@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	 xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		 http://www.springframework.org/schema/aop
+	 http://www.springframework.org/schema/aop/spring-aop.xsd 
 ">
 	<tx:annotation-driven />
 	<context:property-placeholder location="classpath:config.properties"
@@ -47,5 +50,36 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	
+	<bean id="connectionFactoryLocator" class="org.springframework.social.security.SocialAuthenticationServiceRegistry">
+    <property name="authenticationServices">
+        <list>
+            <bean class="org.springframework.social.facebook.security.FacebookAuthenticationService">
+                <constructor-arg value="${facebook.clientId}" />
+                <constructor-arg value="${facebook.clientSecret}" />
+                <!-- Important: The next property name changed from "scope" to "defaultScope" in 1.1.0.M4 -->
+                <property name="defaultScope" value="email" />              
+            </bean>
+        </list>
+    </property>
+</bean>
+
+	<bean id="textEncryptor" class="org.springframework.security.crypto.encrypt.Encryptors"
+		factory-method="noOpText" />
+
+	<bean id="usersConnectionRepository"
+		class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository">
+		<constructor-arg ref="dataSource" />
+		<constructor-arg ref="connectionFactoryLocator" />
+		<constructor-arg ref="textEncryptor" />
+	</bean>
+	<bean id="connectionRepository" factory-method="createConnectionRepository"
+		factory-bean="usersConnectionRepository" scope="request">
+		<constructor-arg value="mail2rajeevshukla" />
+		<!-- #{request.userPrincipal.name} -->
+		<aop:scoped-proxy proxy-target-class="false" />
 	</bean>
 </beans>

@@ -27,31 +27,31 @@
 		pattern="/logout.htm" />
 	<security:http auto-config="true" security="none"
 		pattern="/registerUser.htm"></security:http>
-
+  <security:http auto-config="true" security="none" pattern="/signin/*"></security:http>
 	<security:http auto-config="true">
-	     
-	     <security:intercept-url pattern="/welcome.htm" access="ROLE_ANONYMOUS"/>
-		<security:intercept-url pattern="/*" access="ROLE_ADMIN" />
+	     <security:intercept-url pattern="/welcome.htm" access="ROLE_USER,ROLE_ANONYMOUS"/>
 		<security:session-management
 			invalid-session-url="/sessionExpired.htm">
 			<security:concurrency-control
 				expired-url="/sessionExpired.htm" max-sessions="1"
 				error-if-maximum-exceeded="true" />
 		</security:session-management>
-
 		<security:logout invalidate-session="true"
 			success-handler-ref="customLogoutSuccessHandler" delete-cookies="JSESSIONID" />
+			
 		<security:form-login always-use-default-target="true"
 			authentication-failure-handler-ref="customAuthFailureHandler"
 			authentication-success-handler-ref="customAuthSuccessHandler"
 			login-page="/login.htm" />
+	<security:custom-filter ref="socialAuthenticationFilter"
+			before="PRE_AUTH_FILTER" />
 	</security:http>
 	<security:authentication-manager alias="authenticationManager">
 		<security:authentication-provider  	ref="authProvider">
 		</security:authentication-provider>
-		
-		
+		<security:authentication-provider ref="socialAuthenticationProvider"></security:authentication-provider>
 	</security:authentication-manager>
+	
 	<bean id="authProvider"
 		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
 		<property name="userDetailsService" ref="authenticationService">
@@ -62,10 +62,37 @@
 		class="com.gss.spring.security.service.security.AuthenticationService">
 		<property name="authenticationDAO" ref="authenticationDAO" />
 	</bean>
+	
+	 <!-- Social security filter -->
+	
+	<bean id="socialAuthenticationFilter" 	class="org.springframework.social.security.SocialAuthenticationFilter">
+		<constructor-arg index="0" ref="authenticationManager" />
+		<constructor-arg index="1" ref="userIdSource" />
+		<constructor-arg index="2" ref="usersConnectionRepository" />
+		<constructor-arg index="3" ref="connectionFactoryLocator" /> 
+		<property name="signupUrl" value="/register.htm" />
+	</bean>
+	
+	 <!-- Social auth provider -->
+	
+	<bean id="socialAuthenticationProvider"
+		class="org.springframework.social.security.SocialAuthenticationProvider">
+		<constructor-arg index="0" ref="usersConnectionRepository" />
+		<constructor-arg index="1" ref="socialUserDetailsService" />
+	</bean>
+
+<!--  social user details service -->
+     
+      <bean id="socialUserDetailsService"
+		class="com.gss.spring.security.service.social.RepositoryUserDetailsService"
+		autowire="constructor" />
+      
+
 	<bean id="authenticationDAO"
 		class="com.gss.spring.security.persistence.security.AuthenticationDAO">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
 	<bean id="webSecurityExpressionHandler"
 		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
 
@@ -93,7 +120,9 @@
 		<property name="defaultTargetUrl" value="/login.htm" />
 	</bean>
 	<bean id="passwordEncoder"
-		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+		class="org.springframework.security.authentication.encoding.ShaPasswordEncoder">
+		<constructor-arg value="256"></constructor-arg>
+	</bean>
 <bean id="userIdSource"
 		class="org.springframework.social.security.AuthenticationNameUserIdSource" />
 </beans>

@@ -23,5 +23,7 @@ public class CustomConnectController extends ConnectController {
 		System.out.println("Authenticated name : "+SecurityContextHolder.getContext().getAuthentication().getName());
 		return "redirect:/welcome.htm";
 	}
+	
+	
 
 }

@@ -30,7 +30,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 				RequestDispatcher dispatcher = httpservletrequest.getRequestDispatcher("loginSuccess.htm");
 				dispatcher.forward(httpservletrequest, httpservletresponse);
 			}else{
-				httpservletresponse.sendRedirect("validateUser.htm");
+				httpservletresponse.sendRedirect("welcome.htm");
 			}
 			
 		} catch (Exception e) {
