@@ -1,12 +1,8 @@
 package com.gss.spring.security.web;
 
 import java.security.Principal;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory;
-import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.social.UserIdSource;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.connect.ConnectionFactoryLocator;
@@ -26,8 +22,6 @@ public class CommonController {
 	@Autowired
 	ConnectionRepository connectionRepo;
 	
-
-	
 	@RequestMapping("login")
 	public ModelAndView getLoginPage(){
 		
@@ -38,7 +32,7 @@ public class CommonController {
 	@RequestMapping("welcome")
 	public ModelAndView checked(Principal currentUser){
 		 ModelAndView mav=new ModelAndView("welcome");
-		 System.out.println(connectionRepo.findAllConnections().size());
+	 System.out.println(connectionRepo.findAllConnections().size());
 		 
 		  Connection<Facebook> connection=  connectionRepo.findPrimaryConnection(Facebook.class);
 		 
@@ -55,7 +49,7 @@ public class CommonController {
 		  
          System.out.println(connectionFactoryLocator.getConnectionFactory(Facebook.class));
 		System.out.println(userId.getUserId());
-		return mav;
+	return mav;
 	}
 	
 }

@@ -11,124 +11,89 @@
                         http://www.springframework.org/schema/security/spring-security-3.2.xsd 
                         http://www.springframework.org/schema/tx 
                         http://www.springframework.org/schema/tx/spring-tx.xsd
-                         http://www.springframework.org/schema/aop
-	 http://www.springframework.org/schema/aop/spring-aop.xsd
-                        ">
+                        http://www.springframework.org/schema/aop
+	 					http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<import resource="persistent.xml" />
-	 <security:http auto-config="true" pattern="/login.htm" security="none"></security:http>
+	<security:http auto-config="true" security="none"
+		pattern="/resources/**" />
+	<security:http auto-config="true" security="none"
+		pattern="/common/**" />
+	<security:http auto-config="true" security="none"
+		pattern="/login.htm" />
+	<security:http auto-config="true" security="none"
+		pattern="/sessionExpired.htm" />
+	<security:http auto-config="true" security="none"
+		pattern="/logout.htm" />
+	<security:http auto-config="true" security="none"
+		pattern="/registerUser.htm"></security:http>
+
 	<security:http auto-config="true">
-		<security:intercept-url pattern="/*"  access="ROLE_ANONYMOUS" />
-		 <security:csrf />
-		 
+	     
+	     <security:intercept-url pattern="/welcome.htm" access="ROLE_ANONYMOUS"/>
+		<security:intercept-url pattern="/*" access="ROLE_ADMIN" />
 		<security:session-management
 			invalid-session-url="/sessionExpired.htm">
 			<security:concurrency-control
 				expired-url="/sessionExpired.htm" max-sessions="1"
 				error-if-maximum-exceeded="true" />
 		</security:session-management>
-		
-		<security:form-login login-page="/login.htm"
-			login-processing-url="/login/authenticate"
-			authentication-failure-url="/login?error=bad_credentials"
-			/>
-		<security:logout logout-url="/logout"
-			logout-success-url="/login" delete-cookies="JESSIONID" />
-			
-		<security:custom-filter ref="socialAuthenticationFilter"
-			before="PRE_AUTH_FILTER" />
-			
+
+		<security:logout invalidate-session="true"
+			success-handler-ref="customLogoutSuccessHandler" delete-cookies="JSESSIONID" />
+		<security:form-login always-use-default-target="true"
+			authentication-failure-handler-ref="customAuthFailureHandler"
+			authentication-success-handler-ref="customAuthSuccessHandler"
+			login-page="/login.htm" />
 	</security:http>
 	<security:authentication-manager alias="authenticationManager">
-		<security:authentication-provider
-			user-service-ref="userDetailsService">
-			<security:password-encoder ref="passwordEncoder" />
+		<security:authentication-provider  	ref="authProvider">
 		</security:authentication-provider>
-		<security:authentication-provider
-			ref="socialAuthenticationProvider" />
-	</security:authentication-manager><!-- This is used to hash the password 
-		of the user. -->
-	<bean id="passwordEncoder"
-		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
-		<constructor-arg index="0" value="10" />
-	</bean><!-- Configures the social authentication filter which integrates 
-		Spring Social with Spring Security. -->
-	<bean id="socialAuthenticationFilter"
-		class="org.springframework.social.security.SocialAuthenticationFilter">
-		<constructor-arg index="0" ref="authenticationManager" />
-		<constructor-arg index="1" ref="userIdSource" />
-		<constructor-arg index="2" ref="usersConnectionRepository" />
-		<constructor-arg index="3" ref="socialAuthenticationLocator" /><!-- 
-			Sets the url of the registration form. -->
-		<property name="signupUrl" value="/user/register" />
-	</bean><!-- Configures the social authentication provider which processes 
-		authentication requests made by using supported social authentication services 
-		(FB, Twitter and so on). -->
-		 <bean id="socialAuthenticationLocator" class="org.springframework.social.security.SocialAuthenticationServiceRegistry"></bean>
 		
-	<bean id="socialAuthenticationProvider"
-		class="org.springframework.social.security.SocialAuthenticationProvider">
-		<constructor-arg index="0" ref="usersConnectionRepository" />
-		<constructor-arg index="1" ref="socialUserDetailsService" />
-	</bean>
-	
-	<!-- This bean is used to load the user specific data when social 
-		sign in is used. -->
-	<bean id="socialUserDetailsService"
-		class="com.gss.spring.security.service.social.SimpleSocialUserDetailsService">
-		<constructor-arg index="0" ref="userDetailsService" />
-	</bean>
-	
-	
-	<!-- This bean encrypts the authorization details of the connection. 
-		In our example, the authorization details are stored as plain text. DO NOT 
-		USE THIS IN PRODUCTION. -->
-	<bean id="textEncryptor" class="org.springframework.security.crypto.encrypt.Encryptors"
-		factory-method="noOpText" />
 		
-		<!-- This bean is load the user specific data 
-		when form login is used. -->
-	<bean id="userDetailsService"
-		class="com.gss.spring.security.service.social.RepositoryUserDetailsService"
-		autowire="constructor" />
-		
-		<!-- This bean determines the account ID of the 
-		user. The example application uses the username as the account ID. -->
-	<bean id="userIdSource"
-		class="org.springframework.social.security.AuthenticationNameUserIdSource" />
-		
-	<bean id="usersConnectionRepository"
-		class="org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository">
-		<constructor-arg ref="dataSource" />
-		<constructor-arg ref="connectionFactoryLocator" />
-		<constructor-arg ref="textEncryptor" />
-	</bean>
-
-
-	<bean id="connectionRepository" factory-method="createConnectionRepository"
-		factory-bean="usersConnectionRepository" scope="request">
-		<constructor-arg value="mail2rajeevshukla" />
-		<aop:scoped-proxy proxy-target-class="false" />
-	</bean>
-
-	<bean id="connectionFactoryLocator"
-		class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
-		<property name="connectionFactories">
-			<list>
-				<bean
-					class="org.springframework.social.facebook.connect.FacebookConnectionFactory">
-					<constructor-arg value="${facebook.clientId}" />
-					<constructor-arg value="${facebook.clientSecret}" />
-				</bean>
-			</list>
+	</security:authentication-manager>
+	<bean id="authProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="authenticationService">
 		</property>
+		<property name="passwordEncoder" ref="passwordEncoder" />
 	</bean>
-	<bean id="connectController"
-		class="org.springframework.social.connect.web.ConnectController">
-		<constructor-arg ref="connectionFactoryLocator"></constructor-arg>
-		<constructor-arg ref="connectionRepository"></constructor-arg>
-		<property name="viewPath" value=""></property>
+	<bean id="authenticationService"
+		class="com.gss.spring.security.service.security.AuthenticationService">
+		<property name="authenticationDAO" ref="authenticationDAO" />
+	</bean>
+	<bean id="authenticationDAO"
+		class="com.gss.spring.security.persistence.security.AuthenticationDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="webSecurityExpressionHandler"
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+
+
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
+	<bean id="authenticationFilter"
+		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="filterProcessesUrl" value="/j_spring_security_check" />
+		<property name="authenticationSuccessHandler" ref="customAuthSuccessHandler" />
 	</bean>
 
-<bean id="webSecurityExpressionHandler" 	class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
+	<bean id="customAuthSuccessHandler"
+		class="com.gss.spring.security.service.security.CustomAuthenticationSuccessHandler">
+	</bean>
+
+	<bean id="customAuthFailureHandler"
+		class="com.gss.spring.security.service.security.CustomAuthenticationFailureHandler">
+		<property name="defaultFailureUrl" value="/login.htm?login_error=1" />
+	</bean>
+	<bean id="customLogoutSuccessHandler"
+		class="com.gss.spring.security.service.security.CustomLogoutSuccessHandler">
+		<property name="defaultTargetUrl" value="/login.htm" />
+	</bean>
+	<bean id="passwordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+<bean id="userIdSource"
+		class="org.springframework.social.security.AuthenticationNameUserIdSource" />
 </beans>

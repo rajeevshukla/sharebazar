@@ -9,9 +9,8 @@
 </head>
 <body>
 
-	<form action="#" method="post">
+	<form action="j_spring_security_check" method="post">
 		<table>
-
 			<tr>
 				<td>User Name</td>
 				<td><input type="text" name="j_username"></td>
@@ -24,15 +23,13 @@
 				<td>&nbsp;</td>
 				<td><input type="submit" value="Login"></td>
 			</tr>
-
-
-
 		</table>
 	</form>
-	
-	 <a href="connect/facebook" ></a><input type="button" value="Login with Facebook"> </a>
-	 <input type="button" value="Login with Google">
-	 <input type="button" value="Login with Twitter">
+	&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  OR
+	<form:form  action="connect/facebook.htm" method="post">
+	 <input type="hidden" name="_csrf">
+	 <input type="submit" value="Login with Facebook">
+ 	</form:form>  
 	
 </body>
 </html>
