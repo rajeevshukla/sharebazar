@@ -20,7 +20,7 @@ public class GetCommentDetails extends ActionSupport implements ModelDriven<Comm
 		DatabaseUtils db=new DatabaseUtils();
 		Connection connection=db.getConnectionDb();
 		HttpSession  session=ServletActionContext.getRequest().getSession();
-		PreparedStatement ps=         connection.prepareStatement("SELECT * FROM CUSTOMER_FEEDBACK");
+		PreparedStatement ps=         connection.prepareStatement("SELECT * FROM COMMENT_FORUM");
 		ResultSet rs=        ps.executeQuery();
 
 		ArrayList<CommentBean> list=new ArrayList<CommentBean>();

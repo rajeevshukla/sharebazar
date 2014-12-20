@@ -12,9 +12,7 @@ public class CommentForumAction extends ActionSupport {
 	
 	 @Override
 	public String execute() throws Exception {
-
-		 
 		 return SUCCESS;
 	}
-	
+
 }

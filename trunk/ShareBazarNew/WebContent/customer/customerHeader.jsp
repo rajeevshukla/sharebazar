@@ -99,7 +99,7 @@ nav ul ul ul {
 						<a href="../common/logout.jsp" style="color: white;">Logout</a>
 					</div>
 					<div id="logout_box" align="right">
-						<a href="../customer/forgetPassword.jsp" style="color: white;">Change Password</a>
+						<a href="../customer/changePassword.jsp" style="color: white;">Change Password</a>
 					</div>
 
 				</div>
