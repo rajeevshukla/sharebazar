@@ -13,11 +13,11 @@
   <listener>
     <listener-class>com.miracle.sharebazar.utils.BootLoader</listener-class>
   </listener>
- <!--  <error-page>
+ <error-page>
     <error-code>404</error-code>
     <location>/WEB-INF/404.jsp</location>
-  </error-page> -->
+  </error-page>
   <session-config>
-    <session-timeout>5</session-timeout>
+    <session-timeout>15</session-timeout>
   </session-config>
 </web-app>

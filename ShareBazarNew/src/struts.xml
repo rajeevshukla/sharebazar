@@ -12,7 +12,7 @@
 		<action name="commonLogin" class="com.miracle.sharebazar.login.CommonLogin">
 			<result name="input" type="redirect">/customer/customerLogin.jsp</result>
 			<result name="cssuccess" type="redirect">/customer/crHome.jsp</result>
-			<result name="cysuccess" type="redirect">/company/cyHome.jsp</result>
+			<result name="cysuccess" type="redirect">/company/welcome.action</result>
 			<result name="cspayment" type="redirect">/customer/customerPayment.jsp
 			</result>
 			<result name="cypayment" type="redirect">/company/companyPayment.jsp
