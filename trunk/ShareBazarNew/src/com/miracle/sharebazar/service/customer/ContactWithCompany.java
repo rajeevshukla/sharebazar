@@ -29,23 +29,20 @@ public String getMemberShipId() {
 public void setMemberShipId(String memberShipId) {
 	this.memberShipId = memberShipId;
 }
-
 	public String execute() throws Exception {
 		DatabaseUtils db=new  DatabaseUtils();
 		Connection connection=db.getConnectionDb();
 	    HttpSession session=ServletActionContext.getRequest().getSession();
 	     String userName=   (String)       session.getAttribute("name");
 		String memberIdOfUser=(String)session.getAttribute("memberId");
-	  PreparedStatement ps=  connection.prepareStatement("insert into MESSAGE_TO_COMAPNY values( ?,?,?,? )");
+	    PreparedStatement ps=  connection.prepareStatement("insert into MESSAGE_TO_COMPANY values( ?,?,?,?,?)");
 	           
-		 ps.setString(1, memberShipId);
-		 ps.setString(2, memberIdOfUser);
+		 ps.setString(1, memberIdOfUser);
+		 ps.setString(2, memberShipId);
 		 ps.setString(3, userName);
 		 ps.setString(4, customerMessageToCompany);
-		 System.out.println(customerMessageToCompany);
-		 System.out.println(userName);
-		 System.out.println(memberIdOfUser);
-		 System.out.println(memberShipId);
+		 ps.setBoolean(5, false);//isread by company
+		
 	int  b=	ps.executeUpdate();
 		 if(b==1)
 			 return  SUCCESS;

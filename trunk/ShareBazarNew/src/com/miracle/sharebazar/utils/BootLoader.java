@@ -24,7 +24,6 @@ public class BootLoader implements ServletContextListener {
 			ApplicationUtilities.SHARE_BAZAR_PROPERTIES.load(this.getClass().getResourceAsStream("/sharebazar.properties"));
 				logger.info("Application started successfully...");
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
 	}

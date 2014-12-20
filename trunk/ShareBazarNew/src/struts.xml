@@ -34,10 +34,17 @@
 			class="com.miracle.sharebazar.service.common.SendForgetPasswordMail">
 			<result name="success" type="json"></result>
 		</action>
+		
+		<action name="checkCustomerMailValidity"
+			class="com.miracle.sharebazar.service.common.SendForgetPasswordMail">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="checkCompanyMailValidity"
+			class="com.miracle.sharebazar.service.common.SendForgetPasswordMail">
+			<result name="success" type="json"></result>
+		</action>
 	</package>
-
-
-
 	<include file="company-config.xml"></include>
 	<include file="admin-config.xml"></include>
 	<include file="customer-config.xml"></include>
