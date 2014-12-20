@@ -6,30 +6,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome</title>
+<title>Check my Buy /Sell Shares?</title>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 
 		$("#dialog").dialog({
-			autoOpen:false,
+			autoOpen : false,
 			model : true,
-			height: 300,
+			height : 300,
 			width : 400,
-			resizable :false,
-			
-			  /* buttons: [ { text: "Ok", click: function() { $( this ).dialog( "close" ); } } ] */
-			
+			resizable : false,
+
+		/* buttons: [ { text: "Ok", click: function() { $( this ).dialog( "close" ); } } ] */
+
 		});
-		
-		$("#dialog").parent("div").css("top","160px;");
-		
+
+		$("#dialog").parent("div").css("top", "160px;");
+
 		$(function() {
 			$("#tabs").tabs();
 		});
-		
-		  
-		
+
 	});
 </script>
 </head>
@@ -41,25 +39,36 @@
 		<div class="main">
 			<!-- content -->
 			<section id="content">
-			
-			
+
+
 			<div class="marg_top wrapper">
 				<article class="col3">
 				<p>
-				<h2 class="bigHeading">	About Us</h2>
-				We are a financial services group committed to help you achieve your goals. Our wide range of services and a diversified client base is an outcome of our expertise in guiding you through the financial markets.
-				Since its inception Job Portal has demonstrated dedication coupled with dynamism that has inspired trust from various segments, corporate, government bodies and individuals. Job Portal has since been performing a pivotal role as the intermediary the interface between these players.
-				</p>
+				<h2 class="bigHeading">Check my Buy/Sell Shares?</h2>
 				<p>
-				We offer diverse services including Equities, Commodities & Currencies Markets Intermediation, Portfolio Management Schemes (PMS), Depository Services, Mutual fund and IPO distribution, Qualified Depository Participant (QDP) services, Securities lending and borrowing services, corporate advisory and International broking.
-				Our expertise in serving our clients to their objectives has earned us the trust of reputed names in the finance industry. Citigroup Venture Capital, a private equity fund managed by a wholly owned subsidiary of Citigroup Inc., together with certain affiliated trusts, own an equity stake in Globe Capital Market Ltd.
-				Going forward, we shall strive to create new products and services which would address the needs of the end customer. Our single minded focus in delivering products for customers has given us the distinguished position of being the preferred provider of financial services in the country.
-				</p>
+				Shares are mostly bought and sold on stock exchanges such as the
+				NZX. Shares can also be called stocks, equities, or securities. You
+				can buy or sell shares through a sharebroker. Some banks offer a
+				sharebroking service - check your bank's website for details.
+				Another way to buy shares is in a managed fund, which can be bought
+				directly from a fund manager. Find out more about managed funds.
+				Many KiwiSaver investment funds also have shares as part of their
+				investment mix. Shares listed on stock exchanges and managed funds
+				are usually easier to buy and sell than unlisted shares. If you own
+				shares you may be asked by the company to buy more of its shares
+				(for example in a rights issue or some other allotment of new shares
+				(opens in a new window), when the company is seeking more capital)
+				or you may be asked by the company to sell some of your shares back
+				to it (if the company does a share buyback (opens in a new window)).
+				You also might be asked to vote about whether other shareholders can
+				increase their level of ownership in the company. For almost all
+				listed shares and for some unlisted shares, these transactions
+				(opens in a new window) may be regulated by the Takeovers Code
+				(opens in a new window), which has some protections for
+				shareholders.
 				<p>
-				<br><br>
-
-				
-				</p>	
+					<br> <br>
+				</p>
 				</article>
 			</div>
 			<div class="wrapper marg_top2">
@@ -100,27 +109,34 @@
 				<article class="col2 pad_left1">
 				<div class="pad">
 					<h4 class="bigHeading">Purpose</h4>
-					<h3 style="color:blue;">Committed to improve the financial well-being of people.</h3>
+					<h3 style="color: blue;">Committed to improve the financial
+						well-being of people.</h3>
 
-              <h4><b> Vision</b></h4><br>
-				<ul style="list-style: inside;">
-                  <li>To continue to be a leader.</li>
-                   <li>establish global presence.</li>
-                   <li>facilitate the financial well being of people.</li>
-                  </ul>
-           <h4><b>Values</b></h4><br>
-             <b><font color="blue">ShareBazar is committed to the following core values :</font></b>
-				<ul style="list-style: inside;">
-   				<li> Integrity</li>		
-    			<li>Customer focused culture</li>
-    			<li>Trust, respect and care for the individual</li>
-    			<li>Passion for excellence</li>
-    			<li>Teamwork</li>
-                </ul>
- 
-						
+					<h4>
+						<b> Vision</b>
+					</h4>
+					<br>
+					<ul style="list-style: inside;">
+						<li>To continue to be a leader.</li>
+						<li>establish global presence.</li>
+						<li>facilitate the financial well being of people.</li>
+					</ul>
+					<h4>
+						<b>Values</b>
+					</h4>
+					<br> <b><font color="blue">ShareBazar is committed
+							to the following core values :</font></b>
+					<ul style="list-style: inside;">
+						<li>Integrity</li>
+						<li>Customer focused culture</li>
+						<li>Trust, respect and care for the individual</li>
+						<li>Passion for excellence</li>
+						<li>Teamwork</li>
+					</ul>
+
+
 					</p>
-					</div>
+				</div>
 				</article>
 			</div>
 			</section>
