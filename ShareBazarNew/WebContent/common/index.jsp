@@ -139,20 +139,20 @@
 					</p>
 					<p class="under">
 						We offer different type of accounts.You can have more than one demat account with us.
-						several pages: <a href="Home.html">Home</a>, <a href="About.html">About</a>,
-						<a href="Projects.html">Projects</a> (with <a href="Project.html">Project
-							Page</a>), <a href="Contacts.html">Contacts</a> (for more information contact us
-						form our Head Office), <a href="SiteMap.html">Site Map</a>.
+						several pages: <a href="index.jsp">Home</a>, <a href="about.jsp">About</a>,
+						<a href="Projects.html">Projects</a> (with <a href="#">Project
+							Page</a>), <a href="contact_us.jsp">Contacts</a> (for more information contact us
+						form our Head Office), <a href="sitemap.jsp">Site Map</a>.
 					</p>
 					<div class="wrapper">
 						<ul class="list1 cols">
-							<li><a href="#">different types of accounts offered</a></li>
-							<li><a href="#">How do I check order status?</a></li>
-							<li><a href="#">How do I place orders?</a></li>
+							<li><a href="acoffer.jsp">different types of accounts offered</a></li>
+							<li><a href="orderStatus.jsp">How do I check order status?</a></li>
+							<li><a href="orderPlace.jsp">How do I place orders?</a></li>
 						</ul>
 						<ul class="list1 cols pad_left1">
-							<li><a href="#">check my purchase /sell price?</a></li>
-							<li><a href="#">my Login ID and passwords</a></li>
+							<li><a href="shellBuy.jsp">Check my Buy /Sell Shares?</a></li>
+							<li class="bg_none"><a href="#memberLogin" id="memberLogin" onclick="openLoginDialog();">my Login ID and passwords</a></li>
 							<li><a href="#">forgot my Passwords. What do I do?</a></li>
 						</ul>
 					</div>
