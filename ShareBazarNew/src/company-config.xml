@@ -19,7 +19,7 @@
 			class="com.miracle.sharebazar.service.company.UpdateProfile">
 			<result name="success" type="redirect">/company/updateProfileSuccessfull.jsp
 			</result>
-			<result name="error">/company/editCompanyProfile.jsp</result>
+			<result name="error">/company/editProfile.jsp</result>
 		</action>
 
 		<action name="companyPayment" class="com.miracle.sharebazar.payment.CompanyPayment">
@@ -80,5 +80,17 @@
 			class="com.miracle.sharebazar.service.company.CommentForumAction">
 			<result>/company/commentForum.jsp</result>
 		</action>
+		
+		<action name="changePassword"
+			class="com.miracle.sharebazar.service.company.ChangePasswordAction">
+           <result name="input">/company/changePassword.jsp</result>
+           <result name="success">/company/changePasswordSuccess.jsp</result>
+		</action>
+		
+		<action name="commentForum"
+			class="com.miracle.sharebazar.service.comment.GetCommentDetails">
+			<result type="redirect">/company/commentForum.jsp</result>
+		</action>
+		
 	</package>
 </struts>

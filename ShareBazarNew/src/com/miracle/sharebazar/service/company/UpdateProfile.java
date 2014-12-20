@@ -25,7 +25,7 @@ public class UpdateProfile extends ActionSupport implements
 			DatabaseUtils db = new DatabaseUtils();
 			Connection connection = db.getConnectionDb();
 			PreparedStatement ps = connection
-					.prepareStatement("UPDATE COMPANY_MASTER  SET COMPANY_NAME=? , EMAIL=? , ADDRESS=? , CITY=?, STATE=?, COUNTRY=?, PIN=?, PHONE=? FAX=?,MOBILE=?,ABOUT_COMPANY=? WHERE MEMBERSHIP_ID=? ");
+					.prepareStatement("UPDATE COMPANY_MASTER  SET COMPANY_NAME=? , EMAIL=? , ADDRESS=? , CITY=?, STATE=?, COUNTRY=?, PIN=?, PHONE=?, FAX=?,MOBILE=?,ABOUT_COMPANY=? WHERE MEMBERSHIP_ID=? ");
 
 			ps.setString(1, bean.getCompanyName());
 			ps.setString(2, bean.getEmail());
@@ -41,7 +41,7 @@ public class UpdateProfile extends ActionSupport implements
 			HttpSession session = ServletActionContext.getRequest()
 					.getSession();
 			String memberShipId = (String) session.getAttribute("memberId");
-			ps.setString(13, memberShipId);
+			ps.setString(12, memberShipId);
 			ps.executeUpdate();
 			status = true;
 		} catch (Exception e) {

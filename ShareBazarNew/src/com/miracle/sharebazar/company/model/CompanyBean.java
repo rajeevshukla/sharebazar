@@ -139,6 +139,18 @@ public class CompanyBean {
 	public void setPin(long pin) {
 		this.pin = pin;
 	}
+	@Override
+	public String toString() {
+		return "CompanyBean [companyName=" + companyName + ", companyLogin="
+				+ companyLogin + ", password=" + password + ", rePassword="
+				+ rePassword + ", email=" + email + ", address=" + address
+				+ ", city=" + city + ", state=" + state + ", country="
+				+ country + ", phone=" + phone + ", fax=" + fax + ", mobile="
+				+ mobile + ", aboutCompany=" + aboutCompany + ", pin=" + pin
+				+ ", noOfShare=" + noOfShare + ", ratePerShare=" + ratePerShare
+				+ ", shareType=" + shareType + ", dateOfIssue=" + dateOfIssue
+				+ "]";
+	}
 	
 	
 	

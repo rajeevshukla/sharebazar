@@ -21,7 +21,7 @@
 	-->
 </head>
 
-<body onload="backDisable();">
+<body >
 	<%-- <jsp:include page="../common/headerHome.jsp"></jsp:include>
 	<jsp:include page="sideMenuCustomer.jsp"></jsp:include> --%>
 

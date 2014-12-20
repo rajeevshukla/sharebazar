@@ -21,12 +21,12 @@ public class SaveCommentDetails extends ActionSupport implements ModelDriven<Com
 	
 	@Override
 	public String execute() throws Exception {
-	
+	 System.out.println("inside comment forum !!!!");
 		DatabaseUtils db=new DatabaseUtils();
 	Connection connection=	db.getConnectionDb();
 	HttpSession session=ServletActionContext.getRequest().getSession();
 	String userName=(String)session.getAttribute("name");
-	 PreparedStatement ps=connection.prepareStatement("insert into CUSTOMER_FEEDBACK(MEMBERSHIP_ID,USER_NAME,FEEDBACK,FEEDBACK_DATE) values(?,?,?,?)");
+	 PreparedStatement ps=connection.prepareStatement("insert into COMMENT_FORUM (MEMBERSHIP_ID,USER_NAME,FEEDBACK,FEEDBACK_DATE) values(?,?,?,?)");
 	 ps.setString(1, bean.getMemberShipId());
 	 ps.setString(2, userName);
 	 ps.setString(3, bean.getComment());

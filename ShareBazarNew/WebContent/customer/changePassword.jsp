@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@taglib prefix="s" uri="/struts-tags" %>
 <%@include file="../common/common.jsp"%>
 <c:if test="${empty session.name}">
 	<c:redirect url="../common/index.jsp"></c:redirect>
@@ -11,6 +12,11 @@
 <style type="text/css">
 .body2 {
 	min-height: 400px;
+}
+
+.error {
+ color: red;
+
 }
 </style>
 
@@ -44,28 +50,31 @@
 				<form action="changePassword.action" class="text" method="post">
 					<h4 class="commentformTitle">Change Password .....</h4>
 					<div style="padding: 20px;">
+					   
+					    <s:fielderror name="errorMsg" cssClass="error"></s:fielderror>
+					  
 						<table>
 							<tbody>
 								<tr>
 									<td class="row"><label for="visitorFirstName">Current
 											Password</label></td>
-									<td class="row"><input type="text" id="visitorFirstName"
+									<td class="row"><input type="password" id="visitorFirstName"
 										name="currentPassword" class="short" required="" tabindex="1" /></td>
 
 								</tr>
 								<tr>
-									<td class="row" style="padding-left: 40px;"><label
+									<td class="row"><label
 										for="visitorLastName">New Password</label></td>
-									<td class="row"><input type="text" name="newPassword"
-										id="visitorLastName" required="" tabindex="10" /></td>
+									<td class="row"><input type="password" name="newPassword"
+										id="visitorLastName"  class="short" required="" tabindex="2" /></td>
 								</tr>
 								<tr>
 
 									<td class="row"><label for="visitorLastName">Re
 											Password</label></td>
-									<td class="row"><input type="text" 
-										name="rePassword" class="short"  required=""
-										tabindex="12" /></td>
+									<td class="row"><input type="password" 
+										name="rePassword"   class="short" required=""
+										tabindex="3" /></td>
 
 								</tr>
 								<tr>

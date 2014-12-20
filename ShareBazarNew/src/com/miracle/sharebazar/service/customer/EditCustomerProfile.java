@@ -26,8 +26,7 @@ public class EditCustomerProfile extends ActionSupport implements
 		String memberShipId = (String) session.getAttribute("memberId");
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
-		PreparedStatement ps = connection
-				.prepareStatement("select * from CUSTOMER_MASTER where MEMBERSHIP_ID=? ");
+		PreparedStatement ps = connection.prepareStatement("select * from CUSTOMER_MASTER where MEMBERSHIP_ID=? ");
 		ps.setString(1, memberShipId);
 		ResultSet rs = ps.executeQuery();
 		if (rs.next()) {

@@ -35,11 +35,9 @@ public class EditProfile extends ActionSupport implements ModelDriven<CompanyBea
 		 
 		     PreparedStatement preparedStatement=    connection.prepareStatement("SELECT * FROM COMPANY_MASTER WHERE MEMBERSHIP_ID=?");
 		      preparedStatement.setString(1, memberId);
-		
+		          System.out.println("accessfing member id ");
 		     ResultSet rs= preparedStatement.executeQuery();
-		      
 		      if(rs.next()){
-		    	  
 		    	  companyBean.setEmail(rs.getString("EMAIL"));
 		    	  companyBean.setCompanyName(rs.getString("COMPANY_NAME"));
 		    	  companyBean.setAddress(rs.getString("ADDRESS"));  
@@ -51,8 +49,9 @@ public class EditProfile extends ActionSupport implements ModelDriven<CompanyBea
 		    	  companyBean.setFax(rs.getLong("FAX")); 
 		    	  companyBean.setMobile(rs.getLong("MOBILE"));
 		    	  companyBean.setAboutCompany(rs.getString("ABOUT_COMPANY"));
+		    	  session.setAttribute("companyBean", companyBean);
 		    	  }
-		     
+		      
 		return SUCCESS;
 	}
 		
