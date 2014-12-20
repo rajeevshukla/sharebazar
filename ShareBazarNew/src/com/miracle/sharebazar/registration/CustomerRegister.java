@@ -85,6 +85,7 @@ public class CustomerRegister extends ActionSupport implements ModelDriven<Custo
 			ps.setString(13, bean.getEmail());
 			ps.setInt(14,0);
 			ps.setDouble(15, 0.0);
+			
 			ps2.setString(1, memberShipId);
 			ps2.setString(2, bean.getLoginName());
 			ps2.setString(3, bean.getPassword());

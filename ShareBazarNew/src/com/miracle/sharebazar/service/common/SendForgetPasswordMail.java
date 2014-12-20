@@ -43,6 +43,7 @@ public class SendForgetPasswordMail {
 		DatabaseUtils databaseUtils=new DatabaseUtils();
 		Connection connection= databaseUtils.getConnectionDb();
 		String userName="";
+		String firstName="";
 		String password="";
 		String memberShipId="";
 
@@ -50,14 +51,14 @@ public class SendForgetPasswordMail {
 
 
 			if(userType.equalsIgnoreCase("Customer")){
-				PreparedStatement ps=connection.prepareStatement("SELECT CL.MEMBERSHIP_ID, CL.LOGIN_ID, CL.PASSWORD  FROM CUSTOMER_MASTER CM, CUSTOMER_LOGIN CL WHERE CL.MEMBERSHIP_ID=CM.MEMBERSHIP_ID AND CM.EMAIL=?");
+				PreparedStatement ps=connection.prepareStatement("SELECT CL.MEMBERSHIP_ID, CL.LOGIN_ID, CL.PASSWORD,CM.FIRST_NAME  FROM CUSTOMER_MASTER CM, CUSTOMER_LOGIN CL WHERE CL.MEMBERSHIP_ID=CM.MEMBERSHIP_ID AND CM.EMAIL=?");
 				ps.setString(1, emailId);
 				ResultSet rs= ps.executeQuery();
-
 				if(rs.next()){
 					memberShipId=rs.getString(1);
-					password=rs.getString(2);
-					userName=rs.getString(3);
+					userName=rs.getString(2);
+					password=rs.getString(3);
+					firstName=rs.getString(4);
 					result=" <span style='color : green;'>Email send successfully to your mail Id </span>";
 					status=true;
 				}else {
@@ -65,14 +66,16 @@ public class SendForgetPasswordMail {
 				}
 
 			}else if(userType.equalsIgnoreCase("Company")){
-				PreparedStatement ps=connection.prepareStatement("SELECT CL.MEMBERSHIP_ID, CL.LOGIN_ID, CL.PASSWORD  FROM COMPANY_MASTER CM, COMPANY_LOGIN CL WHERE CL.MEMBERSHIP_ID=CM.MEMBERSHIP_ID AND CM.EMAIL=?");
+				PreparedStatement ps=connection.prepareStatement("SELECT CL.MEMBERSHIP_ID, CL.LOGIN_ID, CL.PASSWORD,CM.FIRST_NAME  FROM COMPANY_MASTER CM, COMPANY_LOGIN CL WHERE CL.MEMBERSHIP_ID=CM.MEMBERSHIP_ID AND CM.EMAIL=?");
 				ps.setString(1, emailId);
 				ResultSet rs= ps.executeQuery();
 
 				if(rs.next()){
 					memberShipId=rs.getString(1);
-					password=rs.getString(2);
-					userName=rs.getString(3);
+					userName=rs.getString(2);
+					password=rs.getString(3);
+					firstName=rs.getString(4);
+					
 					result=" <span style='color : green;'>Email send successfully to your mail Id </span>";
 					status=true;
 				}else {
@@ -83,9 +86,7 @@ public class SendForgetPasswordMail {
 			if(status){
 
 				SendMail sendMail=new SendMail();
-
-			final 	String htmlMsg="<html> <body> Dear "+userName+", <p> Your userId is :<b>"+userName+"</b> Password is :<b> "+password+ "</b> and your  membershipId  is   <b>"+memberShipId+"</b> ! </p> ";
-			 
+			final 	String htmlMsg="<html> <body> Dear "+firstName+", <p> Your userId is :<b>"+userName+"</b> Password is :<b> "+password+ "</b> and your  membershipId  is   <b>"+memberShipId+"</b> ! </p><br><br><br> Best Regards,  <br> ShareBazar.com";
 				sendMail.sendMessageToMail(emailId, "Here is your Sharebazar credentials",  htmlMsg); 
                 System.out.println("Mail send successfullly to "+emailId);
 			}
