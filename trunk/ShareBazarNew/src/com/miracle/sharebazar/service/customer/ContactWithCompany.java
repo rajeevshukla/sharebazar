@@ -1,7 +1,9 @@
 package com.miracle.sharebazar.service.customer;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.Timestamp;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,13 +37,14 @@ public void setMemberShipId(String memberShipId) {
 	    HttpSession session=ServletActionContext.getRequest().getSession();
 	     String userName=   (String)       session.getAttribute("name");
 		String memberIdOfUser=(String)session.getAttribute("memberId");
-	    PreparedStatement ps=  connection.prepareStatement("insert into MESSAGE_TO_COMPANY values( ?,?,?,?,?)");
-	           
-		 ps.setString(1, memberIdOfUser);
+	    PreparedStatement ps=  connection.prepareStatement("insert into MESSAGE_TO_COMPANY values( ?,?,?,?,?,?)");
+
+	    ps.setString(1, memberIdOfUser);
 		 ps.setString(2, memberShipId);
 		 ps.setString(3, userName);
 		 ps.setString(4, customerMessageToCompany);
 		 ps.setBoolean(5, false);//isread by company
+		 ps.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
 		
 	int  b=	ps.executeUpdate();
 		 if(b==1)

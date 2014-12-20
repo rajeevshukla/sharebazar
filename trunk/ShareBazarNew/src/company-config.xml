@@ -3,8 +3,6 @@
 <struts>
 	<package namespace="/company" name="company-package" extends="struts-default">
 
-
-
 		<action name="companyRegister"
 			class="com.miracle.sharebazar.registration.CompanyRegister">
 			<result name="success" type="redirect">/company/companyMemberIdShow.jsp
@@ -13,8 +11,11 @@
 			</result>
 			<result name="error" type="redirect">/company/error.jsp</result>
 		</action>
-		
-		
+		 
+		    <action name="welcome" class="com.miracle.sharebazar.service.company.CompanyWelcomeAction">
+		     <result>/company/cyHome.jsp</result>
+		    </action>
+            		
 		<action name="updateProfile"
 			class="com.miracle.sharebazar.service.company.UpdateProfile">
 			<result name="success" type="redirect">/company/updateProfileSuccessfull.jsp
@@ -23,7 +24,7 @@
 		</action>
 
 		<action name="companyPayment" class="com.miracle.sharebazar.payment.CompanyPayment">
-			<result name="success">/company/cyHome.jsp</result>
+			<result name="success">/company/welcome.action</result>
 			<result name="error">/company/error.jsp</result>
 			<result name="input">/company/companyPayment.jsp</result>
 		</action>

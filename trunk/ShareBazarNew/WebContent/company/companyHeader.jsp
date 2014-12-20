@@ -103,10 +103,10 @@ nav ul ul ul {
 						<a href="../company/changePassword.jsp" style="color: white;">Change Password</a>
 					</div>
 				</div>
-				<div id="welcome_name"><h3>Welcome   <a href="../company/editProfile.action" style="color: white;"> ${name}</a></h3></div>
+				<div id="welcome_name"><h3> <span style="color: InactiveCaptionText;">Welcome</span>   <a href="../company/editProfile.action" style="color: white;"> ${name}</a></h3></div>
 				<nav>
 					<ul id="menu">
-						<li><a href="../company/cyHome.jsp">Home</a></li>
+						<li><a href="../company/welcome.action">Home</a></li>
 						<li><a href="#">Manage Share</a>
 							<ul>
 								<li><a href="../company/updateShare.action">Update Share</a></li>
@@ -127,7 +127,7 @@ nav ul ul ul {
 							</ul></li>
 						<li><a href="#">Feedbacks</a>
 							<ul>
-								<li><a href="../company/contactRequest.action">Contact Request</a></li>
+								<li><a href="../company/contactRequest.action">Contact Request(${totalUnreadMsg})</a></li>
 								<li><a href="../company/commentForum.action">Comments Forum</a></li>
 							</ul></li>
 					</ul>
