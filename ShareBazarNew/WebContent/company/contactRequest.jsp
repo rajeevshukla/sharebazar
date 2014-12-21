@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../common/common.jsp"%>
 <title>ShareHolders</title>
 
@@ -48,7 +49,8 @@
 						 
 						  	<tr class="${className}">
 								<td><a href="#">${contactDetails.customerUserName}</a></td>
-								<td>${contactDetails.date}</td>
+								<td><fmt:formatDate value="${contactDetails.date}" type="both"
+										pattern="dd-MMM-yyyy hh:mm a" /></td>
 								<td>${contactDetails.customerMessage}</td>
 							</tr>
 							</c:forEach>
