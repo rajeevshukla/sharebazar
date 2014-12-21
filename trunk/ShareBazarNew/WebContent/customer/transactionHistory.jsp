@@ -74,7 +74,6 @@
 					<h3>Sell History</h3>
 					<div>
 				
-				
 						</div>
 				</div>
 
