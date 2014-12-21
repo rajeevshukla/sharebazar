@@ -3,19 +3,13 @@
 <%@include file="../common/common.jsp" %>
 <c:if test="${empty session.name}">
 	<c:redirect url="../common/index.jsp"></c:redirect>
-
-
 </c:if>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <style type="text/css">
 </style>
-
-
-<title>${session.name }'s Home</title>
-
+<title>Manage Funds</title>
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -170,9 +164,6 @@ var value=document.getElementById("credit").checked;
 	</div>
 </div>
 </div>
-
-
-
 	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
 </body>
 </html>

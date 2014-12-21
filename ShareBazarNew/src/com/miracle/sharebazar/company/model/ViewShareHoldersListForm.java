@@ -9,7 +9,7 @@ public class ViewShareHoldersListForm {
 	private float ratePerShare;
 	private int noOfShares;
 	private Timestamp date;
-	private int totalCostOfShares;
+	private double totalCostOfShares;
 
 	public String getCustomerMembershipId() {
 		return customerMembershipId;
@@ -31,7 +31,7 @@ public class ViewShareHoldersListForm {
 		return date;
 	}
 
-	public int getTotalCostOfShares() {
+	public double getTotalCostOfShares() {
 		return totalCostOfShares;
 	}
 
@@ -55,7 +55,7 @@ public class ViewShareHoldersListForm {
 		this.date = date;
 	}
 
-	public void setTotalCostOfShares(int totalCostOfShares) {
+	public void setTotalCostOfShares(double totalCostOfShares) {
 		this.totalCostOfShares = totalCostOfShares;
 	}
 

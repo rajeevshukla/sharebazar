@@ -30,24 +30,22 @@ public class ViewShareHoldersAction extends ActionSupport {
 		
           String companyMembershipId=(String)session.getAttribute("memberId");
            
-	 PreparedStatement ps=	     connection.prepareStatement("SELECT BM.CUSTOMER_MEMBERSHIP_ID ,CL.LOGIN_ID,BM.NO_OF_SHARE, BM.RATE_PER_SHARE, BM.DATE FROM BUYER_MASTER BM , CUSTOMER_LOGIN CL WHERE CL.MEMBERSHIP_ID=BM.CUSTOMER_MEMBERSHIP_ID AND  BM.COMPANY_MEMBERSHIP_ID=?");
+	 PreparedStatement ps= connection.prepareStatement("SELECT BM.CUSTOMER_MEMBERSHIP_ID ,CL.LOGIN_ID,BM.NO_OF_SHARE, BM.RATE_PER_SHARE, BM.DATE FROM BUYER_MASTER BM , CUSTOMER_LOGIN CL WHERE CL.MEMBERSHIP_ID=BM.CUSTOMER_MEMBERSHIP_ID AND  BM.COMPANY_MEMBERSHIP_ID=?");
 
 	     ps.setString(1, companyMembershipId);
 	     ResultSet rs=  ps.executeQuery();
        
 	      while (rs.next()) {
-	    	 ViewShareHoldersListForm shareHoldersListForm=new ViewShareHoldersListForm();
-	    	    shareHoldersListForm.
-	    	    
-	    	    
-	    	    
-	    	  
-			
+	        	ViewShareHoldersListForm shareHoldersListForm=new ViewShareHoldersListForm();
+	    	    shareHoldersListForm.setCustomerLoginId(rs.getString(2));
+	    	    shareHoldersListForm.setCustomerMembershipId(rs.getString(1));
+	    	    shareHoldersListForm.setDate(rs.getTimestamp(5));
+	    	    shareHoldersListForm.setNoOfShares(rs.getInt(3));
+	    	    shareHoldersListForm.setRatePerShare(rs.getFloat(4));
+	    	    shareHoldersListForm.setTotalCostOfShares(shareHoldersListForm.getRatePerShare()*shareHoldersListForm.getNoOfShares());
+	    	    getShareHoldersListForms().add(shareHoldersListForm);
 		}
-	   
-	   
-	   
-		return SUCCESS;
+	   	return SUCCESS;
 	}
 
 	public List<ViewShareHoldersListForm> getShareHoldersListForms() {

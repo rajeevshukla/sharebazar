@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@include file="../common/common.jsp"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <title>ShareHolders</title>
 
 <style type="text/css">
@@ -21,43 +22,24 @@
 					<table class="bordered">
 						<thead>
 							<tr>
-								<th>Membership Id</th>
-								<th>Name</th>
-								<th>No.Of Share Purchased</th>
+								<th>Customer Name</th>
+								<th>Shares</th>
+								<th>Rate</th>
+								<th>Total </th>
 								<th>Date Of Share PurChased</th>
 							</tr>
 						</thead>
 						<tbody>
+
+                        <c:forEach var="shareHolderDetails"  items="${shareHoldersListForms}">
 							<tr>
-								<td><a href="#">CS20019</a></td>
-								<td>Mahindra</td>
-								<td>320</td>
-								<td>13-Mar-2015 12:25 PM</td>
+								<td><a href="#">${shareHolderDetails.customerLoginId}</a></td>
+								<td> ${shareHolderDetails.noOfShares}</td>
+								<td> ${shareHolderDetails.ratePerShare}</td>
+								<td> ${shareHolderDetails.totalCostOfShares}</td>
+								<td> <fmt:formatDate value="${shareHolderDetails.date}" pattern="dd-MMM-yyyy hh:mm a"/> </td>
 							</tr>
-							<tr>
-								<td><a href="#">CS20019</a></td>
-								<td>Mahindra</td>
-								<td>320</td>
-								<td>13-Mar-2015 12:25 PM</td>
-							</tr>
-
-
-							<tr>
-								<td><a href="#">CS20019</a></td>
-								<td>Mahindra</td>
-								<td>320</td>
-								<td>13-Mar-2015 12:25 PM</td>
-							</tr>
-
-							<tr>
-								<td><a href="#">CS20019</a></td>
-								<td>Mahindra</td>
-								<td>320</td>
-								<td>13-Mar-2015 12:25 PM</td>
-							</tr>
-
-
-
+                         </c:forEach>
 						</tbody>
 					</table>
 

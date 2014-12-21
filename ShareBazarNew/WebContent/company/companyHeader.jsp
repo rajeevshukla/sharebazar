@@ -1,3 +1,8 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${empty session.name}">
+	<c:redirect url="../common/index.jsp"></c:redirect>
+</c:if>
+
 <style>
 nav ul ul {
 	display: none;
