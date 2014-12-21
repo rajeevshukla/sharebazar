@@ -92,6 +92,8 @@
 			class="com.miracle.sharebazar.service.comment.GetCommentDetails">
 			<result type="redirect">/company/commentForum.jsp</result>
 		</action>
-		
+		<action name="addFund" class="com.miracle.sharebazar.service.company.AddFundForCompanyAction">
+		   <result name="success" type="redirectAction">manageFund</result>
+		</action>
 	</package>
 </struts>
