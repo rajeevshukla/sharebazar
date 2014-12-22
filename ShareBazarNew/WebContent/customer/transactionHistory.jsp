@@ -5,10 +5,7 @@
 <%-- <%@taglib prefix="display" uri="http://displaytag.sf.net"%> --%>
 <c:if test="${empty session.name}">
 	<c:redirect url="index.jsp"></c:redirect>
-
-
 </c:if>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -78,11 +75,24 @@
 					<div>
 						
 						
+				    <display:table style="width : 500px;" list="${creditHistory}" requestURI="transactionHistory.action" pagesize="10">
+ 				     <display:column property="transactionDoneByUserName" title="Name"></display:column>
+				     <display:column property="transactionAmount" title="Amount"></display:column>
+				     <display:column property="transactionDate" title="Date" format="{0,date,dd-MMM-yyyy hh:mm a}"></display:column>
+				    </display:table>
+						
 				</div>
 					<h3>Sell History</h3>
 					<div>
 				
-						</div>
+				
+				    <display:table style="width : 500px;" list="${creditHistory}" requestURI="transactionHistory.action" pagesize="10">
+ 				     <display:column property="transactionDoneByUserName" title="Name"></display:column>
+				     <display:column property="transactionAmount" title="Amount"></display:column>
+				     <display:column property="transactionDate" title="Date" format="{0,date,dd-MMM-yyyy hh:mm a}"></display:column>
+				    </display:table>
+				    
+					</div>
 				</div>
 
 

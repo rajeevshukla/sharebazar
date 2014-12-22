@@ -117,7 +117,7 @@
 		</action>
 
 		<action name="viewCustomerShare"
-			class="com.miracle.sharebazar.service.customer.ViewShareAction">
+			class="com.miracle.sharebazar.service.customer.BuySellShareHistoryAction">
 			<result name="success">/customer/viewCustomerShare.jsp</result>
 		</action>
 

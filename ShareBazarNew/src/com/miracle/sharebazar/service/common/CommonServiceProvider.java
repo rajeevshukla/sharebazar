@@ -108,8 +108,7 @@ public class CommonServiceProvider  {
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 		try {
-			PreparedStatement statement = connection
-					.prepareStatement("UPDATE COMPANY_MASTER SET  BALANCE=?   WHERE MEMBERSHIP_ID=?");
+			PreparedStatement statement = connection.prepareStatement("UPDATE COMPANY_MASTER SET  BALANCE=?   WHERE MEMBERSHIP_ID=?");
 			statement.setDouble(1,balance);
 			statement.setString(2, memberShipId);
 			statement.executeUpdate();
