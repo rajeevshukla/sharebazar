@@ -41,23 +41,22 @@ public class CustomerBuyShare extends ActionSupport implements ModelDriven<Share
 		int remainShare = bean.getAvailableShare() - bean.getBuySharePost();
 		try {
 			connection.setAutoCommit(false);
-			PreparedStatement buyerInsertStatement = connection.prepareStatement("insert into BUYER_MASTER values(?,?,?,?,?,?,?,?)");
+			PreparedStatement buyerInsertStatement = connection.prepareStatement("insert into BUYER_SELLER_MASTER values(?,?,?,?,?,?,?,?)");
 
 			PreparedStatement customerUpdateBalanceStatement = connection.prepareStatement("UPDATE CUSTOMER_MASTER set BALANCE=? where MEMBERSHIP_ID=?");
 
 			PreparedStatement companyUpdateShareStatement = connection.prepareStatement("UPDATE COMPANY_SHARE_MASTER set AVAILABLE_SHARE=? where MEMBERSHIP_ID=?");
 
 			PreparedStatement selectShareFromCustomerMasterStatement = connection.prepareStatement("SELECT SHARE from CUSTOMER_MASTER where MEMBERSHIP_ID=? ");
-
+		
 			PreparedStatement psTransactionStatement = connection.prepareStatement("insert into CUSTOMER_TRANSACTION values(?,?,?,?,?,?,?,?)");
-
 			psTransactionStatement.setString(1, getBuyer());
 			psTransactionStatement.setString(2, null);
 			psTransactionStatement.setString(3, null);
 			psTransactionStatement.setString(4, null);
 			psTransactionStatement.setString(5, null);
 			psTransactionStatement.setDouble(6, bean.getTotalAmount());
-			psTransactionStatement.setString(7, "debit");
+			psTransactionStatement.setString(7, "BUY");
 			psTransactionStatement.setTimestamp(8,new Timestamp(System.currentTimeMillis()));
 			selectShareFromCustomerMasterStatement.setString(1, getBuyer());
 
@@ -67,6 +66,18 @@ public class CustomerBuyShare extends ActionSupport implements ModelDriven<Share
 			customerUpdateBalanceStatement.setDouble(1, remainBal);
 			customerUpdateBalanceStatement.setString(2, getBuyer());
 
+			
+			PreparedStatement companyTransactionStatement = connection.prepareStatement("insert into COMPANY_TRANSACTION values(?,?,?,?,?,?,?,?)");
+
+			companyTransactionStatement.setString(1, bean.getCompanyId());
+			companyTransactionStatement.setString(2, null);
+			companyTransactionStatement.setString(3, null);
+			companyTransactionStatement.setString(4, null);
+			companyTransactionStatement.setString(5, null);
+			companyTransactionStatement.setDouble(6, bean.getTotalAmount());
+			companyTransactionStatement.setString(7, "SELL");
+			companyTransactionStatement.setTimestamp(8,new Timestamp(System.currentTimeMillis()));
+			
 			//inserting buyer details...
 
 			buyerInsertStatement.setString(1, getBuyer());
@@ -98,9 +109,10 @@ public class CustomerBuyShare extends ActionSupport implements ModelDriven<Share
 			ps5.setInt(1, share);
 			ps5.setString(2, getBuyer());
 			int e = ps5.executeUpdate();
+			companyTransactionStatement.executeUpdate();
+			psTransactionStatement.executeUpdate();
 
 			connection.commit();
-			psTransactionStatement.executeUpdate();
 			if (b == 1 && c == 1 && d == 1 && e == 1) {
 				return SUCCESS;
 			} else

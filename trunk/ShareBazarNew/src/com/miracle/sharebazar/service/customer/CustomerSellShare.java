@@ -29,18 +29,17 @@ public class CustomerSellShare extends ActionSupport implements		ModelDriven<Sha
 		System.out.println(bean);
 
 		bean.getCompanyId();
-		
 		bean.getAvailableShare(); //COMPANY available share..
 	    bean.getCustomerShare();// customer available share
 		bean.getRatePerSharePost();
 		bean.getTotalAmount(); //
 		bean.getNoOfShareForSell();
+		
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 
 		try {
-			connection.setAutoCommit(false);
-			PreparedStatement buyerInsertStatement = connection.prepareStatement("INSERT INTO BUYER_MASTER values(?,?,?,?,?,?,?,?)");
+			PreparedStatement buyerInsertStatement = connection.prepareStatement("INSERT INTO BUYER_SELLER_MASTER values(?,?,?,?,?,?,?,?)");
 			
 			
 			double availableCustomerBalance= commonServiceProvider.getCustomerBalanceForMembershipId(ApplicationUtilities.getCurrentMemberIdFromSession());
@@ -59,22 +58,36 @@ public class CustomerSellShare extends ActionSupport implements		ModelDriven<Sha
 			buyerInsertStatement.setInt(4, bean.getBuySharePost());
 			buyerInsertStatement.setDouble(5, bean.getRatePerSharePost());
 			buyerInsertStatement.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
-			buyerInsertStatement.setString(7, commonServiceProvider.getCustomerLoginIdForMembershipId(ApplicationUtilities.getCurrentMemberIdFromSession()));
-			buyerInsertStatement.setString(8, commonServiceProvider.getCompanyLoginIdForMembershipId(bean.getCompanyId()));
+			buyerInsertStatement.setString(7, commonServiceProvider.getCompanyLoginIdForMembershipId(bean.getCompanyId()));
+			buyerInsertStatement.setString(8, commonServiceProvider.getCustomerLoginIdForMembershipId(ApplicationUtilities.getCurrentMemberIdFromSession()));
 			
-			PreparedStatement psTransactionStatement = connection.prepareStatement("insert into CUSTOMER_TRANSACTION values(?,?,?,?,?,?,?,?)");
+			PreparedStatement customerTransactionStatement = connection.prepareStatement("insert into CUSTOMER_TRANSACTION values(?,?,?,?,?,?,?,?)");
 
-			psTransactionStatement.setString(1, ApplicationUtilities.getCurrentMemberIdFromSession());
-			psTransactionStatement.setString(2, null);
-			psTransactionStatement.setString(3, null);
-			psTransactionStatement.setString(4, null);
-			psTransactionStatement.setString(5, null);
-			psTransactionStatement.setDouble(6, bean.getTotalAmount());
-			psTransactionStatement.setString(7, "sell");
-			psTransactionStatement.setTimestamp(8,new Timestamp(System.currentTimeMillis()));
+			customerTransactionStatement.setString(1, ApplicationUtilities.getCurrentMemberIdFromSession());
+			customerTransactionStatement.setString(2, null);
+			customerTransactionStatement.setString(3, null);
+			customerTransactionStatement.setString(4, null);
+			customerTransactionStatement.setString(5, null);
+			customerTransactionStatement.setDouble(6, bean.getTotalAmount());
+			customerTransactionStatement.setString(7, "SELL");
+			customerTransactionStatement.setTimestamp(8,new Timestamp(System.currentTimeMillis()));
+			
+			
+			PreparedStatement companyTransactionStatement = connection.prepareStatement("insert into COMPANY_TRANSACTION values(?,?,?,?,?,?,?,?)");
 
-			System.out.println("Inserting record in customer transaction:"+psTransactionStatement.executeUpdate());
-			System.out.println("Inserting in buyer master :"+buyerInsertStatement.executeUpdate());
+			companyTransactionStatement.setString(1, bean.getCompanyId());
+			companyTransactionStatement.setString(2, null);
+			companyTransactionStatement.setString(3, null);
+			companyTransactionStatement.setString(4, null);
+			companyTransactionStatement.setString(5, null);
+			companyTransactionStatement.setDouble(6, bean.getTotalAmount());
+			companyTransactionStatement.setString(7, "BUY");
+			companyTransactionStatement.setTimestamp(8,new Timestamp(System.currentTimeMillis()));
+			 System.out.println("executing.. update statement.. ");
+			customerTransactionStatement.executeUpdate();
+			 companyTransactionStatement.executeUpdate();
+			 buyerInsertStatement.executeUpdate();
+			 System.out.println("executed update statements. ");
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -85,19 +98,9 @@ public class CustomerSellShare extends ActionSupport implements		ModelDriven<Sha
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 		}
-		
 
-
-
-
-
-
-
-
-
-			return SUCCESS;
+		return SUCCESS;
 		}
 
 		@Override
