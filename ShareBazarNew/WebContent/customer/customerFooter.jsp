@@ -7,8 +7,8 @@
 					<h2>Protecting Your Info</h2>
 					<p>The latest on keeping your personal info safe and secure.</p>
 					<ul class="list1">
-						<li><a href="#">Security Alerts</a></li>
-						<li><a href="#">Avoiding Scams</a></li>
+						<li><a href="customerSecurityAlert.jsp">Security Alerts</a></li>
+						<li><a href="customerAvoidScam.jsp">Avoiding Scams</a></li>
 					</ul>
 				</div>
 			</article>
@@ -35,8 +35,8 @@
 								<h2>Useful Links</h2>
 								<!-- <p>The latest on keeping your personal info safe and secure.</p> -->
 								<ul class="list1">
-									<li><a href="#">Security Alerts</a></li>
-									<li><a href="#">Avoiding Scams</a></li>
+									<li><a href="customerSecurityAlert.jsp">Security Alerts</a></li>
+									<li><a href="customerAvoidScam.jsp">Avoiding Scams</a></li>
 								</ul>
 							</div>
 						</article>
