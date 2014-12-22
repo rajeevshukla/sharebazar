@@ -41,7 +41,7 @@ public class AddFundForCompanyAction  extends ActionSupport  implements ModelDri
 		DatabaseUtils db=new DatabaseUtils();
 	Connection connection=	db.getConnectionDb();
 	HttpSession session=ServletActionContext.getRequest().getSession();
-		PreparedStatement statement1=connection.prepareStatement("select BALANCE from COMPANY_MASTER where MEMBERSHIP_ID=?");
+		PreparedStatement statement1=connection.prepareStatement("SELECT BALANCE FROM COMPANY_MASTER where MEMBERSHIP_ID=?");
 		statement1.setString(1, (String)session.getAttribute("memberId"));
 		PreparedStatement ps = connection
 				.prepareStatement("insert into COMPANY_TRANSACTION values(?,?,?,?,?,?,?,?)");

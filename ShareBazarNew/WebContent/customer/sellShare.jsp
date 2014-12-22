@@ -37,13 +37,12 @@
 
 			<form action="customerSellShare.action" method="post" class="text">
 
-
-				<input type="hidden" name="availableShare" id="noOfShareH" /> <input
-					type="hidden" name="availableShare" id="noOfShareH" /> <input
-					type="hidden" name="ratePerSharePost" id="rateH" /> <input
-					type="hidden" name="shareTypePost" id="typeH" /> <input
-					type="hidden" name="totalAmount" id="amountH" /> <input
-					type="hidden" name="companyId" id="companyH" />
+				 <input	type="hidden" name="availableShare" id="noOfShareH" />
+				  <input type="hidden" name="ratePerSharePost" id="rateH" />
+				  <input type="hidden" name="shareTypePost" id="typeH" /> 
+				  <input	type="hidden" name="totalAmount" id="amountH" /> 
+				  
+				  <input	type="hidden" name="companyId" id="companyH" />
 
 
 				<h4 class="commentformTitle">Sell Share.......</h4>
@@ -56,9 +55,7 @@
 							<tr>
 								<td class="row"><label for="visitorFirstName">company
 										Name</label></td>
-								<td class="row"><sx:autocompleter list="companyList"
-										name="companyName" id="company" autoComplete="true"
-										onchange="fill();"></sx:autocompleter></td>
+								<td class="row"><sx:autocompleter list="companyList" name="companyName" id="company" autoComplete="true" 	onchange="fill();"></sx:autocompleter></td>
 
 							</tr>
 							<tr>
@@ -109,7 +106,7 @@
 											sell)</font>
 								</label></td>
 								<td class="row"><input type="text" id="noOfShareForSell"
-									name="noOfShareForSell" class="short" required=""
+									name="noOfShareForSell"  class="short" required=""
 									style="width: 180px;" onkeyup="return calculate(this.value)" />&nbsp;&nbsp;<font
 									color="red" size="1">(Becarefull)</font></td>
 
@@ -125,7 +122,7 @@
 							<tr>
 
 								<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-								<td class="row"><input type="submit" value="Buy" /> <input
+								<td class="row"><input type="submit" value="Sell" onclick="return sell();" /> <input
 									type="reset" value="Reset" /></td>
 
 							</tr>
