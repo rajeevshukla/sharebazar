@@ -104,9 +104,7 @@
 								<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 								<td class="row"><input type="submit" value="submit" /> <!-- <input
 									type="reset" value="Reset" /> --></td>
-
 							</tr>
-
 						</tbody>
 					</table>
 				</div>

@@ -18,7 +18,6 @@ function setBuyShareProperties() {
 	document.getElementById("shareType").value = val2 + "  Shares";
 	document.getElementById("ratePerShare").value = val3;
 	/* alert(" in fill"); */
-
 	// setting values to the hidden fields for carry out seleced information
 	document.getElementById("noOfShareH").value = val;
 	document.getElementById("rateH").value = val3;
@@ -29,24 +28,19 @@ function setBuyShareProperties() {
 function buy() {
 
 	// checking for the validation purpose
-	var noOfShare = document.getElementById("noOfShare").value ;
-	var buyshare = document.getElementById("buyshare").value;
+	var noOfShare = parseInt(document.getElementById("noOfShare").value) ;
+	var buyshare = parseInt(document.getElementById("buyshare").value);
 	if (buyshare < 1) {
 		alert("shares should be more than zero");
 		return false;
 	}
-     
 	if (noOfShare>0) {
-            
-		
 		if ((noOfShare >= buyshare) && (noOfShare-buyshare)>=0) {
-			
 			return true;
 		} else {
 			alert("Enter no share less than or equall to selected company");
 			return false;
 		}
-
 	} else {
 		alert("selected company dont have enough share to buy");
 		return false;
@@ -57,9 +51,7 @@ function buy() {
 }
 // calculating the amount for selected no of shares
 function calculateAmount(share) {
-
-	var rate = document.getElementById("ratePerShare").value;
-
-	document.getElementById("showamount").value = rate * share;
-	document.getElementById("amountH").value = rate * share;
+	var rate = parseFloat(document.getElementById("ratePerShare").value);
+	document.getElementById("showamount").value = rate * parseInt(share);
+	document.getElementById("amountH").value = rate * parseInt(share);
 }

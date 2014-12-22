@@ -33,6 +33,14 @@
 	});
 
 </script>
+<style type="text/css">
+
+ .pagebanner{
+ 
+  margin-left: 20%;
+ }
+
+</style>
 
 <title>Transaction History</title>
 
@@ -60,9 +68,9 @@
 					<h3>Credit history</h3>
 					<div>
 				 
-				    <display:table style="width : 500px;" list="${creditHistory}" >
- 				     <display:column property="cardHolderName" title="Name"></display:column>
-				     <display:column property="amount" title="Amount"></display:column>
+				    <display:table style="width : 500px;" list="${creditHistory}" requestURI="transactionHistory.action" pagesize="10">
+ 				     <display:column property="transactionDoneByUserName" title="Name"></display:column>
+				     <display:column property="transactionAmount" title="Amount"></display:column>
 				     <display:column property="transactionDate" title="Date" format="{0,date,dd-MMM-yyyy hh:mm a}"></display:column>
 				    </display:table>
 					</div>

@@ -14,6 +14,11 @@ import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GetCompanyListWithCustomerShare extends ActionSupport {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7851097693825241325L;
 	private List<String> companyList=new ArrayList<String>();
 	private List<Integer> noOfShare=new ArrayList<Integer>();
 	private List<String>  shareType=new ArrayList<String>();

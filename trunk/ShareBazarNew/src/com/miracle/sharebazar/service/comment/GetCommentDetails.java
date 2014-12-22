@@ -14,6 +14,10 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class GetCommentDetails extends ActionSupport implements ModelDriven<CommentBean> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4204617888851791469L;
 	CommentBean bean=new CommentBean();
 
 	public String execute() throws Exception {
@@ -39,10 +43,6 @@ public class GetCommentDetails extends ActionSupport implements ModelDriven<Comm
 		return SUCCESS;
 
 	}
-
-
-
-
 	public CommentBean getModel() {
 		// TODO Auto-generated method stub
 		return bean;

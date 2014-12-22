@@ -11,11 +11,10 @@
 			</result>
 			<result name="error" type="redirect">/company/error.jsp</result>
 		</action>
-		 
-		    <action name="welcome" class="com.miracle.sharebazar.service.company.CompanyWelcomeAction">
-		     <result>/company/cyHome.jsp</result>
-		    </action>
-            		
+		<action name="welcome"
+			class="com.miracle.sharebazar.service.company.CompanyWelcomeAction">
+			<result>/company/cyHome.jsp</result>
+		</action>
 		<action name="updateProfile"
 			class="com.miracle.sharebazar.service.company.UpdateProfile">
 			<result name="success" type="redirect">/company/updateProfileSuccessfull.jsp
@@ -81,19 +80,24 @@
 			class="com.miracle.sharebazar.service.company.CommentForumAction">
 			<result>/company/commentForum.jsp</result>
 		</action>
-		
+
 		<action name="changePassword"
 			class="com.miracle.sharebazar.service.company.ChangePasswordAction">
-           <result name="input">/company/changePassword.jsp</result>
-           <result name="success">/company/changePasswordSuccess.jsp</result>
+			<result name="input">/company/changePassword.jsp</result>
+			<result name="success">/company/changePasswordSuccess.jsp</result>
 		</action>
-		
+
 		<action name="commentForum"
 			class="com.miracle.sharebazar.service.comment.GetCommentDetails">
 			<result type="redirect">/company/commentForum.jsp</result>
 		</action>
-		<action name="addFund" class="com.miracle.sharebazar.service.company.AddFundForCompanyAction">
-		   <result name="success" type="redirectAction">manageFund</result>
+		<action name="addFund"
+			class="com.miracle.sharebazar.service.company.AddFundForCompanyAction">
+			<result name="success" type="redirectAction">manageFund</result>
+		</action>
+
+		<action name="getShareHolderDetails">
+			<result name="success">/company/viewShareHolderDetails.jsp</result>
 		</action>
 	</package>
 </struts>

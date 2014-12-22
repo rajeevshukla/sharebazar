@@ -1,6 +1,5 @@
 package com.miracle.sharebazar.service.customer;
 
-import java.util.Calendar;
 
 public class ShareBean {
 
@@ -118,13 +117,11 @@ public class ShareBean {
 		return tranPasswordPost;
 	}
 
-
 	public void setTranPasswordPost(int tranPasswordPost) {
 		System.out.println("transaction password"+tranPasswordPost);
 		this.tranPasswordPost = tranPasswordPost;
 	}
-
-
+	
 	public double getRatePerSharePost() {
 		return ratePerSharePost;
 	}
@@ -134,6 +131,15 @@ public class ShareBean {
 		System.out.println("rate per share"+ratePerSharePost);
 		this.ratePerSharePost = ratePerSharePost;
 	}
-
-
+	
+	@Override
+	public String toString() {
+		return "ShareBean [companyNamePost=" + companyNamePost
+				+ ", shareTypePost=" + shareTypePost + ", buySharePost="
+				+ buySharePost + ", tranPasswordPost=" + tranPasswordPost
+				+ ", ratePerSharePost=" + ratePerSharePost + ", companyId="
+				+ companyId + ", availableShare=" + availableShare
+				+ ", customerShare=" + customerShare + ", noOfShareForSell="
+				+ noOfShareForSell + ", totalAmount=" + totalAmount + "]";
+	}
 }
