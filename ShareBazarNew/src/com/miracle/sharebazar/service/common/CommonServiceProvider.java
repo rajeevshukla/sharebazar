@@ -261,7 +261,35 @@ public class CommonServiceProvider  {
 		return noOfShares;
 
 	}
-
+	
+	
+	public double getCurrentShareRateForMembershipId(String membershipId) {
+		
+		double ratePerShare=0;
+		DatabaseUtils db = new DatabaseUtils();
+		Connection connection = db.getConnectionDb();
+		try {
+			PreparedStatement statement = connection
+					.prepareStatement("SELECT RATE_PER_SHARE FROM COMPANY_SHARE_MASTER   WHERE MEMBERSHIP_ID=?");
+			statement.setString(1, membershipId);
+			ResultSet  rs=  statement.executeQuery();
+			if(rs.next()){
+				ratePerShare=rs.getDouble(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return ratePerShare;
+		
+		
+	}
 	public void updateCompanyShareForMembershipId(String membershipId, int noOfShares){
 
 		System.out.println("updating comapny share details.....");

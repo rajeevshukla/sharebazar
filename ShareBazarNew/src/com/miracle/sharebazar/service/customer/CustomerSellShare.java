@@ -55,7 +55,7 @@ public class CustomerSellShare extends ActionSupport implements		ModelDriven<Sha
 			buyerInsertStatement.setString(1, bean.getCompanyId());
 			buyerInsertStatement.setString(2, ApplicationUtilities.getCurrentMemberIdFromSession());
 			buyerInsertStatement.setString(3, bean.getShareTypePost());
-			buyerInsertStatement.setInt(4, bean.getBuySharePost());
+			buyerInsertStatement.setInt(4, bean.getNoOfShareForSell());
 			buyerInsertStatement.setDouble(5, bean.getRatePerSharePost());
 			buyerInsertStatement.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
 			buyerInsertStatement.setString(7, commonServiceProvider.getCompanyLoginIdForMembershipId(bean.getCompanyId()));

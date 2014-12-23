@@ -30,12 +30,11 @@
 <div class="body2">
 		<div class="main">
 			<div class="marg_top wrapper">
-
-
 		<font style="color: green; font-size: 13px; font-style: oblique;">
-
 			Share has been sell successfully. Thank you for choosing
-			ShareBazar.com </font>
+			ShareBazar.com 
+			
+			</font>
 
 	</div>
 	

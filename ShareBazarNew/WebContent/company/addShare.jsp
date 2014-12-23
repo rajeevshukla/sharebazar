@@ -7,11 +7,9 @@
 <script type="text/javascript">
 	$(document).ready(
 			function() {
-
 				var fullDate = new Date()
 				console.log(fullDate);
 				//Thu May 19 2011 17:25:38 GMT+1000 {}
-				 
 				//convert month to 2 digits
 				var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
 				 

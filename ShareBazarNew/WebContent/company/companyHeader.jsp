@@ -114,20 +114,23 @@ nav ul ul ul {
 						<li><a href="../company/welcome.action">Home</a></li>
 						<li><a href="#">Manage Share</a>
 							<ul>
-								<li><a href="../company/updateShare.action">Update Share</a></li>
-								<li><a href="../company/sellShare.action">Sell Share</a></li>
+								<li><a href="../company/getAddSharePage.action">Add Share</a></li>
+								<li><a href="../company/getUpdateSharePage.action">Update Share</a></li>
 								<li><a href="../company/deleteShare.action">Delete Share</a></li>
-							</ul></li>
+								<li><a href="../company/getShareHistory.action">Share History</a></li>
+							</ul>
+							
+							</li>
 						<li><a href="#">Manage Transaction</a>
-
+							
 							<ul>
 								<li><a href="../company/manageFund.action">Manage funds</a></li>
-								<li><a href="../company/viewTransaction.action">Transaction
-										History</a></li>
+								<li><a href="../company/viewTransaction.action">Transaction 	History</a></li>
 							</ul></li>
-						<li><a href="#">Contact company</a>
+							
+						<li><a href="#">Share Holders</a>
 							<ul>
-								<li><a href="../company/viewShareHolders.action">Share Holders</a></li>
+								<li><a href="../company/viewShareHolders.action">Share Holders </a></li>
 								<li><a href="../company/searchShareHolders.action">Search Share Holders</a></li>
 							</ul></li>
 						<li><a href="#">Feedbacks</a>
