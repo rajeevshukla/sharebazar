@@ -206,7 +206,7 @@ input.short {
 	width: 200px
 }
 
-input:focus,textarea:focus,select:focus {
+input:focus,select:focus {
 	-webkit-box-shadow: 0 0 10px #ccc;
 	-moz-box-shadow: 0 0 10px #ccc;
 	box-shadow: 0 0 5px #ccc;
@@ -215,8 +215,19 @@ input:focus,textarea:focus,select:focus {
 	transform: scale(1.05)
 }
 
+textarea:focus {
+	-webkit-box-shadow: 0 0 10px #ccc;
+	-moz-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 5px #ccc;
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	transform: scale(1.01)
+	
+}
+
+
 input:not(:focus){
-opacity:.5
+opacity:1.0
 }
 select 
 {
