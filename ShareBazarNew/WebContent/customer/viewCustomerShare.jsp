@@ -51,7 +51,7 @@
 					<h3>Sell Share History</h3>
 					<div>
 				    <display:table style="width : 500px;" list="${sellHistory}" requestURI="viewCustomerShare.action" pagesize="10" decorator="com.miracle.sharebazar.decorator.CustomTableDecorator">
- 				     <display:column property="loginName" title="User Id"></display:column>
+ 				     <display:column property="companyDetails" title="User Id"></display:column>
 				     <display:column property="noOfShares" title="No Of Shares"></display:column>
 				      <display:column property="ratePerShare" title="Rate Per Share"></display:column>
 				      <display:column property="totalAmount" title="Total Amount"></display:column>
@@ -61,7 +61,7 @@
 					<h3>Buy Share History</h3>
 					<div>
 				    <display:table style="width : 500px;" list="${buyHistory}" requestURI="viewCustomerShare.action" pagesize="10" decorator="com.miracle.sharebazar.decorator.CustomTableDecorator">
- 				     <display:column property="loginName" title="User Id"></display:column>
+ 				     <display:column property="companyDetails" title="User Id"></display:column>
 				     <display:column property="noOfShares" title="No Of Shares"></display:column>
 				     <display:column property="ratePerShare" title="Rate Per Share"></display:column>
 				     <display:column property="totalAmount" title="Total Amount"></display:column>
