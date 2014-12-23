@@ -52,10 +52,9 @@
 					<div>
 				    <display:table style="width : 500px;" list="${sellHistory}" requestURI="viewCustomerShare.action" pagesize="10" decorator="com.miracle.sharebazar.decorator.CustomTableDecorator">
  				     <display:column property="loginName" title="User Id"></display:column>
-				     <display:column property="totalAmount" title="Amount"></display:column>
 				     <display:column property="noOfShares" title="No Of Shares"></display:column>
 				      <display:column property="ratePerShare" title="Rate Per Share"></display:column>
-				      <display:column property="totalAmount" title="Total Cost"></display:column>
+				      <display:column property="totalAmount" title="Total Amount"></display:column>
 				     <display:column property="transactionDate" title="Date" format="{0,date,dd-MMM-yyyy hh:mm a}"></display:column>
 				    </display:table>
 					</div>
@@ -63,9 +62,9 @@
 					<div>
 				    <display:table style="width : 500px;" list="${buyHistory}" requestURI="viewCustomerShare.action" pagesize="10" decorator="com.miracle.sharebazar.decorator.CustomTableDecorator">
  				     <display:column property="loginName" title="User Id"></display:column>
-				     <display:column property="totalAmount" title="Amount"></display:column>
 				     <display:column property="noOfShares" title="No Of Shares"></display:column>
 				     <display:column property="ratePerShare" title="Rate Per Share"></display:column>
+				     <display:column property="totalAmount" title="Total Amount"></display:column>
 				     <display:column property="transactionDate" title="Date" format="{0,date,dd-MMM-yyyy hh:mm a}"></display:column>
 				    </display:table>	
 				</div>

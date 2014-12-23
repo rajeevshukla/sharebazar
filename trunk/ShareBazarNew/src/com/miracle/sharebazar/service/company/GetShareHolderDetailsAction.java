@@ -40,7 +40,7 @@ public class GetShareHolderDetailsAction extends ActionSupport {
 
 		}
 
-		PreparedStatement preparedStatement= connection.prepareStatement("SELECT SUM(NO_OF_SHARE) FROM BUYER_MASTER WHERE CUSTOMER_MEMEBERSHIP_ID=? AND COMPANY_MEMBERSHIP_ID=? GROUP BY COMPANY_MEMBERSHIP_ID");
+		PreparedStatement preparedStatement= connection.prepareStatement("SELECT SUM(NO_OF_SHARE) FROM BUYER_SELLER_MASTER WHERE BUYER_MEMEBERSHIP_ID=? AND SELLER_MEMBERSHIP_ID=? GROUP BY SELLER_MEMBERSHIP_ID");
 		ResultSet resultSet= preparedStatement.executeQuery();
 
 		if(resultSet.next()){

@@ -18,8 +18,8 @@ public class TransactionHistory extends ActionSupport {
 
 	private static final long serialVersionUID = 5197225901196242391L;
 	private List<TransactionHistoryDetailsForm> creditHistory = new ArrayList<TransactionHistoryDetailsForm>();
-	private List<TransactionHistoryDetailsForm> debitHistory = new ArrayList<TransactionHistoryDetailsForm>();
-	private List<TransactionHistoryDetailsForm> sellHistory = new ArrayList<TransactionHistoryDetailsForm>();
+	private List<TransactionHistoryDetailsForm> buyHistory = new ArrayList<TransactionHistoryDetailsForm>(); //in terms of transactions only.
+	private List<TransactionHistoryDetailsForm> sellHistory = new ArrayList<TransactionHistoryDetailsForm>(); //in terms of transactions only
 
 	
 	@Override
@@ -30,27 +30,32 @@ public class TransactionHistory extends ActionSupport {
 
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		String memberId = (String) session.getAttribute("memberId");
-		PreparedStatement ps = connection.prepareStatement("SELECT * FROM CUSTOMER_TRANSACTION WHERE MEMBERSHIP_ID=?");
+		PreparedStatement ps = connection.prepareStatement("SELECT * FROM CUSTOMER_TRANSACTION WHERE MEMBERSHIP_ID=? ORDER BY DATE DESC" );
 		ps.setString(1, memberId);
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
-			if(rs.getString("REMARK").equalsIgnoreCase("credit")){
+			if(rs.getString("REMARK").equalsIgnoreCase("credit") || rs.getString("REMARK").equalsIgnoreCase("registration")){
 				TransactionHistoryDetailsForm transactionHistoryForm = new TransactionHistoryDetailsForm();
 				transactionHistoryForm.setTransactionAmount(rs.getFloat("AMOUNT"));
 				transactionHistoryForm.setTransactionDoneByUserName(rs.getString("CARD_HOLDER_NAME"));
+				transactionHistoryForm.setTransactionType(rs.getString("REMARK"));
 				transactionHistoryForm.setTransactionDate(rs.getTimestamp("DATE"));
 				creditHistory.add(transactionHistoryForm);
-			}
-			
-			else if(rs.getString("REMARK").equalsIgnoreCase("debit")){
+			}else if(rs.getString("REMARK").equalsIgnoreCase("BUY")){
 				TransactionHistoryDetailsForm transactionHistoryForm = new TransactionHistoryDetailsForm();
 				transactionHistoryForm.setTransactionAmount(rs.getFloat("AMOUNT"));
-				transactionHistoryForm.setTransactionDoneByUserName(rs
-						.getString("CARD_HOLDER_NAME"));
+				transactionHistoryForm.setTransactionType("Brought shares");
 				transactionHistoryForm.setTransactionDate(rs.getTimestamp("DATE"));
-				debitHistory.add(transactionHistoryForm);
-			}	
+				buyHistory.add(transactionHistoryForm);
+			}else if(rs.getString("REMARK").equalsIgnoreCase("SELL")){
+				TransactionHistoryDetailsForm transactionHistoryForm = new TransactionHistoryDetailsForm();
+				transactionHistoryForm.setTransactionAmount(rs.getFloat("AMOUNT"));
+				transactionHistoryForm.setTransactionType("Sold shares");
+				transactionHistoryForm.setTransactionDate(rs.getTimestamp("DATE"));
+				sellHistory.add(transactionHistoryForm);
+			}
 	}
+		 
 		return SUCCESS;
 	}
 
@@ -62,12 +67,14 @@ public class TransactionHistory extends ActionSupport {
 		this.creditHistory = creditHistory;
 	}
 
-	public List<TransactionHistoryDetailsForm> getDebitHistory() {
-		return debitHistory;
+
+	
+	public List<TransactionHistoryDetailsForm> getBuyHistory() {
+		return buyHistory;
 	}
 
-	public void setDebitHistory(List<TransactionHistoryDetailsForm> debitHistory) {
-		this.debitHistory = debitHistory;
+	public void setBuyHistory(List<TransactionHistoryDetailsForm> buyHistory) {
+		this.buyHistory = buyHistory;
 	}
 
 	public List<TransactionHistoryDetailsForm> getSellHistory() {

@@ -5,9 +5,7 @@
 <%@include file="../common/common.jsp"%>
 
 <c:if test="${empty session.name}">
-	<c:redirect url="index.jsp"></c:redirect>
-
-
+	<c:redirect url="../common/index.jsp"></c:redirect>
 </c:if>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>

@@ -1,4 +1,4 @@
-package com.miracle.sharebazar.service.customer;
+package com.miracle.sharebazar.service.company;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,8 +13,7 @@ import com.miracle.sharebazar.customer.model.BuySellShareHistoryForm;
 import com.miracle.sharebazar.utils.ApplicationUtilities;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BuySellShareHistoryAction  extends ActionSupport{
-
+public class GetShareHistoryAction  extends ActionSupport{
 
 	Logger logger=Logger.getLogger(getClass());
 	private static final long serialVersionUID = 5197225901196242391L;
@@ -85,7 +84,4 @@ public class BuySellShareHistoryAction  extends ActionSupport{
 	public void setSellHistory(List<BuySellShareHistoryForm> sellHistory) {
 		this.sellHistory = sellHistory;
 	}
-
-
-
 }

@@ -36,7 +36,7 @@
 
 		<action name="updateShare"
 			class="com.miracle.sharebazar.service.company.UpdateShareAction">
-			<result>/company/updateShare.jsp</result>
+			<result>/company/updateShareSuccess.jsp</result>
 
 		</action>
 
@@ -66,11 +66,12 @@
 
 		<action name="searchShareHolders"
 			class="com.miracle.sharebazar.service.company.searchShareHoldersAction">
-
 			<result>/company/searchShareHolders.jsp</result>
-
 		</action>
-
+		 <action name="addShare" class="">
+ 
+ 		 
+		 </action>
 		<action name="contactRequest"
 			class="com.miracle.sharebazar.service.company.ContactRequestAction">
 			<result>/company/contactRequest.jsp</result>
@@ -99,5 +100,21 @@
 		<action name="getShareHolderDetails">
 			<result name="success">/company/viewShareHolderDetails.jsp</result>
 		</action>
+		<action name="getAddSharePage" class="com.miracle.sharebazar.service.company.GetAddSharePageAction">
+		  <result name="success">/company/showExistingShare.jsp</result>
+		</action>
+		
+		 <action name="addMoreShare" class="com.miracle.sharebazar.service.company.AddCompanyShareAction">
+		  <result name="success">/company/addShareSuccess.jsp</result>
+		 </action>
+		 
+		 <action name="getUpdateSharePage" class="com.miracle.sharebazar.service.company.GetUpdateSharePageAction">
+		   <result name="success">/company/updateShare.jsp </result>
+		 </action>
+		 <action name="getShareHistory" class="com.miracle.sharebazar.service.company.GetShareHistoryAction">
+		    <result name="success">/company/shareHistory.jsp</result>
+		 </action>
+		 
+		 
 	</package>
 </struts>

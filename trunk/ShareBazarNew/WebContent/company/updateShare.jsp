@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@include file="../common/common.jsp"%>
-<%@taglib prefix="sx" uri="/struts-dojo-tags" %>
-<%@taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="sx" uri="/struts-dojo-tags"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <title>Update Share</title>
 
 <style type="text/css">
@@ -10,67 +10,69 @@
 }
 </style>
 
+<script type="text/javascript">
+        $(document).ready(function(){
+        
+         var value= '<c:out value="${shareType}"></c:out>';
+         $("#newShareType").val(value);
+        
+        });
+        
+
+</script>
+  
 </head>
 
 <body>
 	<jsp:include page="../company/companyHeader.jsp"></jsp:include>
-
 	<div class="body2">
 		<div class="main">
 			<div class="marg_top wrapper">
-			
 				<div>
 					<s:fielderror></s:fielderror>
-					<form action="customerBuyShare.action" method="post" class="text">
-
-
-						<input type="hidden" name="availableShare" id="noOfShareH" /> <input
-							type="hidden" name="ratePerSharePost" id="rateH" /> <input
-							type="hidden" name="shareTypePost" id="typeH" /> <input
-							type="hidden" name="totalAmount" id="amountH" /> <input
-							type="hidden" name="companyId" id="companyH" />
-
+					<form action="updateShare.action" method="post" class="text">
 						<h4 class="commentformTitle">Update Share.......</h4>
 						<div style="padding: 20px; font-size: 10px;">
 							<table style="font-size: 13px;">
 								<tbody>
-
 									<tr>
-										<td class="row"><label for="visitorFirstName">Select Share</label></td>
-										<td class="row"><input type="text" class="sort" readonly="readonly" value="Equity Share"></td>
-
+										<td class="row"><label for="visitorFirstName">
+												Share Type</label></td>
+										<td class="row"><select name="newShareType" id="newShareType">
+												<option selected="selected">Select Share Type</option>
+												<option value="ordinary">Ordinary</option>
+												<option value="equity">Equity</option>
+												<option value="preferential">Preferential</option>
+										</select></td>
 									</tr>
 									<tr>
-
-								
-
-									
-
-										
-										<td class="row"><label for="visitorLastName"> No 	of shares (available)</label></td>
+										<td class="row"><label for="visitorLastName"> No of shares (available)</label></td>
 										<td class="row"><input type="text" style="width: 100px;"
-											class="short" readonly="readonly" value="500" />
-											
-										</td>
+											class="short" disabled="disabled" value="${availableShare }" /></td>
 
 									</tr>
 									<tr>
-										<td class="row"><label for="visitorLastName">Old Rate per Share</label></td>
-										<td class="row"><input type="text" class="short" required="" style="width: 100px;"
-											id="ratePerShare" readonly="readonly" value="1000"/>Rs.</td>
+										<td class="row"><label for="visitorLastName">Old
+												Rate per Share</label></td>
+										<td class="row"><input type="text" class="short"
+											required="" style="width: 100px;" id="ratePerShare"
+											 disabled="disabled" value="${ratePerShare}" />Rs.</td>
 
 									</tr>
 									<tr>
 
-										<td class="row"><label for="visitorLastName"> New rate per share<font style="font-size: 8px; color: green;">(for	buying)</font>
+										<td class="row"><label for="visitorLastName"> New
+												rate per share<font style="font-size: 8px; color: green;">(for
+													buying)</font>
 										</label></td>
-										<td class="row"><input type="text" id="buyshare"	name="buySharePost" class="short" required=""
-											style="width: 180px;" onkeyup="calculateAmount(this.value)" readonly="readonly" value="1200"/>&nbsp;&nbsp;<font	color="red" size="1">(Becarefull)</font></td>
+										<td class="row"><input type="text" id="buyshare"
+											name="newShareRate" class="short" required=""
+											style="width: 180px;" />&nbsp;&nbsp;</td>
 									</tr>
 									<tr>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-										<td class="row"><input type="submit" value="Buy"
-											onclick="return buy();" /> <input type="reset" value="Reset" />
+										<td class="row"><input type="submit" value="Update"
+											 /> <input type="reset" value="Reset" />
 										</td>
 
 									</tr>
@@ -83,9 +85,9 @@
 
 					</form>
 				</div>
-			
-			
-			
+
+
+
 			</div>
 		</div>
 	</div>
