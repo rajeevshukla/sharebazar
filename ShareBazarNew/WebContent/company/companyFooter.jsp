@@ -35,8 +35,10 @@
 								<h2>Useful Links</h2>
 								<!-- <p>The latest on keeping your personal info safe and secure.</p> -->
 								<ul class="list1">
-									<li><a href="#">Security Alerts</a></li>
-									<li><a href="#">Avoiding Scams</a></li>
+									<li><a href="http://www.bseindia.com/">Bombay Stock Exchange</a></li>
+									<li><a href="http://www.nseindia.com/">National Stock Exchange</a></li>
+									<li><a href="http://www.bseindia.com/markets/equity/EQReports/mktwatchR.aspx?expandable=2&filter=gainer*all$all$">BSE Top Gainer</a></li>
+									<li><a href="http://www.bseindia.com/markets/equity/EQReports/mktwatchR.aspx?expandable=2&filter=loser*all$all$">BSE Top Loser</a></li>
 								</ul>
 							</div>
 						</article>
