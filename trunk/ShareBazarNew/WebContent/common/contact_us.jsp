@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html  lang="en">
 <%@include file="../common/common.jsp" %>
 <body>
 	<jsp:include page="../common/commonHeader.jsp"></jsp:include>
@@ -27,7 +27,7 @@
 							</p>
 							</article>
 						</div>
-						<a href="#" class="button"><span><span>headquarters</span></span></a>
+					<!-- 	<a href="#" class="button"><span><span>headquarters</span></span></a> -->
 					</div>
 				</div>
 				<div class="box1_bot">
