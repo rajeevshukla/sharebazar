@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+<script type="text/javascript">
+ $(document).ready(function(){
+ 
+      alert("working"); 
+ 
+ });
+</script>
+
+
 <body id="page5">
 	<div class="body3"></div>
 	<div class="body1">
@@ -27,9 +36,9 @@
 					<div class="text1">Your Business Needs Fresh Ideas?</div>
 					<div class="text2">We work for your Profit</div>
 					<ul id="icons">
-						<li><a href="#"><img src="../images/icon1.jpg" alt=""></a></li>
-						<li><a href="#"><img src="../images/icon2.jpg" alt=""></a></li>
-						<li><a href="#"><img src="../images/icon3.jpg" alt=""></a></li>
+						<li><a href="http://www.facebook.com/mail2rajeevshukla" target="_blank"><img src="../images/icon1.jpg" alt=""></a></li>
+						<li><a href="http://in.linkedin.com/in/rajeevshukladoeacc/" target="_blank"><img src="../images/icon2.jpg" alt=""></a></li>
+						<li><a href="https://twitter.com/rajeevshukla_" target="_blank"><img src="../images/icon3.jpg" alt=""></a></li>
 					</ul>
 				</div>
 				<div class="ic">More Website Templates at TemplateMonster.com!</div>
