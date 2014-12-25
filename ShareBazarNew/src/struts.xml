@@ -44,6 +44,19 @@
 			class="com.miracle.sharebazar.service.common.SendForgetPasswordMail">
 			<result name="success" type="json"></result>
 		</action>
+		
+		
+		<action name="submitContactDetails" class="com.miracle.sharebazar.service.common.SubmitContactDetailsAction">
+		<result name="success" type="json"></result>
+		</action>
+		
+		<action name="subscribeNewsLetter" class="com.miracle.sharebazar.service.common.SubscribeNewLetterAction">
+		<result name="success" type="json"></result>
+		</action>
+		
+		<action name="unsubscribeNewsLetter" class="com.miracle.sharebazar.service.common.UnsubscribeNewLetterAction">
+    		<result name="success" type="json"></result>
+		</action>
 	</package>
 	<include file="company-config.xml"></include>
 	<include file="admin-config.xml"></include>
