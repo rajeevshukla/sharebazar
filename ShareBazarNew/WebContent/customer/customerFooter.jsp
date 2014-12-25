@@ -17,16 +17,14 @@
 					<div class="wrapper">
 						<article class="cols">
 							<h2>Newsletter</h2>
-							<form id="form_1" action="" method="post">
-								<div>
+								<form id="form_1" action="" method="post">
+								<div id="newsletter">
 									<div class="bg">
-										<input class="input" type="text" value="Enter email here"
-											onblur="if(this.value=='') this.value='Enter email here'"
-											onFocus="if(this.value =='Enter email here' ) this.value=''" />
+										<input class="input" id="subscriberEmailId" type="email" value="" required="required" />
 									</div>
-									<a href="#" class="submit"
-										onClick="document.getElementById('form_1').submit()"><span><span>Submit</span></span></a>
-									<a href="#">Unsucscribe</a>
+									<a href="#newsletter" class="submit"
+										onClick="subscribeNewsLetter();"><span><span>Submit</span></span></a>
+									<a href="##newsletter" onclick="unSubscribeNewsLetter();">Unsucscribe</a>
 								</div>
 							</form>
 						</article>
