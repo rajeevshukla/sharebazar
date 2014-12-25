@@ -61,9 +61,12 @@
 		<action name="viewShareHolders"
 			class="com.miracle.sharebazar.service.company.ViewShareHoldersAction">
 			<result>/company/viewShareHolder.jsp</result>
-
 		</action>
 
+		<action name="viewShareHolderDetails" class="com.miracle.sharebazar.service.company.ViewShareHolderDetailsAction">
+		<result>/company/viewShareHolderDetails.jsp</result>
+		</action>
+		
 		<action name="searchShareHolders"
 			class="com.miracle.sharebazar.service.company.searchShareHoldersAction">
 			<result>/company/searchShareHolders.jsp</result>

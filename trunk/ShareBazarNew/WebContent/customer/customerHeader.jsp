@@ -176,11 +176,11 @@ nav ul ul ul {
 								<li><a href="transactionHistory.action">Transaction
 										History</a></li>
 							</ul></li>
-						<li><a href="#">Contact Shareholders</a>
+						<li><a href="#">Contact Company</a>
 							<ul>
-								<li><a href="companyDetailGet.action">View Shareholders</a></li>
+								<li><a href="companyDetailGet.action">View Companies</a></li>
 								<li><a href="contactwithcompanyGet.action">Contact
-										Shareholders</a></li>
+										Company</a></li>
 							</ul></li>
 						<li class="bg_none"><a href="commentGet.action">Comment</a></li>
 					</ul>
