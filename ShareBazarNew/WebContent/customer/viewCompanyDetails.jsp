@@ -11,13 +11,13 @@
 </head>
 
 <body>
-	<jsp:include page="../company/companyHeader.jsp"></jsp:include>
+	<jsp:include page="../customer/customerHeader.jsp"></jsp:include>
 
 	<div class="body2">
 		<div class="main">
-			<div class="marg_top wrapper">Shareholders details..</div>
+			<div class="marg_top wrapper">company details..</div>
 		</div>
 	</div>
-	<jsp:include page="../company/companyFooter.jsp"></jsp:include>
+	<jsp:include page="../customer/customerFooter.jsp"></jsp:include>
 </body>
 </html>

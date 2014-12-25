@@ -125,8 +125,12 @@
 			class="com.miracle.sharebazar.service.customer.ChangePasswordAction">
            <result name="input">/customer/changePassword.jsp</result>
            <result name="success">/customer/changePasswordSuccess.jsp</result>
-
 		</action>
-
+		
+		<action name="viewCompanyDetails" class="com.miracle.sharebazar.service.customer.ViewCompanyDetailsAction"> 
+		
+		 <result name="success">/customer/viewCompanyDetails.jsp</result>
+		
+		</action>
 	</package>
 </struts>
