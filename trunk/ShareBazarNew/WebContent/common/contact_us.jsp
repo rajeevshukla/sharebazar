@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html  lang="en">
 <%@include file="../common/common.jsp" %>
+ 
+ <head>
+ 
+ 
+ <title>Contact Form</title>
+   <script type="text/javascript">
+     
+      function submitContactDetails(){
+       var name=$("#name").val();
+       var emailId=$("#email").val();
+       var message=$("#message").val();
+       
+        $.post("../common/submitContactDetails.action",{name : name,emailId :emailId,message : message },function(data){
+ 
+          
+          $("#formResult").empty().html("<p style='color : green'>Your message has been submitted successfully. We will reach you soon !!</p>");
+      
+ 
+
+        });
+      }
+    
+   
+   </script>
+ 
+ </head>
+
 <body>
 	<jsp:include page="../common/commonHeader.jsp"></jsp:include>
 
@@ -62,35 +89,34 @@
 				</article>
 			</div>
 			<div class="wrapper marg_top2">
-				<div class="pad">
+				<div id="formResult" class="pad">
 					<h2>Contact Form</h2>
 					<form id="ContactForm" action="">
 						<div class="wrapper pad_bot1">
 							<div class="wrapper">
 								<div class="bg">
-									<input type="text" class="input" />
+									<input type="text" class="input" id="name" />
 								</div>
 								Your Name:<br />
 							</div>
 							<div class="wrapper">
 								<div class="bg">
-									<input type="text" class="input" />
+									<input type="text" class="input" id="email" />
 								</div>
 								Your E-mail:<br />
 							</div>
 							<div class="wrapper">
 								<div class="bg">
 									<div class="textarea">
-										<textarea name="textarea" cols="1" rows="1"></textarea>
+										<textarea name="textarea" cols="1" rows="1" id="message"></textarea>
 									</div>
 								</div>
 								Your Message:<br />
 							</div>
 							<div class="wrapper">
-								<a href="#" class="button"
-									onClick="document.getElementById('ContactForm').submit()"><span><span>send</span></span></a>
-								<a href="#" class="button marg_right1"
-									onClick="document.getElementById('ContactForm').reset()"><span><span>clear</span></span></a>
+							   
+							     <input type="button" value="Submit"   onclick="submitContactDetails();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							     <input type="button" value="Reset"  onclick="">
 							</div>
 						</div>
 					</form>

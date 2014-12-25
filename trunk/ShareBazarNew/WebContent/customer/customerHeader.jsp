@@ -1,3 +1,55 @@
+
+<script type="text/javascript">
+  
+   function subscribeNewsLetter(){
+   
+      var emailId=$("#subscriberEmailId").val();
+      
+       if(!validateEmail(emailId)){
+       alert("Please enter valid email Id ");
+       return false;
+       }
+       
+       
+      $.post("../common/subscribeNewsLetter.action",{emailId:emailId},function(data){
+ 
+         $("#subscriberEmailId").val("");
+         alert("News letter has been subscribed for :"+emailId);
+      });
+   }
+   
+ function unSubscribeNewsLetter(){
+      var emailId=$("#subscriberEmailId").val();
+      
+       if(!validateEmail(emailId)){
+       alert("Please enter valid email Id ");
+       return false;
+       }
+      
+      $.post("../common/unsubscribeNewsLetter.action",{emailId:emailId},function(data){
+
+        $("#subscriberEmailId").val("");
+         alert("News letter has been unsubscribed for :"+emailId);
+      
+      });
+    }
+    
+    
+    
+    function validateEmail(x) {
+ 
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+    return true;
+}
+    
+    
+</script>
+
 <style>
 nav ul ul {
 	display: none;
