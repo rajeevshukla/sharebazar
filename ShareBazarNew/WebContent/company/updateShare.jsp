@@ -11,16 +11,33 @@
 </style>
 
 <script type="text/javascript">
-        $(document).ready(function(){
-        
-         var value= '<c:out value="${shareType}"></c:out>';
-         $("#newShareType").val(value);
-        
-        });
-        
+	$(document).ready(function() {
 
+		var value = '<c:out value="${shareType}"></c:out>';
+		$("#newShareType").val(value);
+
+	});
+
+	function validate() {
+
+		var newShareType = $("#newShareType").val();
+		var newShareRate=$("#newShareRate").val();
+		if (newShareType == -1) {
+			alert("Please select valid share type");
+			return false;
+		}
+ 
+      if(newShareRate<0 ){
+           alert("Please select valid share rate " );
+           return false;
+      }
+
+
+     return true;
+
+	}
 </script>
-  
+
 </head>
 
 <body>
@@ -30,7 +47,8 @@
 			<div class="marg_top wrapper">
 				<div>
 					<s:fielderror></s:fielderror>
-					<form action="updateShare.action" method="post" class="text">
+					<form action="updateShare.action" method="post" class="text"
+						onsubmit="return validate();">
 						<h4 class="commentformTitle">Update Share.......</h4>
 						<div style="padding: 20px; font-size: 10px;">
 							<table style="font-size: 13px;">
@@ -38,15 +56,18 @@
 									<tr>
 										<td class="row"><label for="visitorFirstName">
 												Share Type</label></td>
-										<td class="row"><select name="newShareType" id="newShareType">
-												<option selected="selected">Select Share Type</option>
+										<td class="row"><select name="newShareType"
+											id="newShareType">
+												<option value="-1" selected="selected">Select Share
+													Type</option>
 												<option value="ordinary">Ordinary</option>
 												<option value="equity">Equity</option>
 												<option value="preferential">Preferential</option>
 										</select></td>
 									</tr>
 									<tr>
-										<td class="row"><label for="visitorLastName"> No of shares (available)</label></td>
+										<td class="row"><label for="visitorLastName"> No
+												of shares (available)</label></td>
 										<td class="row"><input type="text" style="width: 100px;"
 											class="short" disabled="disabled" value="${availableShare }" /></td>
 
@@ -56,7 +77,7 @@
 												Rate per Share</label></td>
 										<td class="row"><input type="text" class="short"
 											required="" style="width: 100px;" id="ratePerShare"
-											 disabled="disabled" value="${ratePerShare}" />Rs.</td>
+											disabled="disabled" value="${ratePerShare}" />Rs.</td>
 
 									</tr>
 									<tr>
@@ -65,29 +86,21 @@
 												rate per share<font style="font-size: 8px; color: green;">(for
 													buying)</font>
 										</label></td>
-										<td class="row"><input type="text" id="buyshare"
+										<td class="row"><input type="text" id="newShareRate"
 											name="newShareRate" class="short" required=""
 											style="width: 180px;" />&nbsp;&nbsp;</td>
 									</tr>
 									<tr>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-										<td class="row"><input type="submit" value="Update"
-											 /> <input type="reset" value="Reset" />
-										</td>
+										<td class="row"><input type="submit" value="Update" />
+											<input type="reset" value="Reset" /></td>
 
 									</tr>
 								</tbody>
 							</table>
-
-
 						</div>
-
-
 					</form>
 				</div>
-
-
-
 			</div>
 		</div>
 	</div>

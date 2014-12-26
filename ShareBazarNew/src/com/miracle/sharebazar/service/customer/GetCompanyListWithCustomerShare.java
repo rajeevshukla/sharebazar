@@ -87,15 +87,14 @@ public class GetCompanyListWithCustomerShare extends ActionSupport {
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
 		PreparedStatement ps = connection
-				.prepareStatement("select  COMPANY_NAME,AVAILABLE_SHARE,  SHARE_TYPE ,RATE_PER_SHARE , MEMBERSHIP_ID from COMPANY_SHARE_MASTER");
-		PreparedStatement ps2=connection.prepareStatement("select share from CUSTOMER_MASTER where MEMBERSHIP_ID=?");
+				.prepareStatement("select  COMPANY_NAME,AVAILABLE_SHARE,  SHARE_TYPE ,RATE_PER_SHARE , MEMBERSHIP_ID from COMPANY_SHARE_MASTER WHERE AVAILABLE_SHARE>0");
+		PreparedStatement ps2=connection.prepareStatement("select SHARE from CUSTOMER_MASTER where MEMBERSHIP_ID=?");
 		HttpSession session=ServletActionContext.getRequest().getSession();
 		String memberId=(String)session.getAttribute("memberId");
 		ps2.setString(1, memberId);
 		 ResultSet set2=ps2.executeQuery();
 		ResultSet set = ps.executeQuery();
-		while(set.next())
-		{ 
+		while(set.next()) { 
 			companyList.add(set.getString(1));
 			noOfShare.add(set.getInt(2));
 			shareType.add(set.getString(3));
@@ -104,10 +103,7 @@ public class GetCompanyListWithCustomerShare extends ActionSupport {
 		}
 		if (set2.next()) {
 			setShare(set2.getInt(1));
-			
 		}
-		
 		return SUCCESS;
-
 	}
 }

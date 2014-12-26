@@ -70,8 +70,7 @@ public class GetCompanyList extends ActionSupport {
 		companyId.add("");
 		DatabaseUtils db = new DatabaseUtils();
 		Connection connection = db.getConnectionDb();
-		PreparedStatement ps = connection
-				.prepareStatement("select  COMPANY_NAME,AVAILABLE_SHARE,  SHARE_TYPE ,RATE_PER_SHARE , MEMBERSHIP_ID from COMPANY_SHARE_MASTER");
+		PreparedStatement ps = connection.prepareStatement("select  COMPANY_NAME,AVAILABLE_SHARE,  SHARE_TYPE ,RATE_PER_SHARE , MEMBERSHIP_ID from COMPANY_SHARE_MASTER WHERE AVAILABLE_SHARE>0");
 		
 		ResultSet set = ps.executeQuery();
 		while(set.next())

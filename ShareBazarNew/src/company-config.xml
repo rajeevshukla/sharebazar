@@ -2,7 +2,6 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package namespace="/company" name="company-package" extends="struts-default">
-
 		<action name="companyRegister"
 			class="com.miracle.sharebazar.registration.CompanyRegister">
 			<result name="success" type="redirect">/company/companyMemberIdShow.jsp
@@ -44,10 +43,18 @@
 			class="com.miracle.sharebazar.service.company.SellShareAction">
 			<result>/company/sellShare.jsp</result>
 		</action>
-		<action name="deleteShare"
-			class="com.miracle.sharebazar.service.company.DeleteShareAction">
+
+		<action name="getDeleteSharePage"
+			class="com.miracle.sharebazar.service.company.GetDeleteSharePageAction">
 			<result>/company/deleteShare.jsp</result>
 		</action>
+		<action name="deleteShare"
+			class="com.miracle.sharebazar.service.company.DeleteShareAction">
+			<result>/company/deleteShareSuccess.jsp</result>
+		</action>
+
+
+
 		<action name="manageFund"
 			class="com.miracle.sharebazar.service.company.ManageFundAction">
 			<result>/company/manageFund.jsp</result>
@@ -63,18 +70,19 @@
 			<result>/company/viewShareHolder.jsp</result>
 		</action>
 
-		<action name="viewShareHolderDetails" class="com.miracle.sharebazar.service.company.ViewShareHolderDetailsAction">
-		<result>/company/viewShareHolderDetails.jsp</result>
+		<action name="viewShareHolderDetails"
+			class="com.miracle.sharebazar.service.company.ViewShareHolderDetailsAction">
+			<result>/company/viewShareHolderDetails.jsp</result>
 		</action>
-		
+
 		<action name="searchShareHolders"
 			class="com.miracle.sharebazar.service.company.searchShareHoldersAction">
 			<result>/company/searchShareHolders.jsp</result>
 		</action>
-		 <action name="addShare" class="">
- 
- 		 
-		 </action>
+		<action name="addShare" class="">
+
+
+		</action>
 		<action name="contactRequest"
 			class="com.miracle.sharebazar.service.company.ContactRequestAction">
 			<result>/company/contactRequest.jsp</result>
@@ -103,21 +111,25 @@
 		<action name="getShareHolderDetails">
 			<result name="success">/company/viewShareHolderDetails.jsp</result>
 		</action>
-		<action name="getAddSharePage" class="com.miracle.sharebazar.service.company.GetAddSharePageAction">
-		  <result name="success">/company/showExistingShare.jsp</result>
+		<action name="getAddSharePage"
+			class="com.miracle.sharebazar.service.company.GetAddSharePageAction">
+			<result name="success">/company/showExistingShare.jsp</result>
 		</action>
-		
-		 <action name="addMoreShare" class="com.miracle.sharebazar.service.company.AddCompanyShareAction">
-		  <result name="success">/company/addShareSuccess.jsp</result>
-		 </action>
-		 
-		 <action name="getUpdateSharePage" class="com.miracle.sharebazar.service.company.GetUpdateSharePageAction">
-		   <result name="success">/company/updateShare.jsp </result>
-		 </action>
-		 <action name="getShareHistory" class="com.miracle.sharebazar.service.company.GetShareHistoryAction">
-		    <result name="success">/company/shareHistory.jsp</result>
-		 </action>
-		 
-		 
+
+		<action name="addMoreShare"
+			class="com.miracle.sharebazar.service.company.AddCompanyShareAction">
+			<result name="success">/company/addShareSuccess.jsp</result>
+		</action>
+
+		<action name="getUpdateSharePage"
+			class="com.miracle.sharebazar.service.company.GetUpdateSharePageAction">
+			<result name="success">/company/updateShare.jsp </result>
+		</action>
+		<action name="getShareHistory"
+			class="com.miracle.sharebazar.service.company.GetShareHistoryAction">
+			<result name="success">/company/shareHistory.jsp</result>
+		</action>
+
+
 	</package>
 </struts>
