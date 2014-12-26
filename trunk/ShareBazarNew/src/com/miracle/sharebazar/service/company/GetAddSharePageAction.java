@@ -20,7 +20,7 @@ public class GetAddSharePageAction extends ActionSupport {
 	private int availableShare;
 	private String shareType;
 	private double ratePerShare;
-
+    private boolean deleted;
 	private CommonServiceProvider serviceProvider = new CommonServiceProvider();
 
 	@Override
@@ -30,7 +30,7 @@ public class GetAddSharePageAction extends ActionSupport {
 		Connection connection = db.getConnectionDb();
 		try {
 			PreparedStatement statement = connection
-					.prepareStatement("SELECT RATE_PER_SHARE,AVAILABLE_SHARE,SHARE_TYPE FROM COMPANY_SHARE_MASTER   WHERE MEMBERSHIP_ID=?");
+					.prepareStatement("SELECT RATE_PER_SHARE,AVAILABLE_SHARE,SHARE_TYPE ,IS_DELETED FROM COMPANY_SHARE_MASTER   WHERE MEMBERSHIP_ID=?");
 			statement.setString(1, ApplicationUtilities.getCurrentMemberIdFromSession());
 			ResultSet  rs=  statement.executeQuery();
 			if(rs.next()){
@@ -38,7 +38,7 @@ public class GetAddSharePageAction extends ActionSupport {
 				ratePerShare=rs.getDouble(1);
 				availableShare=rs.getInt(2);
 				shareType=rs.getString(3);
-				
+				deleted=rs.getBoolean(4);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -88,6 +88,12 @@ public class GetAddSharePageAction extends ActionSupport {
 		this.serviceProvider = serviceProvider;
 	}
 
-	
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
 	
 }

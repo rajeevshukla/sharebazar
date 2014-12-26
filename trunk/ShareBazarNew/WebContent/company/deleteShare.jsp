@@ -14,9 +14,7 @@
  
   function submitDetails(){
       
-       if(confirm("Do you really want to delete your share ?\n You will no longer be able to sell your share any more. Continue ? ")){
-       
-         
+       if(confirm("Do you really want to delete your share ?\n Once you delete your shares you ll no longer visibile to market untill you add shares. Continue ? ")){
          return true;
        }else 
        
@@ -57,8 +55,17 @@
 									<tr>
 									<tr>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-										<td class="row"><input type="submit" value="Delete"  style="color: red";
+										<td class="row">
+										 <c:choose>
+										<c:when test="${deleted}">
+										 <span style="color : red;">Your account is locked for share related modification ! Contact support to re enable it .  </span>
+										</c:when>
+										<c:otherwise>
+										
+										<input type="submit" value="Delete"  style="color: red";
 											 />
+											 </c:otherwise>
+											 </c:choose>
 										</td>
 
 									</tr>

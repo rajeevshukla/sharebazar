@@ -92,9 +92,18 @@
 									</tr>
 									<tr>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-										<td class="row"><input type="submit" value="Update" />
-											<input type="reset" value="Reset" /></td>
-
+										<td class="row">
+										<c:choose>
+										<c:when test="${deleted}">
+										 <span style="color : red;">Your share has been deleted. You  are not visible to market Please add share to do so. </span>
+										</c:when>
+										<c:otherwise>
+										
+										<input type="submit" value="Update" />
+											<input type="reset" value="Reset" />
+                                         </c:otherwise>
+                                         </c:choose>
+                                         </td>
 									</tr>
 								</tbody>
 							</table>
