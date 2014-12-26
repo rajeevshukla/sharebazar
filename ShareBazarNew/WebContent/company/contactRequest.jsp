@@ -48,7 +48,7 @@
 						    </c:choose>
 						 
 						  	<tr class="${className}">
-								<td><a href="#">${contactDetails.customerUserName}</a></td>
+								<td><a href="viewShareHolderDetails.action?memberId=${contactDetails.customerMembershipId}">${contactDetails.customerUserName}</a></td>
 								<td><fmt:formatDate value="${contactDetails.date}" type="both"
 										pattern="dd-MMM-yyyy hh:mm a" /></td>
 								<td>${contactDetails.customerMessage}</td>

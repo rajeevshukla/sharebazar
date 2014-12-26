@@ -17,9 +17,10 @@ public class DeleteShareAction  extends ActionSupport{
 		Connection connection = db.getConnectionDb();
 		try {
 		
-			PreparedStatement statement = connection.prepareStatement("UPDATE COMPANY_SHARE_MASTER SET IS_DELETED=?  WHERE MEMBERSHIP_ID=?");
+			PreparedStatement statement = connection.prepareStatement("UPDATE COMPANY_SHARE_MASTER SET IS_DELETED=? , AVAILABLE_SHARE=? WHERE MEMBERSHIP_ID=?");
 			statement.setBoolean(1, true);
-			statement.setString(2,ApplicationUtilities.getCurrentMemberIdFromSession());
+			statement.setInt(2, 0);
+			statement.setString(3,ApplicationUtilities.getCurrentMemberIdFromSession());
 			statement.executeUpdate();
 			System.out.println("Company Status has been disabled..");
 			//send a new mail to company 
