@@ -58,7 +58,7 @@
 									<tr>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 										<td class="row"><input type="submit" value="Delete"  style="color: red";
-											 /> <input type="reset" value="Reset" />
+											 />
 										</td>
 
 									</tr>

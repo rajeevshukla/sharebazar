@@ -10,6 +10,32 @@
 }
 </style>
 
+
+<style>
+.ui-autocomplete-loading {
+	background: white url("../images/ui-anim_basic_16x16.gif") right center
+		no-repeat;
+}
+</style>
+
+
+<script type="text/javascript">
+	$(function() {
+		function log(message) {
+			$("<div>").text(message).prependTo("#log");
+			$("#log").scrollTop(0);
+		}
+		$( "#search" ).autocomplete({
+					source : "getShareHolders.action",
+					minLength : 2,
+					select : function(event, ui) {
+						log(ui.item ? "Selected: " + ui.item.value + " aka "
+								+ ui.item.id : "Nothing selected, input was "
+								+ this.value);
+					}
+				});
+	});
+</script>
 </head>
 
 <body>
@@ -25,15 +51,10 @@
 							<table style="font-size: 13px;">
 								<tbody>
 									<tr>
-										<td class="row"><label for="visitorFirstName">Shareholder Name  </label></td>
-										<td class="row"><input type="text" style="width: 100px;"
-											         /></td>
-									</tr>
-									<tr>
-										<td class="row"><label for="visitorLastName"> No
-												of shares (available)</label></td>
-										<td class="row"><input type="text" style="width: 100px;"
-											class="short" disabled="disabled" value="${availableShare}" /></td>
+										<td class="row"><label for="visitorFirstName">Shareholder
+												Name </label></td>
+										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+											type="text" id="search" placeholder="Type Share holder name !!" /></td>
 									</tr>
 								</tbody>
 							</table>

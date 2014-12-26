@@ -10,7 +10,6 @@
 </style>
 
 </head>
-
 <body>
 	<jsp:include page="../company/companyHeader.jsp"></jsp:include>
 
@@ -30,10 +29,9 @@
 							</tr>
 						</thead>
 						<tbody>
-
                         <c:forEach var="shareHolderDetails"  items="${shareHoldersListForms}">
 							<tr>
-								<td><a href="#">${shareHolderDetails.customerLoginId}</a></td>
+								<td><a href="viewShareHolderDetails.action?memberId=${shareHolderDetails.customerMembershipId}">${shareHolderDetails.customerLoginId}</a></td>
 								<td> ${shareHolderDetails.noOfShares}</td>
 								<td> ${shareHolderDetails.ratePerShare}</td>
 								<td> ${shareHolderDetails.totalCostOfShares}</td>
@@ -42,9 +40,7 @@
                          </c:forEach>
 						</tbody>
 					</table>
-
 			</form>
-
 			</div>
 		</div>
 	</div>
