@@ -34,6 +34,7 @@
 								<!-- <p>The latest on keeping your personal info safe and secure.</p> -->
 								<ul class="list1">
 									<li><a href="securityAlert.jsp">Security Alerts</a></li>
+									<li><a href="http://www.investopedia.com/university/stocks" target="_blank">About share market</a></li>
 									<li><a href="avoidScams.jsp">Avoiding Scams</a></li>
 									<li><a href="../common/privacyAndPolicy.jsp">Privacy & Policies</a></li>
 									<li><a href="../common/doAndDont1.jsp">Do's & Don't</a></li>

@@ -164,7 +164,7 @@ nav ul ul ul {
 							<ul>
 								<li><a href="../company/getAddSharePage.action">Add Share</a></li>
 								<li><a href="../company/getUpdateSharePage.action">Update Share</a></li>
-								<li><a href="../company/deleteShare.action">Delete Share</a></li>
+								<li><a href="../company/getDeleteSharePage.action">Delete Share</a></li>
 								<li><a href="../company/getShareHistory.action">Share History</a></li>
 							</ul>
 							
