@@ -3,7 +3,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@include file="../common/common.jsp"%>
 <c:if test="${empty session.name}">
-	<c:redirect url="index.jsp"></c:redirect>
+	<c:redirect url="../common/index.jsp"></c:redirect>
 
 
 </c:if>
@@ -71,7 +71,7 @@
 
 				<hr style="margin-right: 20px;">
 				<div>
-					<a href="companyDetailGet.action" style="text-decoration: none;">Back
+					<a href="${companyInfoBackURL}" style="text-decoration: none;">Back
 					</a><font
 						style="color: navy; font-weight: bold; font-style: oblique; margin-left: 300px;">
 						Company Details</font>

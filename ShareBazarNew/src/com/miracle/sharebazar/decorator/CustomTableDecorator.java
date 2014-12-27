@@ -13,10 +13,9 @@ public class CustomTableDecorator extends TableDecorator {
 		 return link;
 	 }
 	 
-	 
 	 public String getCompanyDetails(){
 		 BuySellShareHistoryForm buyShareForm=(BuySellShareHistoryForm)getCurrentRowObject();
-		 String link="<a href='viewCompanyDetails.action?memberId="+buyShareForm.getMemberShipId()+"'>"+buyShareForm.getLoginName()+"</a>";
+		 String link="<a href='companyInfo.action?memberShipId="+buyShareForm.getMemberShipId()+"'>"+buyShareForm.getLoginName()+"</a>";
 		 return link;
 	 }
 }
