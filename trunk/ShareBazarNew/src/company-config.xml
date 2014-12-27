@@ -79,10 +79,7 @@
 			class="com.miracle.sharebazar.service.company.searchShareHoldersAction">
 			<result>/company/searchShareHolders.jsp</result>
 		</action>
-		<action name="addShare" class="">
-
-
-		</action>
+		
 		<action name="contactRequest"
 			class="com.miracle.sharebazar.service.company.ContactRequestAction">
 			<result>/company/contactRequest.jsp</result>

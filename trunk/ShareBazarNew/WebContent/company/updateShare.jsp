@@ -31,8 +31,6 @@
            alert("Please select valid share rate " );
            return false;
       }
-
-
      return true;
 
 	}
@@ -95,10 +93,9 @@
 										<td class="row">
 										<c:choose>
 										<c:when test="${deleted}">
-										 <span style="color : red;">Your share has been deleted. You  are not visible to market Please add share to do so. </span>
+										 <span style="color : red;">Your visibility in market has been disabled as you have deleted your shares !</span>
 										</c:when>
 										<c:otherwise>
-										
 										<input type="submit" value="Update" />
 											<input type="reset" value="Reset" />
                                          </c:otherwise>

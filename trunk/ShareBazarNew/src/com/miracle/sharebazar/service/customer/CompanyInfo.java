@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.miracle.sharebazar.company.model.CompanyBean;
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.payment.PaymentBean;
@@ -25,13 +29,15 @@ PaymentBean paymentBean=new PaymentBean();
  
 	public String execute() throws Exception {
 	
+	
+		
+		
 		DatabaseUtils db=new DatabaseUtils();
 	Connection connection=	db.getConnectionDb();
 	  PreparedStatement ps=            connection.prepareStatement("select * from COMPANY_MASTER c, COMPANY_SHARE_MASTER s where c.MEMBERSHIP_ID=s.MEMBERSHIP_ID and c.MEMBERSHIP_ID=?" );
 	     ps.setString(1, memberShipId);
 	  ResultSet rs=   ps.executeQuery();
-	   if(!rs.next())
-	   {
+	   if(!rs.next())  {
 		   return NONE;
 	   }
 	   else

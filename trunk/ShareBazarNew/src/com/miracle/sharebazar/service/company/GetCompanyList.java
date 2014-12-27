@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -64,6 +68,11 @@ public class GetCompanyList extends ActionSupport {
 
 	public String execute() throws Exception {
 		companyList.add(" select a company");
+		
+		HttpSession session=ServletActionContext.getRequest().getSession();
+		session.setAttribute("companyInfoBackURL", "companyDetailGet.action"); //used to reach on back page  
+		
+		
 		noOfShare.add(0);
 		shareType.add("no");
 		ratePerShare.add(0.00);

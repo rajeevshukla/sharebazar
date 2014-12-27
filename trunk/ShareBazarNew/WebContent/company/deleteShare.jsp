@@ -58,7 +58,7 @@
 										<td class="row">
 										 <c:choose>
 										<c:when test="${deleted}">
-										 <span style="color : red;">Your account is locked for share related modification ! Contact support to re enable it .  </span>
+										 <span style="color : red;">Your visibility in market has been disabled as you have deleted your shares !  </span>
 										</c:when>
 										<c:otherwise>
 										

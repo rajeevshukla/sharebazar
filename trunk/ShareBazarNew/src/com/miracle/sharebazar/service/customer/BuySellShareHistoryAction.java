@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.customer.model.BuySellShareHistoryForm;
@@ -25,6 +28,10 @@ public class BuySellShareHistoryAction  extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 
+		HttpSession session=ServletActionContext.getRequest().getSession();
+		 session.setAttribute("companyInfoBackURL", "viewCustomerShare.action");
+		   System.out.println("settting company info back url.");
+		
 		DatabaseUtils databaseUtils = new DatabaseUtils();
 		Connection connection = databaseUtils.getConnectionDb();
 
