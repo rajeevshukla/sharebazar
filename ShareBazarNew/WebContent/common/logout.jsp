@@ -1,17 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@include file="../common/common.jsp"%>
-<%@taglib prefix="currency" uri="http://www.sharebazar.com/currencyTags"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE HTML >
+<html lang="en">
 <head>
-<base href="<%=basePath%>">
 
 <title>Logout</title>
 <meta http-equiv="pragma" content="no-cache">
@@ -23,30 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Security Alert</title>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		$("#dialog").dialog({
-			autoOpen : false,
-			model : true,
-			height : 300,
-			width : 400,
-			resizable : false,
-
-		/* buttons: [ { text: "Ok", click: function() { $( this ).dialog( "close" ); } } ] */
-
-		});
-
-		$("#dialog").parent("div").css("top", "160px;");
-
-		$(function() {
-			$("#tabs").tabs();
-		});
-	});
-</script>
-
+<title>Log out</title>
 </head>
 <body>
 	<jsp:include page="../common/commonHeader.jsp"></jsp:include>
@@ -62,7 +30,7 @@
 					<%
 						session.invalidate();
 					%>
-					Logout Successfully . <a href="./common/index.jsp">Click here </a>to
+					<a href="./common/index.jsp">Click here </a>to
 					go home page
 				<p>
 					<br> <br>

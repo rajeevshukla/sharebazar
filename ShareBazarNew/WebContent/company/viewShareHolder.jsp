@@ -23,9 +23,8 @@
 							<tr>
 								<th>Customer Name</th>
 								<th>Shares</th>
-								<th>Rate</th>
 								<th>Total </th>
-								<th>Date Of Share PurChased</th>
+								<th>Last Date of purchase</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -33,7 +32,6 @@
 							<tr>
 								<td><a href="viewShareHolderDetails.action?memberId=${shareHolderDetails.customerMembershipId}">${shareHolderDetails.customerLoginId}</a></td>
 								<td> ${shareHolderDetails.noOfShares}</td>
-								<td> ${shareHolderDetails.ratePerShare}</td>
 								<td> ${shareHolderDetails.totalCostOfShares}</td>
 								<td> <fmt:formatDate value="${shareHolderDetails.date}" pattern="dd-MMM-yyyy hh:mm a"/> </td>
 							</tr>

@@ -27,7 +27,8 @@ public class ContactRequestAction extends ActionSupport {
 
 		String memberId = (String) session.getAttribute("memberId");
 		DatabaseUtils databaseUtils = new DatabaseUtils();
-
+		session.setAttribute("shareHolderInfoBackURL", "contactRequest.action");
+		 
 		Connection connection = databaseUtils.getConnectionDb();
 
 		PreparedStatement ps = connection

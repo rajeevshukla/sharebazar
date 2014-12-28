@@ -12,12 +12,10 @@ import com.miracle.sharebazar.utils.ApplicationUtilities;
 
 public class SendMail {
 
-
-	private String HOST_NAME = "smtp.gmail.com";
-	private String USER_MAIL_ID =ApplicationUtilities.getCustomProperty("mail.username", "noreplyatsharebazar");  // username
-	private String AUTH_PWD = ApplicationUtilities.getCustomProperty("mail.password", "sharebazar@123");     // passwd
-	public boolean sendMessageToMail(String mailid,String subject , String msg)
-	{
+	private final String HOST_NAME = "smtp.gmail.com";
+	private final String USER_MAIL_ID =ApplicationUtilities.getCustomProperty("mail.username", "noreplyatsharebazar");  // username
+	private final  String AUTH_PWD = ApplicationUtilities.getCustomProperty("mail.password", "sharebazar@123");     // passwd
+	public boolean sendMessageToMail(String mailid,String subject , String msg)	{
 
 		try {
 			String port=null;

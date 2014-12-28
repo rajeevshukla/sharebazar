@@ -55,8 +55,6 @@
 </head>
 
 <body>
-	&nbsp;
-
 	<jsp:include page="../company/companyHeader.jsp"></jsp:include>
 
 
@@ -78,7 +76,7 @@
 					<div class="LeftInnerDiv">
 
 						Name:
-						<s:property value="companyName" />
+						<s:property value="firstName" />&nbsp;<s:property value="lastName" />
 
 					</div>
 
@@ -123,12 +121,8 @@
 
 
 					<div class="RightInnerDiv">
-						Phone :
-						<s:property value="phone" />
-					</div>
-					<div class="LeftInnerDiv">
-						Mobile:
-						<s:property value="mobile" />
+					Mobile:
+						<s:property value="mobileNo" />
 					</div>
 
 
