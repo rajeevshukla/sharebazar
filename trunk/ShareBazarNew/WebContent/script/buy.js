@@ -38,7 +38,7 @@ function buy() {
 		if ((noOfShare >= buyshare) && (noOfShare-buyshare)>=0) {
 			return true;
 		} else {
-			alert("Enter no share less than or equall to selected company");
+			alert("Enter no share less than or equal to selected company");
 			return false;
 		}
 	} else {

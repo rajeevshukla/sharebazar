@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	<package namespace="/company" name="company-package" extends="struts-default">
+	<package namespace="/company" name="company-package" extends="struts-default,json-default">
 		<action name="companyRegister"
 			class="com.miracle.sharebazar.registration.CompanyRegister">
 			<result name="success" type="redirect">/company/companyMemberIdShow.jsp
@@ -126,7 +126,10 @@
 			class="com.miracle.sharebazar.service.company.GetShareHistoryAction">
 			<result name="success">/company/shareHistory.jsp</result>
 		</action>
-
-
+		
+		<action name="getShareHoldersList" class="com.miracle.sharebazar.service.company.GetShareHolderListAction">
+		 <result name="success" type="json"></result>
+		
+		</action>
 	</package>
 </struts>

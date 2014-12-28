@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.connection.DatabaseUtils;
 import com.miracle.sharebazar.customer.model.BuySellShareHistoryForm;
@@ -26,7 +29,9 @@ public class GetShareHistoryAction  extends ActionSupport{
 
 		DatabaseUtils databaseUtils = new DatabaseUtils();
 		Connection connection = databaseUtils.getConnectionDb();
-
+        HttpSession  session=ServletActionContext.getRequest().getSession();
+        session.setAttribute("shareHolderInfoBackURL", "getShareHistory.action");
+		
 		PreparedStatement buyHistoryStatement= connection.prepareStatement("SELECT * FROM  BUYER_SELLER_MASTER  WHERE BUYER_MEMBERSHIP_ID=? ORDER BY DATE DESC");
 		buyHistoryStatement.setString(1, ApplicationUtilities.getCurrentMemberIdFromSession());
 

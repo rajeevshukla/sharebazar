@@ -25,14 +25,19 @@
 			$("<div>").text(message).prependTo("#log");
 			$("#log").scrollTop(0);
 		}
-		$( "#search" ).autocomplete({
-					source : "getShareHolders.action",
+		$("#search").autocomplete(
+				{
+					source : function(request, response) {
+						$.getJSON("getShareHoldersList.action?term="
+								+ request.term, function(data) {
+							response(data.resultList);
+						});
+					},
+					close : function(){
+					alert("selected");
+					},
 					minLength : 2,
-					select : function(event, ui) {
-						log(ui.item ? "Selected: " + ui.item.value + " aka "
-								+ ui.item.id : "Nothing selected, input was "
-								+ this.value);
-					}
+					delay : 100
 				});
 	});
 </script>
@@ -54,7 +59,8 @@
 										<td class="row"><label for="visitorFirstName">Shareholder
 												Name </label></td>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-											type="text" id="search" placeholder="Type Share holder name !!" /></td>
+											type="text" id="search"
+											placeholder="Type Share holder name !!" /></td>
 									</tr>
 								</tbody>
 							</table>
