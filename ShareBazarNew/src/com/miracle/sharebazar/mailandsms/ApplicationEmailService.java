@@ -9,28 +9,78 @@ public class ApplicationEmailService {
 
 
 
-	public void sendCompanyResitrationEmail(final String memberId,final String userName,final String password,final String toMailId){
+	public static void sendCompanyResitrationEmail(final String memberId,final String userName,final String password,final String toMailId){
+
+		final String msg="";
+
+		new Thread(){
+			public void run() {
+
+				SendMail sendMail=new SendMail();
+				sendMail.sendMessageToMail(toMailId, "", msg);
+			};
+		}.start();
+	}
+
+	public  static void sendCustomerRegistrationEmail(final String memberId,final String userName,final String password,final String toMailId) {
+
+		final String msg="";
+
+		new Thread(){
+			public void run() {
+
+				SendMail sendMail=new SendMail();
+				sendMail.sendMessageToMail(toMailId, "", msg);
+			};
+		}.start();
+	}
+
+	public static void sendForgetPasswordEmail(final String userId,final String password,final String memberId,final String toMailId){
+
+		final String msg="";
+
+		new Thread(){
+			public void run() {
+
+				SendMail sendMail=new SendMail();
+				sendMail.sendMessageToMail(toMailId, "Here is your sharebazar.com credentials", msg);
+			};
+		}.start();
+
 
 
 	}
 
-	public void sendCustomerRegistrationEmail(final String memberId,final String userName,final String password,final String toMailId) {
+	public static void sendSellShareEmailToCompany(final int noOfShares , final String customerId,final String companyId,final String totalPrice,final String dateOfSell,final String companyMailId){
 
 
+		final String msg="<!Doctype html>"
+				+ "<html lang='e'>  <head>  </head>  <body>  Hi "+companyId+" ,"
+				+ " <p> You have sold <b>"+noOfShares+" shares</b> to  <b>"+customerId+"</b> on <b>"+dateOfSell+"</b>. Total amount  credited to your account is <b>"+totalPrice+" Rs.</b>"
+				+ " <p>Thank you for choosing sharebazar.com</p>  <i>Note : This is an auto generated email please do not reply back to this email.</i>"
+				+ "<br> <br>  Best regards, <br>   Sharebazar.com team   </body>   </html>";   
+
+		new Thread(){
+			public void run() {
+				SendMail sendMail=new SendMail();
+				sendMail.sendMessageToMail(companyMailId, "Transaction alert ! "+noOfShares+" sold at sharebazar.com", msg);
+			};
+		}.start();
 	}
 
-	public void sendForgetPasswordEmail(final String userId,final String password,final String memberId){
+	public static void sendBuyShareEmailToCustomer(final int noOfShares , final String customerId,final String companyId,final double totalPrice,final String dateOfPurchase,final String customerMailId){
 
-
-	}
-
-	public void sendSellShareEmailToCompany(final int noOfShares , final String customerId,final String companyId,final String totalPrice,final String dateOfPurchase,final String companyMailId){
-
-
-	}
-
-	public void sendBuyShareEmailToCustomer(final int noOfShares , final String customerId,final String companyId,final String totalPrice,final String dateOfPurchase,final String companyMailId){
-
+		final String msg="<!Doctype html>"
+				+ "<html lang='e'>  <head>  </head>  <body>  Hi "+customerId+" ,"
+				+ " <p> You have brought <b>"+noOfShares+" shares</b> from  <b>"+companyId+"</b> on <b>"+dateOfPurchase+"</b>. Total amount you have paid is <b>"+totalPrice+" Rs.</b>"
+				+ " <p>Thank you for choosing sharebazar.com</p>  <i>Note : This is an auto generated email please do not reply back to this email.</i>"
+				+ "<br> <br>  Best regards, <br>   Sharebazar.com team   </body>   </html>";    
+		new Thread(){
+			public void run() {
+				SendMail sendMail=new SendMail();
+				sendMail.sendMessageToMail(customerMailId, "Transaction alert !"+noOfShares+" brought at sharebazar.com", msg);
+			};
+		}.start();
 
 	}
 
