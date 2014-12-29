@@ -30,15 +30,24 @@
 					source : function(request, response) {
 						$.getJSON("getShareHoldersList.action?term="
 								+ request.term, function(data) {
-							response(data.resultList);
-						});
+
+                       response($.map(data, function(item) {
+                                           alert(item);
+										return {
+											shareHolderName : item.shareHolderName,
+											memberId : item.memberId,
+										};
+									}));
+						},'json');
 					},
 					close : function(){
 					
 					},
 					minLength : 2,
 					delay : 100
-				});
+				}).data("uiAutocomplete")._renderItem = function(ul,item) {
+							return $("<li/>").append("<a>"+item.shareHolderName+"</a").appentTo(ul);
+						};
 	});
 </script>
 </head>
@@ -67,7 +76,7 @@
 						</div>
 					</form>
 				</div>
-
+  <input type="hidden"  id="memberId">
 			</div>
 		</div>
 	</div>
