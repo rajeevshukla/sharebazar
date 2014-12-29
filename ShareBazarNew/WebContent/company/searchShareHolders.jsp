@@ -34,7 +34,7 @@
 						});
 					},
 					close : function(){
-					alert("selected");
+					
 					},
 					minLength : 2,
 					delay : 100
