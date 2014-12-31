@@ -4,11 +4,13 @@
 		<div class="wrapper">
 			<article class="col1">
 				<div class="pad">
-					<h2>Protecting Your Info</h2>
-					<p>The latest on keeping your personal info safe and secure.</p>
+					<h2>Informational</h2>
+					<p>The latest policies terms and conditions.</p>
 					<ul class="list1">
-						<li><a href="#">Security Alerts</a></li>
-						<li><a href="#">Avoiding Scams</a></li>
+						<li><a href="../common/privacyAndPolicy.jsp">Privacy And Policy</a></li>
+						<li><a href="../common/doAndDont1.jsp">Do and Don't</a></li>
+						<li><a href="#">Terms And Conditions</a></li>
+						<li><a href="../common/help.jsp">Help</a></li>
 					</ul>
 				</div>
 			</article>

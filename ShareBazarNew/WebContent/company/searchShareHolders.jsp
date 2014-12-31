@@ -30,14 +30,7 @@
 					source : function(request, response) {
 						$.getJSON("getShareHoldersList.action?term="
 								+ request.term, function(data) {
-
-                       response($.map(data, function(item) {
-                                           alert(item);
-										return {
-											shareHolderName : item.shareHolderName,
-											memberId : item.memberId,
-										};
-									}));
+                       response(data.resultList);
 						},'json');
 					},
 					close : function(){
@@ -45,9 +38,7 @@
 					},
 					minLength : 2,
 					delay : 100
-				}).data("uiAutocomplete")._renderItem = function(ul,item) {
-							return $("<li/>").append("<a>"+item.shareHolderName+"</a").appentTo(ul);
-						};
+				});
 	});
 </script>
 </head>
@@ -59,7 +50,7 @@
 			<div class="marg_top wrapper">
 				<div>
 					<s:fielderror></s:fielderror>
-					<form action="#" method="post" class="text">
+					<form action="getShareHolderDetailsById.action" method="post" class="text">
 						<h4 class="commentformTitle">Search Shareholders</h4>
 						<div style="padding: 20px; font-size: 10px;">
 							<table style="font-size: 13px;">
@@ -68,8 +59,9 @@
 										<td class="row"><label for="visitorFirstName">Shareholder
 												Name </label></td>
 										<td class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-											type="text" id="search"
-											placeholder="Type Share holder name !!" /></td>
+											type="text" id="search" name="loginName"
+											placeholder="Type Share holder name !!" required=""
+											> <input type="submit" value="Search" > </td>
 									</tr>
 								</tbody>
 							</table>
