@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@include file="../common/common.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,14 +9,11 @@
 <link rel="stylesheet" type="text/css" href="style/header.css">
 </head>
 <body>
-	<jsp:include page="../common/header.jsp"></jsp:include>
-	<jsp:include page="../common/leftpan.jsp"></jsp:include>
-	<div class="rightPan">
-
-		<div class="text">
-
-
-
+	<jsp:include page="../common/commonHeader.jsp"></jsp:include>
+			<div class="body2">
+		<div class="main">
+			<div class="marg_top wrapper">
+			
 			<b>Online share dealing: How it works</b>
 			<p>Online share dealing means that thousands of investors can
 				have the information about the stock market from their computer.</p>
@@ -46,13 +44,16 @@
 				information supplied to clients. For example, you can access market
 				information and share tips.</p>
 			<p>You ask for online dealing prices for the shares you want to
-				buy…… The money to pay for the shares will either be taken from
+				buyer or  The money to pay for the shares will either be taken from
 				your account or charged to your debit/credit card as appropriate.
-				Once settlement occurs, the share certificates are sent by post.</p>
+				Once settlement occurs, the share certificates are sent by email.</p>
+		
+		</div>
+		</div>
 		</div>
 
 
-	</div>
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+	
+	<jsp:include page="../common/commonFooter.jsp"></jsp:include>
 </body>
 </html>

@@ -129,7 +129,11 @@
 		
 		<action name="getShareHoldersList" class="com.miracle.sharebazar.service.company.GetShareHolderListAction">
 		 <result name="success" type="json"></result>
+		</action>
 		
+		<action name="getShareHolderDetailsById"  class="com.miracle.sharebazar.service.company.GetShareHolderDetailsByIdAction">
+		 <result name="success">/company/viewShareHolderDetails.jsp</result>
+		 <result name="notfound">/company/noShareHolderExist.jsp</result>
 		</action>
 	</package>
 </struts>

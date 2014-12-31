@@ -44,7 +44,6 @@ public class GetShareHolderDetailsAction extends ActionSupport {
 		ResultSet resultSet= preparedStatement.executeQuery();
 
 		if(resultSet.next()){
-
 			noOfSharesBrought=rs.getInt(1);
 
 		}else {

@@ -81,71 +81,7 @@
 				</p>
 				</article>
 			</div>
-			<div class="wrapper marg_top2">
-				<article class="col1">
-				<div class="box2">
-					<div class="pad" style="width: 230px">
-						<h2 class="bigHeading">Currency Converter</h2>
-						<div class="wrapper pad_bot1" style="width: 230px;">
-							<!-- <figure><img src="../images/page1_img1.jpg" alt="" class="left marg_right1"></figure>
-								<span class="color1">Michael Donovan</span><br>
-								Sit amet, ectetuer adgipi scing elit.<a href="#">More</a> -->
-							<span> From :<select id="currency_from"
-								style="width: 215px;">
-									<currency:IterateCurrency>
-										<option value="${key}">${value}(${key})</option>
-									</currency:IterateCurrency>
-							</select>
-							</span> <br> <span style="margin-top: 10px;"> To : <select
-								id="currency_to" style="padding-left: 14px; width: 216px;">
-									<currency:IterateCurrency>
-										<option value="${key}">${value}(${key})</option>
-									</currency:IterateCurrency>
-							</select></span><br> <br> <input type="button" value="get"
-								onclick="getCurrencyValue();">
-						</div>
-						<div class="wrapper pad_bot1" id="showCurrencyRate"
-							style="height: 32px;"></div>
-						<!-- <div class="wrapper pad_bot1">
-							<figure> <img src="../images/page1_img3.jpg" alt=""
-								class="left marg_right1"> </figure>
-							<span class="color1">James Doe</span><br> Quis autem vel eum
-							iure reprehenderit. <a href="#">More</a>
-						</div> -->
-					</div>
-				</div>
-				</article>
-				<article class="col2 pad_left1">
-				<div class="pad">
-					<h4 class="bigHeading">Purpose</h4>
-					<h3 style="color: blue;">Committed to improve the financial
-						well-being of people.</h3>
-
-					<h4>
-						<b> Vision</b>
-					</h4>
-					<br>
-					<ul style="list-style: inside;">
-						<li>To continue to be a leader.</li>
-						<li>establish global presence.</li>
-						<li>facilitate the financial well being of people.</li>
-					</ul>
-					<h4>
-						<b>Values</b>
-					</h4>
-					<br> <b><font color="blue">ShareBazar is committed
-							to the following core values :</font></b>
-					<ul style="list-style: inside;">
-						<li>Integrity</li>
-						<li>Customer focused culture</li>
-						<li>Trust, respect and care for the individual</li>
-						<li>Passion for excellence</li>
-						<li>Teamwork</li>
-					</ul>
-
-
-					</p>
-				</div>
+			
 				</article>
 			</div>
 			</section>

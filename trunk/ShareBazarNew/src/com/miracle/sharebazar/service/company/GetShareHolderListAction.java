@@ -36,23 +36,19 @@ public class GetShareHolderListAction  extends ActionSupport{
 		 HttpServletRequest request=ServletActionContext.getRequest();
 		 String term=request.getParameter("term");
 		  
+			HttpSession  session=ServletActionContext.getRequest().getSession();
+			session.setAttribute("shareHolderInfoBackURL", "searchShareHolders.action");
+			
 		DatabaseUtils databaseUtils = new DatabaseUtils();
 		Connection connection = databaseUtils.getConnectionDb();
-		HttpSession  session=ServletActionContext.getRequest().getSession();
-		session.setAttribute("shareHolderInfoBackURL", "getShareHistory.action");
 		
 		try {
-			
-			PreparedStatement ps= connection.prepareStatement("SELECT CM.FIRST_NAME,CM.LAST_NAME,CM.MEMBERSHIP_ID FROM  BUYER_SELLER_MASTER BSM, CUSTOMER_MASTER CM   WHERE BSM.BUYER_MEMBERSHIP_ID=CM.MEMBERSHIP_ID AND  SELLER_MEMBERSHIP_ID=?  AND CM.FIRST_NAME LIKE ?");
+			PreparedStatement ps= connection.prepareStatement("SELECT CL.LOGIN_ID FROM  BUYER_SELLER_MASTER BSM, CUSTOMER_LOGIN CL   WHERE BSM.BUYER_MEMBERSHIP_ID=CL.MEMBERSHIP_ID AND  SELLER_MEMBERSHIP_ID=?  AND CL.LOGIN_ID LIKE ?");
 			ps.setString(1, ApplicationUtilities.getCurrentMemberIdFromSession());
 			ps.setString(2, "%"+term+"%");
-			System.out.println("Get term :"+term);
 			ResultSet rs=  ps.executeQuery();
 			if(rs.next()){
-				JSONObject jsonObject=new JSONObject();
-				jsonObject.put("shareHolderName", rs.getString(1)+" "+rs.getString(2));
-				jsonObject.put("memberId", rs.getString(3));
-				getResultList().add(jsonObject.toString());
+				getResultList().add(rs.getString(1));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

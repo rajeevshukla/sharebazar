@@ -100,8 +100,8 @@
 				<article class="col2 pad_left1">
 				<div class="pad">
 					<h4 class="bigHeading">Purpose</h4>
-					<h3 style="color:blue;">Committed to improve the financial well-being of people.</h3>
-
+					<span>Committed to improve the financial well-being of people.</span>
+              
               <h4><b> Vision</b></h4><br>
 				<ul style="list-style: inside;">
                   <li>To continue to be a leader.</li>
@@ -109,7 +109,7 @@
                    <li>facilitate the financial well being of people.</li>
                   </ul>
            <h4><b>Values</b></h4><br>
-             <b><font color="blue">ShareBazar is committed to the following core values :</font></b>
+             <b><font >ShareBazar is committed to the following core values :</font></b>
 				<ul style="list-style: inside;">
    				<li> Integrity</li>		
     			<li>Customer focused culture</li>
@@ -119,7 +119,7 @@
                 </ul>
  
 						
-					</p>
+					
 					</div>
 				</article>
 			</div>
