@@ -48,7 +48,7 @@ public class SendForgetPasswordMail {
 		String memberShipId="";
 
 		try  {
-
+           System.out.println("inside send forget password mail.. ");
 
 			if(userType.equalsIgnoreCase("Customer")){
 				PreparedStatement ps=connection.prepareStatement("SELECT CL.MEMBERSHIP_ID, CL.LOGIN_ID, CL.PASSWORD,CM.FIRST_NAME  FROM CUSTOMER_MASTER CM, CUSTOMER_LOGIN CL WHERE CL.MEMBERSHIP_ID=CM.MEMBERSHIP_ID AND CM.EMAIL=?");
@@ -59,10 +59,10 @@ public class SendForgetPasswordMail {
 					userName=rs.getString(2);
 					password=rs.getString(3);
 					firstName=rs.getString(4);
-					result=" <span style='color : green;'>Email send successfully to your mail Id </span>";
+					result=" <span style='color : green;'>Email send successfully to your mail Id !</span>";
 					status=true;
 				}else {
-					result="<span style='color : red;'>Email Id does not exist in our database</span>";
+					result="<span style='color : red;'>Email Id does not exist in our database !</span>";
 				}
 
 			}else if(userType.equalsIgnoreCase("Company")){
@@ -75,20 +75,25 @@ public class SendForgetPasswordMail {
 					userName=rs.getString(2);
 					password=rs.getString(3);
 					firstName=rs.getString(4);
-					
-					result=" <span style='color : green;'>Email send successfully to your mail Id </span>";
+
+					result=" <span style='color : green;'>Email send successfully to your mail Id !!</span>";
 					status=true;
 				}else {
-					result="<span style='color : red;'>Email Id does not exist in our database</span>";
+					result="<span style='color : red;'>Email Id does not exist in our database !!</span>";
 				}
 
 			}
 			if(status){
-
 				SendMail sendMail=new SendMail();
-			final 	String htmlMsg="<html> <body> Dear "+firstName+", <p> Your userId is :<b>"+userName+"</b> Password is :<b> "+password+ "</b> and your  membershipId  is   <b>"+memberShipId+"</b> ! </p><br><br><br> Best Regards,  <br> ShareBazar.com";
-				sendMail.sendMessageToMail(emailId, "Here is your Sharebazar credentials",  htmlMsg); 
-                System.out.println("Mail send successfullly to "+emailId);
+				final 	String htmlMsg="<html> <body> Dear "+firstName+", <p> Your userId is :<b>"+userName+"</b> Password is :<b> "+password+ "</b> and your  membershipId  is   <b>"+memberShipId+"</b> ! </p><br><br><br> Best Regards,  <br> ShareBazar.com";
+				boolean statusOfMail = sendMail.sendMessageToMail(emailId, "Here is your Sharebazar credentials",  htmlMsg); 
+				System.out.println("Mail send successfullly to "+emailId);
+				
+				 if(!statusOfMail){
+					 
+					 result=" <span style='color : red;'> Could send forget password email . Please check your internet connection ! </span>";
+					 
+				 }
 			}
 
 		}catch(Exception e){

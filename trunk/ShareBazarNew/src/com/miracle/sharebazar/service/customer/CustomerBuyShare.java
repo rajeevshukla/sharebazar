@@ -11,7 +11,9 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.miracle.sharebazar.connection.DatabaseUtils;
+import com.miracle.sharebazar.mailandsms.ApplicationEmailService;
 import com.miracle.sharebazar.service.common.CommonServiceProvider;
+import com.miracle.sharebazar.utils.ApplicationUtilities;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -86,8 +88,10 @@ public class CustomerBuyShare extends ActionSupport implements ModelDriven<Share
 			buyerInsertStatement.setInt(4, bean.getBuySharePost());
 			buyerInsertStatement.setDouble(5, bean.getRatePerSharePost());
 			buyerInsertStatement.setTimestamp(6, new Timestamp(System.currentTimeMillis()));
-			buyerInsertStatement.setString(7, commonServiceProvider.getCustomerLoginIdForMembershipId(getBuyer()));
-			buyerInsertStatement.setString(8, commonServiceProvider.getCompanyLoginIdForMembershipId(bean.getCompanyId()));
+			String companyLoginId=commonServiceProvider.getCompanyLoginIdForMembershipId(bean.getCompanyId());
+			String customerLoginId=commonServiceProvider.getCustomerLoginIdForMembershipId(getBuyer());
+			buyerInsertStatement.setString(7, customerLoginId);
+			buyerInsertStatement.setString(8, companyLoginId);
 			
 			double companyBalance=commonServiceProvider.getCompanyBalanceForMembershipId(bean.getCompanyId());
 
@@ -114,6 +118,13 @@ public class CustomerBuyShare extends ActionSupport implements ModelDriven<Share
 
 			connection.commit();
 			if (b == 1 && c == 1 && d == 1 && e == 1) {
+				
+				 //sending brough and sell share email certificate online..
+				 
+				ApplicationEmailService.sendBuyShareEmailToCustomer(bean.getBuySharePost(),customerLoginId , companyLoginId, bean.getTotalAmount(), ApplicationUtilities.getCurrentDateWithTime(), commonServiceProvider.getCustomerMailId(getBuyer()));
+				ApplicationEmailService.sendSellShareEmailToCompany(bean.getBuySharePost(), customerLoginId, companyLoginId, bean.getTotalAmount(), ApplicationUtilities.getCurrentDateWithTime(), commonServiceProvider.getCompanyMailIdForMembershipId(bean.getCompanyId()));
+				
+				
 				return SUCCESS;
 			} else
 				return ERROR;

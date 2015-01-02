@@ -30,7 +30,7 @@
 					<%
 						session.invalidate();
 					%>
-					<a href="./common/index.jsp">Click here </a>to
+					<a href="../common/index.jsp">Click here </a>to
 					go home page
 				<p>
 					<br> <br>

@@ -1,5 +1,7 @@
 package com.miracle.sharebazar.utils;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Properties;
 
 import javax.servlet.http.HttpSession;
@@ -30,4 +32,13 @@ public class ApplicationUtilities {
 		return (String) session.getAttribute("memberId");
 	}
 
+	
+	public static String getCurrentDateWithTime(){
+		
+		 SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd-MMM-yyyy hh:mm a");
+		 
+		 return simpleDateFormat.format(new Date(System.currentTimeMillis()));
+		
+	}
+	
 }

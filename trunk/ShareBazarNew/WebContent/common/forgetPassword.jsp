@@ -8,7 +8,7 @@
 <title>Forget Password</title>
 <script type="text/javascript">
   
-  
+/*   
    function sendForgetPasswordMail(){
     
      var emailId=$("#emailId").val();
@@ -29,13 +29,10 @@
     
     
     $.get("sendForgetPasswordMail.action",{emailId : emailId,userType :userType},function (data){
-     
-     
          $("#result").empty().html(data.result);
-   
     },'json')
    }
- 
+  */
  
 </script>
 
@@ -70,7 +67,7 @@
 					</tr>
 				</table>
 				
-				<span id="result"> </span>
+				<span id="forgetPasswordResult"> </span>
 				
 			</div>
 		</div>

@@ -8,20 +8,6 @@ package com.miracle.sharebazar.mailandsms;
 public class ApplicationEmailService {
 
 
-
-	public static void sendCompanyResitrationEmail(final String memberId,final String userName,final String password,final String toMailId){
-
-		final String msg="";
-
-		new Thread(){
-			public void run() {
-
-				SendMail sendMail=new SendMail();
-				sendMail.sendMessageToMail(toMailId, "", msg);
-			};
-		}.start();
-	}
-
 	public  static void sendCustomerRegistrationEmail(final String memberId,final String userName,final String password,final String toMailId) {
 
 		final String msg="";
@@ -37,7 +23,11 @@ public class ApplicationEmailService {
 
 	public static void sendForgetPasswordEmail(final String userId,final String password,final String memberId,final String toMailId){
 
-		final String msg="";
+		final String msg="<!Doctype html> <html lang='en'> <head> </head>"
+				+ " <body>     Hi "+userId+",    <p> Here is your credentials for  <b>Sharebazar.com</b> given below."
+				+ " <p>     <b>Login Id : </b> "+userId+" <br>  <b>Password : </b> "+password+" <br>  <b>MembershipId : </b> "+memberId+" <br></p>"
+				+ "<i>Note : This is an auto generated email please do not reply back to this email.</i> <br> <br>"
+				+ " Best regards, <br>  Sharebazar.com team  </body> </html> "   ;
 
 		new Thread(){
 			public void run() {
@@ -51,7 +41,7 @@ public class ApplicationEmailService {
 
 	}
 
-	public static void sendSellShareEmailToCompany(final int noOfShares , final String customerId,final String companyId,final String totalPrice,final String dateOfSell,final String companyMailId){
+	public static void sendSellShareEmailToCompany(final int noOfShares , final String customerId,final String companyId,final double totalPrice,final String dateOfSell,final String companyMailId){
 
 
 		final String msg="<!Doctype html>"
@@ -63,7 +53,7 @@ public class ApplicationEmailService {
 		new Thread(){
 			public void run() {
 				SendMail sendMail=new SendMail();
-				sendMail.sendMessageToMail(companyMailId, "Transaction alert ! "+noOfShares+" sold at sharebazar.com", msg);
+				sendMail.sendMessageToMail(companyMailId, "Transaction alert ! "+noOfShares+" shares sold at sharebazar.com", msg);
 			};
 		}.start();
 	}
@@ -78,7 +68,7 @@ public class ApplicationEmailService {
 		new Thread(){
 			public void run() {
 				SendMail sendMail=new SendMail();
-				sendMail.sendMessageToMail(customerMailId, "Transaction alert !"+noOfShares+" brought at sharebazar.com", msg);
+				sendMail.sendMessageToMail(customerMailId, "Transaction alert !"+noOfShares+" share brought at sharebazar.com", msg);
 			};
 		}.start();
 

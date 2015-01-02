@@ -315,5 +315,60 @@ public class CommonServiceProvider  {
 			}
 		}
 	}
+	
+	public String getCustomerMailId(String membershipId){
+		
+		String  emailId="";
+		DatabaseUtils db = new DatabaseUtils();
+		Connection connection = db.getConnectionDb();
+		try {
+			PreparedStatement statement = connection
+					.prepareStatement("SELECT EMAIL FROM CUSTOMER_MASTER   WHERE MEMBERSHIP_ID=?");
+			statement.setString(1, membershipId);
+			ResultSet  rs=  statement.executeQuery();
+			if(rs.next()){
+				emailId=rs.getString(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return emailId;
+		
+	}
+	
+	public String getCompanyMailIdForMembershipId(String membershipId){
+		String  emailId="";
+		DatabaseUtils db = new DatabaseUtils();
+		Connection connection = db.getConnectionDb();
+		try {
+			PreparedStatement statement = connection
+					.prepareStatement("SELECT EMAIL FROM COMPANY_MASTER   WHERE MEMBERSHIP_ID=?");
+			statement.setString(1, membershipId);
+			ResultSet  rs=  statement.executeQuery();
+			if(rs.next()){
+				emailId=rs.getString(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return emailId;
+		
+	}
 
 }
