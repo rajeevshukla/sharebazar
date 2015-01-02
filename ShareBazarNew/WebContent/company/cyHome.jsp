@@ -17,7 +17,12 @@
 		<div class="main">
 			<div class="marg_top wrapper">
 			
-			<img src="../images/company.png" alt="company.png" style="margin-left: 200px;">
+							<center>
+
+					<iframe src="http://edulifeline.com/includes/stocks_widget/"
+						height="322px" width="250px" frameborder="0" scrolling="0"></iframe>
+
+				</center>
 			
 			
 			

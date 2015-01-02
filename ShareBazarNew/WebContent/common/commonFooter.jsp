@@ -9,7 +9,7 @@
 					<ul class="list1">
 						<li><a href="../common/privacyAndPolicy.jsp">Privacy And Policy</a></li>
 						<li><a href="../common/doAndDont1.jsp">Do and Don't</a></li>
-						<li><a href="#">Terms And Conditions</a></li>
+						<li><a href="../common/t&c.jsp">Terms And Conditions</a></li>
 						<li><a href="../common/help.jsp">Help</a></li>
 					</ul>
 				</div>
@@ -38,8 +38,6 @@
 									<li><a href="securityAlert.jsp">Security Alerts</a></li>
 									<li><a href="http://www.investopedia.com/university/stocks" target="_blank">About share market</a></li>
 									<li><a href="avoidScams.jsp">Avoiding Scams</a></li>
-									<li><a href="../common/privacyAndPolicy.jsp">Privacy & Policies</a></li>
-									<li><a href="../common/doAndDont1.jsp">Do's & Don't</a></li>
 								</ul>
 							</div>
 						</article>

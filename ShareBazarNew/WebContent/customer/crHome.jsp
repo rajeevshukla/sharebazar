@@ -30,30 +30,30 @@
 	<div class="body2">
 		<div class="main">
 			<div class="marg_top wrapper">
-			
-			 
-			 
-			 
-			 <iframe src="http://edulifeline.com/includes/stocks_widget/" height="322px" width="250px" frameborder="0" scrolling="0"></iframe>
- 
-			  <center><iframe src="http://www.appuonline.com/gadgets/nse-chart-index.html" height="300px" width="270px" frameborder="0" scrolling="no"></iframe></center>
-     
-			  
-			  
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			
+
+
+				<center>
+
+					<iframe src="http://edulifeline.com/includes/stocks_widget/"
+						height="322px" width="250px" frameborder="0" scrolling="0"></iframe>
+
+				</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			</div>
 		</div>
 	</div>
