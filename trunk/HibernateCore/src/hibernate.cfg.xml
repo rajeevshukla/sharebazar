@@ -27,6 +27,9 @@
 		<property name="hibernate.connection.password">
 			password
 		</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		
 	  <mapping class="com.demo.Employee"/>
 	  <mapping  class="com.demo.DepartmentDTO"/>
 	</session-factory>

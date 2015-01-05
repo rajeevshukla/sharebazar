@@ -1,6 +1,7 @@
 package com.demo;
 
 import org.hibernate.Session;
+import org.hibernate.stat.Statistics;
 
 public class Main {
 
@@ -11,7 +12,37 @@ public class Main {
 
 		//main.insertEmployee();
 		//main.insertDepartMent();
-		main.insertEmp();
+		 Statistics statistics=HibernateUtils.getSessionFactory().getStatistics();
+		 System.out.println("Statics enabled :"+statistics.isStatisticsEnabled());
+		 statistics.setStatisticsEnabled(true);
+		  System.out.println("Statics enabled:"+statistics.isStatisticsEnabled());
+		main.getEmpDetails(1, Employee.class);
+		System.out.println("#################################################");
+		System.out.println("Cache Hit :"+statistics.getSecondLevelCacheHitCount());
+		System.out.println("Cache miss:"+statistics.getSecondLevelCacheMissCount());
+		System.out.println("Cache put:"+ statistics.getSecondLevelCachePutCount());
+		main.getEmpDetails(2, Employee.class);
+		System.out.println("#################################################");
+		System.out.println("Cache Hit :"+statistics.getSecondLevelCacheHitCount());
+		System.out.println("Cache miss:"+statistics.getSecondLevelCacheMissCount());
+		System.out.println("Cache put:"+ statistics.getSecondLevelCachePutCount());
+		main.getEmpDetails(3, Employee.class);
+		System.out.println("#################################################");
+		System.out.println("Cache Hit :"+statistics.getSecondLevelCacheHitCount());
+		System.out.println("Cache miss:"+statistics.getSecondLevelCacheMissCount());
+		System.out.println("Cache put:"+ statistics.getSecondLevelCachePutCount());
+		main.getEmpDetails(2, Employee.class);
+		System.out.println("#################################################");
+		System.out.println("Cache Hit :"+statistics.getSecondLevelCacheHitCount());
+		System.out.println("Cache miss:"+statistics.getSecondLevelCacheMissCount());
+		System.out.println("Cache put:"+ statistics.getSecondLevelCachePutCount());
+		main.getEmpDetails(1, Employee.class);
+		System.out.println("#################################################");
+		System.out.println("Cache Hit :"+statistics.getSecondLevelCacheHitCount());
+		System.out.println("Cache miss:"+statistics.getSecondLevelCacheMissCount());
+		System.out.println("Cache put:"+ statistics.getSecondLevelCachePutCount());
+		
+		
 		
 
 		/* Employee employee=(Employee)main.getEmpDetails(1,Employee.class);
@@ -48,8 +79,6 @@ public class Main {
 	public void insertEmp(){
 
 		Employee employee=new Employee("Rajeev ", 1200);
-		employee.setDepartmentDTO((DepartmentDTO)hibernateDaoService.getObject(DepartmentDTO.class, 1));
-
 		Session session=HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 		session.save(employee);
@@ -81,6 +110,7 @@ public class Main {
 	public Object getEmpDetails(int id,Class object1){
 
 		Session session=HibernateUtils.getSessionFactory().openSession();
+		
 		session.beginTransaction();
 		Object object=(Object)session.get(object1, id);
 		session.getTransaction().commit();
@@ -90,3 +120,4 @@ public class Main {
 
 
 }
+
