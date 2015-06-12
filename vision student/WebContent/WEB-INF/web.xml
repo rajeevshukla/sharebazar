@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>vision.Login</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping> 
+   
+  <servlet>
+    <servlet-name>DoStudent</servlet-name>
+    <servlet-class>vision.DoStudent</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>DoStudent</servlet-name>
+    <url-pattern>/DoStudent</url-pattern>
+  </servlet-mapping> 
+
+  <servlet>
+    <servlet-name>Supdate</servlet-name>
+    <servlet-class>vision.Supdate</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Supdate</servlet-name>
+    <url-pattern>/Supdate</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>Deposit</servlet-name>
+    <servlet-class>vision.Deposit</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>Deposit</servlet-name>
+    <url-pattern>/Deposit</url-pattern>
+  </servlet-mapping>
+ 
+   <servlet>
+    <servlet-name>DoTeacher</servlet-name>
+    <servlet-class>vision.DoTeacher</servlet-class>
+  </servlet>
+
+ 
+  <servlet-mapping>
+    <servlet-name>DoTeacher</servlet-name>
+    <url-pattern>/DoTeacher</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Tupdate</servlet-name>
+    <servlet-class>vision.Tupdate</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>Tupdate</servlet-name>
+    <url-pattern>/Tupdate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DoUpp</servlet-name>
+    <servlet-class>vision.DoUpp</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>DoUpp</servlet-name>
+    <url-pattern>/DoUpp</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>Salary</servlet-name>
+    <servlet-class>vision.Salary</servlet-class>
+  </servlet>
+
+ 
+  <servlet-mapping>
+    <servlet-name>Salary</servlet-name>
+    <url-pattern>/Salary</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DoExpense</servlet-name>
+    <servlet-class>vision.DoExpense</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DoExpense</servlet-name>
+    <url-pattern>/DoExpense</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Exupdate</servlet-name>
+    <servlet-class>vision.Exupdate</servlet-class>
+  </servlet>  
+  <servlet-mapping>
+    <servlet-name>Exupdate</servlet-name>
+    <url-pattern>/Exupdate</url-pattern>
+  </servlet-mapping>
+  
+
+
+
+
+
+
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
