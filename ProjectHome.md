@@ -1,0 +1,4 @@
+ShareBazar.com is a portal designed to facilitate companies and customers who deals in direct equity market to come online and do transactions. It offers services like online share purchase, and sell, Making on line payment. As we know that buying and selling in share markets needs to be very quick and accurate.
+
+
+The main objective of this application is to provide buyers and sellers a very fast medium to trade shares online and from anywhere. You can buy and sell in real time, which means that you know the exact price at which you are dealing. ShareBazar.com is also aims at providing up to date information about current prizes of shares and there position in the market. Main motto of the clinic is to provide the buyers and sellers of equity a common platform where they can transact fast and securely using latest web technologies all that with "ANY TIME ANY WHERE" feature.
